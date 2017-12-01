@@ -1,7 +1,10 @@
 const express = require('express');
 const path = require('path');
 var app = express();
-app.use('/views', express.static(path.join(__dirname, 'views')));
+app.use(express.static('views'));
+app.use(express.static('static'));
+app.set('view engine', 'pug');
+app.set('views','./views');
 
 var rootjs = require('./routes/root.js');
 var testjs = require('./routes/test.js');

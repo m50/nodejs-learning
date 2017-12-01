@@ -2,10 +2,10 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function(req, res){
-   res.send('GET route on root.');
+   res.render('first_view');
 });
 router.post('/', function(req, res){
-   res.send('POST route on root.');
+   res.render('first_view');
 });
 
 //export this router to use in our index.js
