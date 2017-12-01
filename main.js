@@ -5,9 +5,7 @@ var app = express();
 // app.use(express.static('views'));
 // app.use(express.static('static'));
 
-// app.set('view engine', 'pug');
-// app.set('views','./views');
-app.set('view engine', 'html');
+app.set('view engine', 'pug');
 app.set('views','./views');
 
 var rootjs = require('./routes/root.js');
