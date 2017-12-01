@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function(req, res){
-	res.render('index.html', {
+	res.render('first_view', {
 		title: "Root",
 		url: "https://clardy.eu/markus"
    	});
