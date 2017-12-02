@@ -19,7 +19,7 @@ router.get('/', function(req, res){
    	});
 });
 router.post('/', function(req, res){
-   	res.render('first_view');
+   	res.render('firstview');
 });
 
 //export this router to use in our index.js
