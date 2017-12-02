@@ -1,0 +1,31 @@
+const express = require('express');
+const bodyParser = require('body-parser');
+const multer = require('multer');
+var upload = multer();
+var router = express.router();
+
+
+router.get('/', function(req, res){
+   res.render('form');
+});
+
+router.set('view engine', 'pug');
+router.set('views', './views');
+
+// for parsing routerlication/json
+router.use(bodyParser.json()); 
+
+// for parsing routerlication/xwww-
+router.use(bodyParser.urlencoded({ extended: true })); 
+//form-urlencoded
+
+// for parsing multipart/form-data
+router.use(upload.array()); 
+router.use(express.static('public'));
+
+router.post('/', function(req, res){
+   console.log(req.body);
+   res.send("recieved your request!");
+});
+
+module.export(router);
