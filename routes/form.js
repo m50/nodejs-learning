@@ -24,4 +24,4 @@ router.post('/', function(req, res){
    res.send("recieved your request!");
 });
 
-module.export(router);
+module.exports = router;
