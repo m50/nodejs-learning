@@ -1,6 +1,6 @@
 $(document).ready(() => {
 
-$(p).on('click', () => {
+$('p').on('click', () => {
 	$(this).text = "JQuery changed this!";
 });
 
