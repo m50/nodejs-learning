@@ -12,14 +12,14 @@ router.get('/', function(req, res){
 	} else {
 		req.session.page_views = 1;
 	}
-	res.render('firstview', {
+	res.render('root', {
 		title: "Root",
 		url: "https://clardy.eu/markus",
 		visits: req.session.page_views
    	});
 });
 router.post('/', function(req, res){
-   	res.render('firstview');
+   	res.render('root');
 });
 
 //export this router to use in our index.js
