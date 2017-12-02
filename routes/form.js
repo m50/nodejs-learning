@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const multer = require('multer');
 var upload = multer();
-var router = express.router();
+var router = express.Router();
 
 
 router.get('/', function(req, res){
