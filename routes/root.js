@@ -12,7 +12,7 @@ router.get('/', function(req, res){
 	} else {
 		req.session.page_views = 1;
 	}
-	res.render('first_view', {
+	res.render('firstview', {
 		title: "Root",
 		url: "https://clardy.eu/markus",
 		visits: req.session.page_views
