@@ -9,9 +9,6 @@ router.get('/', function(req, res){
    res.render('form');
 });
 
-router.set('view engine', 'pug');
-router.set('views', './views');
-
 // for parsing routerlication/json
 router.use(bodyParser.json()); 
 
@@ -20,8 +17,7 @@ router.use(bodyParser.urlencoded({ extended: true }));
 //form-urlencoded
 
 // for parsing multipart/form-data
-router.use(upload.array()); 
-router.use(express.static('public'));
+router.use(upload.array());
 
 router.post('/', function(req, res){
    console.log(req.body);
