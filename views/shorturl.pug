@@ -15,4 +15,6 @@ html
 	body
 		h1 URL Shortener
 		hr 
-		p Your url is #{url}
+		div
+			label Your url is: 
+			a(href=url target="_blank") #{url}
