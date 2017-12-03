@@ -7,11 +7,13 @@ form {
 }
 
 button {
-	border: 1px solid black;
-	background: #AAA;
+	border: 1px solid white;
+	background: #888;
 	padding: 5px;
 	border-radius: 5px;
 	color: white;
+	-webkit-transition: 2s; /* Safari */
+    transition: 2s;
 }
 
 button:hover {
