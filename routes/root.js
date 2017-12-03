@@ -13,14 +13,20 @@ router.use(session({
 
 router.get('/', function(req, res){
 	component.page_views(req);
+	const title = component.get_req(req);
+	res.render('root', {
+		title: title,
+		url: "https://clardy.eu/markus/",
+		visits: req.session.page_views
+   	});
+});
+router.post('/', function(req, res){
+	component.page_views(req);
 	res.render('root', {
 		title: "Root",
 		url: "https://clardy.eu/markus",
 		visits: req.session.page_views
    	});
-});
-router.post('/', function(req, res){
-   	res.render('root');
 });
 
 //export this router to use in our index.js

@@ -10,4 +10,12 @@ component.page_views = (req) => {
 	}
 };
 
+component.get_req = (req) => {
+	if (req.query.name) {
+		return req.query.name;
+	} else {
+		return "Root";
+	}
+};
+
 module.exports = component;
