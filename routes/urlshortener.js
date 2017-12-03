@@ -25,7 +25,8 @@ router.use(bodyParser.urlencoded({ extended: true }));
 router.use(upload.array());
 
 router.post('/', (req, res) => {
-   res.send("Your URI: http://learning.clardy.eu/uri/"+component.createShortener(req.body.url));
+	const url = "http://learning.clardy.eu/url/"+component.createShortener(req.body.url);
+   	res.send("Your URI: <a href='"+url+"'>"+url+"</a>");
 });
 
 module.exports = router;
