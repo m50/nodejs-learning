@@ -12,8 +12,8 @@ button {
 	padding: 5px;
 	border-radius: 5px;
 	color: white;
-	-webkit-transition: 2s; /* Safari */
-    transition: 2s;
+	-webkit-transition: 2ms;
+    transition: 2ms;
 }
 
 button:hover {
