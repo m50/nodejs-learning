@@ -24,7 +24,7 @@ router.post('/', function(req, res){
 	component.page_views(req);
 	res.render('root', {
 		title: "Root",
-		url: "https://clardy.eu/markus",
+		url: "https://l.clardy.eu/url",
 		visits: req.session.page_views
    	});
 });
