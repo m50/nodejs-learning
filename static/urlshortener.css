@@ -12,8 +12,8 @@ button {
 	padding: 5px;
 	border-radius: 5px;
 	color: white;
-	-webkit-transition: 2ms;
-    transition: 2ms;
+	-webkit-transition: 1s;
+    transition: 1s;
 }
 
 button:hover {
