@@ -26,9 +26,8 @@ router.use(upload.array());
 
 router.post('/', (req, res) => {
 	const uri = "http://l.clardy.eu/url/"+component.createShortener(req.body.url);
-   	const respURL = "<a target=\"_blank\" href='"+uri+"'>"+uri+"</a>";
 	res.render('shorturl', {
-		url: respURL
+		url: uri
 	});
 });
 
