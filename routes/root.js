@@ -1,6 +1,7 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
+const component = require('../components/root.js');
 var router = express.Router();
 
 router.use(cookieParser());
@@ -11,11 +12,7 @@ router.use(session({
 }));
 
 router.get('/', function(req, res){
-	if(req.session.page_views) {
-		req.session.page_views++;
-	} else {
-		req.session.page_views = 1;
-	}
+	component.page_views();
 	res.render('root', {
 		title: "Root",
 		url: "https://clardy.eu/markus",
