@@ -11,4 +11,9 @@ button {
 	background: #AAA;
 	padding: 5px;
 	border-radius: 5px;
+	color: white;
+}
+
+button:hover {
+	background: #A3A;
 }
