@@ -12,7 +12,7 @@ router.use(session({
 }));
 
 router.get('/', function(req, res){
-	component.page_views();
+	component.page_views(req);
 	res.render('root', {
 		title: "Root",
 		url: "https://clardy.eu/markus",
