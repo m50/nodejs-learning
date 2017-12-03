@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:key', (req, res) => {
-	component.getURI(req.params.key);
+	component.getURI(req.params.key, res);
 });
 
 // for parsing routerlication/json
