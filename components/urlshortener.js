@@ -17,6 +17,7 @@ function makeid() {
 component.createShortener = (uri) => {
 	const key = makeid();
 	client.set("urishort:"+key, uri);
+	console.log('Key: '+key+"; URI: "+uri);
 	return key;
 };
 
