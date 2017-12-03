@@ -12,7 +12,7 @@ input {
 	background: none;
 	font-size: 18px;
 }
-label {
+label, p {
 	font-size: 18px;
 }
 
