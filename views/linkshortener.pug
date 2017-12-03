@@ -1,0 +1,11 @@
+doctype html
+html
+	head
+		title Form Tester
+	body
+		form(action = "/form", method = "post")
+			div
+				label(for = "url") URI to shorten:
+				input(name = "url" value = "https://google.com/")
+			br
+			button(type = "submit") Generate!
