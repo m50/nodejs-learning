@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:key', (req, res) => {
-	res.redirect(component.getURI(req.params.key));
+	component.getURI(req.params.key);
 });
 
 // for parsing routerlication/json
@@ -26,7 +26,7 @@ router.use(upload.array());
 
 router.post('/', (req, res) => {
 	const url = "http://learning.clardy.eu/url/"+component.createShortener(req.body.url);
-   	res.send("Your URI: <a href='"+url+"'>"+url+"</a>");
+   	res.send("Your URI: <a target=\"_blank\" href='"+url+"'>"+url+"</a>");
 });
 
 module.exports = router;

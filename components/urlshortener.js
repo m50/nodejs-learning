@@ -21,12 +21,11 @@ component.createShortener = (uri) => {
 	return key;
 };
 
-component.getURI = (key) => {
-	var url = client.get("urishort:"+key, (err, reply) => {
-		return reply;		
+component.getURI = (key, res) => {
+	client.get("urishort:"+key, (err, reply) => {
+		console.log("getURI: Key="+key+"; URL="+reply);
+		res.redirect(reply);
 	});
-	console.log("getURI: Key="+key+"; URL="+url);
-	return url;
 };
 
 
