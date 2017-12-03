@@ -4,7 +4,11 @@ const session = require('express-session');
 var router = express.Router();
 
 router.use(cookieParser());
-router.use(session({secret: "Shh! It's a secret!"}));
+router.use(session({
+	secret: "Shh! It's a secret!",
+	resave: true,
+    saveUninitialized: true
+}));
 
 router.get('/', function(req, res){
 	if(req.session.page_views) {

@@ -13,6 +13,6 @@ const moviesjs = require('./routes/movies.js');
 app.use('/', rootjs);
 app.use('/test', testjs);
 app.use('/form', formjs);
-app.use('/moves', moviesjs);
+app.use('/movies', moviesjs);
 
 app.listen(6080, '127.0.0.1');
