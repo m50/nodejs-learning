@@ -16,14 +16,6 @@ router.get('/', function(req, res){
 	const title = component.get_req(req);
 	res.render('root', {
 		title: title,
-		url: "https://clardy.eu/markus/",
-		visits: req.session.page_views
-   	});
-});
-router.post('/', function(req, res){
-	component.page_views(req);
-	res.render('root', {
-		title: "Root",
 		url: "https://l.clardy.eu/url",
 		visits: req.session.page_views
    	});
