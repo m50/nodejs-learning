@@ -23,20 +23,16 @@ component.createShortener = (uri, res, callback) => {
 			const uri = "http://l.clardy.eu/url/"+key;
 			callback(res, uri);
 		} else {
-			try {
-				keys.forEach((key) => {
-					client.get(key, (err, reply) => {
-						const uri = '';
-						if(!err) {
-							uri = "http://l.clardy.eu/url/"+reply;
-							callback(res, uri);
-							throw BreakException;
-						}
-					});
+			keys.some((key) => {
+				client.get(key, (err, reply) => {
+					const uri = '';
+					if(!err) {
+						uri = "http://l.clardy.eu/url/"+reply;
+						callback(res, uri);
+						return true;
+					}
 				});
-			} catch (e) {
-				if (e !== BreakException) throw e;
-			}
+			});
 			
 		}
 	});
