@@ -23,20 +23,16 @@ component.createShortener = (uri, res, callback) => {
 			client.set("urishort:key:"+key, uri);
 			client.set("urishort:uri:"+uri, key);
 			linkuri += key;
-			console.log(key);
-			console.log(linkuri);
 			callback(linkuri);
 		} else {
 			linkuri += reply.toString();
-			console.log(reply);
-			console.log(linkuri);
 			callback(linkuri);
 		}
 	});
 };
 
 component.getURI = (key, res) => {
-	client.get("urishort:"+key, (err, reply) => {
+	client.get("urishort:key:"+key, (err, reply) => {
 		res.redirect(reply);
 	});
 };
