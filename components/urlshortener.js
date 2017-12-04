@@ -22,11 +22,12 @@ component.createShortener = (uri, res, callback) => {
 			const key = makeid();
 			client.set("urishort:"+key, uri);
 			client.set("urishort:"+uri, key);
-			link = "http://l.clardy.eu/url/"+key;
+			link += key;
 			callback(res, link);
 		} else {
-			link = "http://l.clardy.eu/url/"+reply;
+			link += reply;
 			console.log(reply);
+			console.log(link);
 			callback(res, link);
 		}
 	});
