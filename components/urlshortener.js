@@ -19,19 +19,21 @@ component.createShortener = (uri, res, callback) => {
 		if(err) {
 			const key = makeid();
 			client.set("urishort:"+key, uri);
-			const uri = "http://l.clardy.eu/url/"+component.createShortener(req.body.url);
+			const uri = "http://l.clardy.eu/url/"+key;
 			callback(res, uri);
 		} else {
 			keys.forEach((key) => {
 				client.get(key, (err, reply) => {
+					const uri = '';
 					if(err) {
 						const key = makeid();
 						client.set("urishort:"+key, uri);
-						const uri = "http://l.clardy.eu/url/"+component.createShortener(req.body.url);
+						uri = "http://l.clardy.eu/url/"+key;
+						callback(res, uri);
+					} else {
+						uri = "http://l.clardy.eu/url/"+reply;
 						callback(res, uri);
 					}
-					const uri = "http://l.clardy.eu/url/"+reply;
-					callback(res, uri);
 				});
 			});
 		}
