@@ -21,14 +21,14 @@ router.get('/mail/policies', (req, res, next) => {
 		}
 		const q = "SELECT * FROM policy;";
 		const query = client.query(q);
-		query.on('row', (row) => {
-			results.push(row);
-		});
+		// query.on('row', (row) => {
+		// 	results.push(row);
+		// });
 
-		query.on('end', () => {
-			done();
-			return res.json(results);
-		});
+		// query.on('end', () => {
+		// 	done();
+		// 	return res.json(results);
+		// });
 	});
 });
 
