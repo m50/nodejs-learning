@@ -25,9 +25,10 @@ router.use(bodyParser.urlencoded({ extended: true }));
 router.use(upload.array());
 
 router.post('/', (req, res) => {
-	const uri = "http://l.clardy.eu/url/"+component.createShortener(req.body.url);
-	res.render('shorturl', {
-		url: uri
+	component.createShortener(req.body.url, res, (res, uri) => {
+		res.render('shorturl', {
+			url: uri
+		});
 	});
 });
 

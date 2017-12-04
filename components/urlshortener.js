@@ -14,10 +14,28 @@ function makeid() {
   return text;
 }
 
-component.createShortener = (uri) => {
-	const key = makeid();
-	client.set("urishort:"+key, uri);
-	return key;
+component.createShortener = (uri, res, callback) => {
+	client.keys('urishort:*' (err, keys) => {
+		if(err) {
+			const key = makeid();
+			client.set("urishort:"+key, uri);
+			const uri = "http://l.clardy.eu/url/"+component.createShortener(req.body.url);
+			callback(res, uri);
+		} else {
+			keys.forEach((key) => {
+				client.get(key, (err, reply) => {
+					if(err) {
+						const key = makeid();
+						client.set("urishort:"+key, uri);
+						const uri = "http://l.clardy.eu/url/"+component.createShortener(req.body.url);
+						callback(res, uri);
+					}
+					const uri = "http://l.clardy.eu/url/"+reply;
+					callback(res, uri);
+				});
+			});
+		}
+	});
 };
 
 component.getURI = (key, res) => {
