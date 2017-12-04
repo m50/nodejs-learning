@@ -17,14 +17,15 @@ function makeid() {
 
 component.createShortener = (uri, res, callback) => {
 	client.get(key, (err, reply) => {
+		const link = '';
 		if(err) {
 			const key = makeid();
 			client.set("urishort:"+key, uri);
 			client.set("urishort:"+uri, key);
-			const link = "http://l.clardy.eu/url/"+key;
+			link = "http://l.clardy.eu/url/"+key;
 			callback(res, link);
 		} else {
-			uri = "http://l.clardy.eu/url/"+reply;
+			link = "http://l.clardy.eu/url/"+reply;
 			callback(res, uri);
 		}
 	});
