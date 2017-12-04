@@ -5,7 +5,7 @@ const component = require('../components/mail.js');
 var upload = multer();
 var router = express.Router();
 
-router.post('/mail', (req, res, next) => {
+router.get('/mail/policies', (req, res, next) => {
 	component.getPolicies(req, res, next);
 });
 

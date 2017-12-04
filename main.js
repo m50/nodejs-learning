@@ -10,11 +10,13 @@ const testjs = require('./routes/test.js');
 const formjs = require('./routes/form.js');
 const moviesjs = require('./routes/movies.js');
 const urlshortenerjs = require('./routes/urlshortener.js');
+const mailjs = require('./routes/mail.js');
 
 app.use('/', rootjs);
 app.use('/test', testjs);
 app.use('/form', formjs);
 app.use('/movies', moviesjs);
 app.use('/url', urlshortenerjs);
+app.use('/mail', mailjs);
 
 app.listen(6080, '127.0.0.1');
