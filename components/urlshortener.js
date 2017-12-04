@@ -15,7 +15,7 @@ function makeid() {
 }
 
 component.createShortener = (uri, res, callback) => {
-	client.keys('urishort:*' (err, keys) => {
+	client.keys('urishort:*', (err, keys) => {
 		if(err) {
 			const key = makeid();
 			client.set("urishort:"+key, uri);
