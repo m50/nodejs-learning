@@ -25,7 +25,7 @@ router.use(bodyParser.urlencoded({ extended: true }));
 router.use(upload.array());
 
 router.post('/', (req, res) => {
-	component.createShortener(req.body.url, res, (res, uri) => {
+	component.createShortener(req.body.url, res, (uri) => {
 		res.render('shorturl', { url: uri });
 	});
 });

@@ -16,21 +16,21 @@ function makeid() {
 }
 
 component.createShortener = (uri, res, callback) => {
-	client.get('urishort:'+uri, (err, reply) => {
+	client.get('urishort:uri:'+uri, (err, reply) => {
 		const linkuri = 'http://l.clardy.eu/url/';
 		if(err || reply == null) {
 			const key = makeid();
-			client.set("urishort:"+key, uri);
-			client.set("urishort:"+uri, key);
+			client.set("urishort:key:"+key, uri);
+			client.set("urishort:uri:"+uri, key);
 			linkuri += key;
 			console.log(key);
 			console.log(linkuri);
-			callback(res, linkuri);
+			callback(linkuri);
 		} else {
 			linkuri += reply.toString();
 			console.log(reply);
 			console.log(linkuri);
-			callback(res, linkuri);
+			callback(linkuri);
 		}
 	});
 };
