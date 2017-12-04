@@ -19,8 +19,8 @@ component.createShortener = (uri, res, callback) => {
 	const key = makeid();
 	client.set("urishort:"+key, uri);
 	client.set("urishort:"+uri, key);
-	const uri = "http://l.clardy.eu/url/"+key;
-	callback(res, uri);
+	const link = "http://l.clardy.eu/url/"+key;
+	callback(res, link);
 	// client.keys('urishort:*', (err, keys) => {
 	// 	if(!err) {
 	// 		keys.some((key) => {
