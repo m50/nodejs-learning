@@ -16,7 +16,7 @@ router.get('/', function(req, res){
 	const title = component.get_req(req);
 	res.render('root', {
 		title: title,
-		url: "https://l.clardy.eu/url",
+		url: "http://l.clardy.eu/url",
 		visits: req.session.page_views
    	});
 });
