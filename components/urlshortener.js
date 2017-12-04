@@ -26,7 +26,7 @@ component.createShortener = (uri, res, callback) => {
 			callback(res, link);
 		} else {
 			link = "http://l.clardy.eu/url/"+reply;
-			callback(res, uri);
+			callback(res, link);
 		}
 	});
 };
