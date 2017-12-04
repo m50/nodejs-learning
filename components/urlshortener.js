@@ -16,26 +16,27 @@ function makeid() {
 }
 
 component.createShortener = (uri, res, callback) => {
-	client.keys('urishort:*', (err, keys) => {
-		if(err) {
-			const key = makeid();
-			client.set("urishort:"+key, uri);
-			const uri = "http://l.clardy.eu/url/"+key;
-			callback(res, uri);
-		} else {
-			keys.some((key) => {
-				client.get(key, (err, reply) => {
-					const uri = '';
-					if(!err) {
-						uri = "http://l.clardy.eu/url/"+reply;
-						callback(res, uri);
-						return true;
-					}
-				});
-			});
-			
-		}
-	});
+	const key = makeid();
+	client.set("urishort:"+key, uri);
+	client.set("urishort:"+uri, key);
+	const uri = "http://l.clardy.eu/url/"+key;
+	callback(res, uri);
+	// client.keys('urishort:*', (err, keys) => {
+	// 	if(!err) {
+	// 		keys.some((key) => {
+	// 			console.log(key);
+	// 			client.get(key, (err, reply) => {
+	// 				const uri = '';
+	// 				if(!err) {
+	// 					uri = "http://l.clardy.eu/url/"+reply;
+	// 					console.log(uri);
+	// 					callback(res, uri);
+	// 					return true;
+	// 				}
+	// 			});
+	// 		});
+	// 	}
+	// });
 };
 
 component.getURI = (key, res) => {
