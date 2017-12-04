@@ -3,6 +3,7 @@ const redis = require('redis');
 client = redis.createClient();
 
 var component = {};
+var BreakException = {};
 
 function makeid() {
   var text = "";
@@ -22,20 +23,21 @@ component.createShortener = (uri, res, callback) => {
 			const uri = "http://l.clardy.eu/url/"+key;
 			callback(res, uri);
 		} else {
-			keys.forEach((key) => {
-				client.get(key, (err, reply) => {
-					const uri = '';
-					if(err) {
-						const key = makeid();
-						client.set("urishort:"+key, uri);
-						uri = "http://l.clardy.eu/url/"+key;
-						callback(res, uri);
-					} else {
-						uri = "http://l.clardy.eu/url/"+reply;
-						callback(res, uri);
-					}
+			try {
+				keys.forEach((key) => {
+					client.get(key, (err, reply) => {
+						const uri = '';
+						if(!err) {
+							uri = "http://l.clardy.eu/url/"+reply;
+							callback(res, uri);
+							throw BreakException;
+						}
+					});
 				});
-			});
+			} catch (e) {
+				if (e !== BreakException) throw e;
+			}
+			
 		}
 	});
 };
