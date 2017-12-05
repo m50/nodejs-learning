@@ -37,12 +37,12 @@ button:hover {
 
 #header {
 	background: #EEE;
-	margin: none;
+	margin: 0px;
 	padding: 5px;
 	border-bottom: 1px solid black;
 }
 
 html, body {
-	margin: none;
-	padding: none;
+	margin: 0px;
+	padding: 0px;
 }
