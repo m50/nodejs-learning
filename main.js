@@ -10,7 +10,6 @@ const testjs = require('./routes/test.js');
 const formjs = require('./routes/form.js');
 const moviesjs = require('./routes/movies.js');
 const urlshortenerjs = require('./routes/urlshortener.js');
-const mailjs = require('./routes/mail.js');
 
 app.use('/', rootjs);
 app.use('/test', testjs);
