@@ -16,9 +16,12 @@ html
 	body
 		include ./header.pug
 		div#body
-			a(href=url) URL Shortener
-			br
 			a(href='/form') Form test
-			p Page Views: #{visits}
+			br
+			if(unlocked)
+				p You unlocked another page!
+				a(href=url) URL Shortener
+			else
+				p Page Views: #{visits}
 		script(src="/static/root.js")
 		include ./footer.pug

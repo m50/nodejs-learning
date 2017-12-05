@@ -14,10 +14,12 @@ router.use(session({
 router.get('/', function(req, res){
 	component.page_views(req);
 	const title = component.get_req(req);
+	const unlocked = req.session.page_views > 5;
 	res.render('root', {
 		pageTitle: title,
 		url: "http://l.clardy.eu/url",
-		visits: req.session.page_views
+		visits: req.session.page_views,
+		unlocked: unlocked
    	});
 });
 
