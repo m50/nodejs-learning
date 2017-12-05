@@ -13,11 +13,11 @@ html
 		link(rel="icon" type="image/x-icon" href="https://clardy.eu/imgs/favicon.png")
 		link(rel="stylesheet" type="text/css" href="/static/urlshortener.css")
 	body
-		h1 URL Shortener
-		hr 
+		include ./header.pug
 		form(action = "/url", method = "post")
 			div
 				label(for = "url") URL to shorten:&nbsp;
 				input(name = "url" value = "https://google.com/")
 			br
 			button(type = "submit") Generate!
+		include ./footer.pug

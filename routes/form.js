@@ -6,7 +6,7 @@ var router = express.Router();
 
 
 router.get('/', function(req, res){
-   res.render('form');
+   res.render('form', { pageTitle: 'URL Shortener' });
 });
 
 // for parsing routerlication/json

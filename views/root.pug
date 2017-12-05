@@ -14,7 +14,8 @@ html
 		link(rel="stylesheet" type="text/css" href="https://clardy.eu/style/main.css")
 		script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
 	body
-		h1 This is the #{title} directory
+		include ./header.pug
 		a(href=url) URL Shortener
 		p Page Views: #{visits}
 		script(src="/static/root.js")
+		include ./footer.pug

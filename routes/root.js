@@ -15,7 +15,7 @@ router.get('/', function(req, res){
 	component.page_views(req);
 	const title = component.get_req(req);
 	res.render('root', {
-		title: title,
+		pageTitle: title,
 		url: "http://l.clardy.eu/url",
 		visits: req.session.page_views
    	});

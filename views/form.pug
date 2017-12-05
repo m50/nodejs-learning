@@ -13,6 +13,7 @@ html
 		link(rel="icon" type="image/x-icon" href="https://clardy.eu/imgs/favicon.png")
 		link(rel="stylesheet" type="text/css" href="https://clardy.eu/style/main.css")
 	body
+		include ./header.pug
 		form(action = "/form", method = "post")
 			div
 				label(for = "say") Say:
@@ -23,3 +24,4 @@ html
 				input(name = "to" value = "Express Forms")
 			br
 			button(type = "submit") Send my greetings
+		include ./footer.pug

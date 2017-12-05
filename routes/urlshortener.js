@@ -7,7 +7,7 @@ var router = express.Router();
 
 
 router.get('/', (req, res) => {
-   res.render('urlshortener');
+   res.render('urlshortener', { pageTitle: 'URL Shortener' });
 });
 
 router.get('/:key', (req, res) => {
@@ -26,7 +26,7 @@ router.use(upload.array());
 
 router.post('/', (req, res) => {
 	component.createShortener(req.body.url, res, (uri) => {
-		res.render('shorturl', { url: uri });
+		res.render('shorturl', { pageTitle: 'URL Shortener',url: uri });
 	});
 });
 
