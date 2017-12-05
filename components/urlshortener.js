@@ -20,8 +20,8 @@ component.createShortener = (uri, res, callback) => {
 		var linkuri = 'http://l.clardy.eu/url/';
 		if(err || reply == null) {
 			const key = makeid();
-			client.set("urishort:key:"+key, uri);
-			client.set("urishort:uri:"+uri, key);
+			client.set("urishort:key:"+key, uri, 'EX', 604800);
+			client.set("urishort:uri:"+uri, key, 'EX', 604800);
 			linkuri += key;
 			callback(linkuri);
 		} else {
