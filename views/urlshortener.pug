@@ -14,7 +14,7 @@ html
 		link(rel="stylesheet" type="text/css" href="/static/main.css")
 	body
 		include ./header.pug
-		form(action = "/url", method = "post")
+		form#body(action = "/url", method = "post")
 			div
 				label(for = "url") URL to shorten:&nbsp;
 				input(name = "url" value = "https://google.com/")
