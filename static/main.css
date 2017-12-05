@@ -41,3 +41,8 @@ button:hover {
 	padding: 5px;
 	border-bottom: 1px solid black;
 }
+
+html, body {
+	margin: none;
+	padding: none;
+}
