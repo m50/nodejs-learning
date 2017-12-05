@@ -12,10 +12,12 @@ html
 		meta(name="keywords" content="programming,email,website,personal")
 		link(rel="icon" type="image/x-icon" href="https://clardy.eu/imgs/favicon.png")
 		link(rel="stylesheet" type="text/css" href="https://clardy.eu/style/main.css")
+		link(rel="stylesheet" type="text/css" href="/style/main.css")
 		script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
 	body
 		include ./header.pug
 		a(href=url) URL Shortener
+		a(href='/form') Form test
 		p Page Views: #{visits}
 		script(src="/static/root.js")
 		include ./footer.pug
