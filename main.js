@@ -17,6 +17,5 @@ app.use('/test', testjs);
 app.use('/form', formjs);
 app.use('/movies', moviesjs);
 app.use('/url', urlshortenerjs);
-app.use('/mail', mailjs);
 
 app.listen(6080, '127.0.0.1');
