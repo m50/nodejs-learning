@@ -16,8 +16,10 @@ html
 		script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
 	body
 		include ./header.pug
-		a(href=url) URL Shortener
-		a(href='/form') Form test
-		p Page Views: #{visits}
+		div#body
+			a(href=url) URL Shortener
+			br
+			a(href='/form') Form test
+			p Page Views: #{visits}
 		script(src="/static/root.js")
 		include ./footer.pug

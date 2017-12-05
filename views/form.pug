@@ -15,7 +15,7 @@ html
 		link(rel="stylesheet" type="text/css" href="/style/main.css")
 	body
 		include ./header.pug
-		form(action = "/form", method = "post")
+		form#body(action = "/form", method = "post")
 			div
 				label(for = "say") Say:
 				input(name = "say" value = "hi")
