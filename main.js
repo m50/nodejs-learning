@@ -4,7 +4,7 @@ const babel = require('gulp-babel');
 var app = express();
 
 gulp.task("default", () => {
-    gulp.src( "./static/jsx/*.jsx" ).pipe( babel({ plugins: ['transform-react-jsx'] }) ).pipe( gulp.dest("src/js/react/") );
+    gulp.src( "./static/jsx/*.jsx" ).pipe( babel({ plugins: ['transform-react-jsx'] }) ).pipe( gulp.dest("./static/js/react/") );
 });
 
 app.set('view engine', 'pug');
