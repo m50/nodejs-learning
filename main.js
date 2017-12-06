@@ -1,15 +1,10 @@
 const express = require('express');
-const path = require('path');
 const gulp = require('gulp');
 const babel = require('gulp-babel');
 var app = express();
 
-gulp.task("babel", function(){
-    return gulp.src("./static/jsx/*.jsx").
-        pipe(babel({
-            plugins: ['transform-react-jsx']
-        })).
-        pipe(gulp.dest("src/js/react/"));
+gulp.task("default", () => {
+    gulp.src( "./static/jsx/*.jsx" ).pipe( babel({ plugins: ['transform-react-jsx'] }) ).pipe( gulp.dest("src/js/react/") );
 });
 
 app.set('view engine', 'pug');
@@ -29,4 +24,6 @@ app.use('/form', formjs);
 app.use('/url', urlshortenerjs);
 app.use('/react', reactjs);
 
-app.listen(6080, '127.0.0.1');
+app.listen(6080, '127.0.0.1', () => {
+	console.log('listening on 127.0.0.1:6080');
+});
