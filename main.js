@@ -14,7 +14,7 @@ const urlshortenerjs = require('./routes/urlshortener.js');
 app.use('/', rootjs);
 app.use('/test', testjs);
 app.use('/form', formjs);
-app.use('/ract', reactjs);
+app.use('/react', reactjs);
 // app.use('/movies', moviesjs);
 app.use('/url', urlshortenerjs);
 

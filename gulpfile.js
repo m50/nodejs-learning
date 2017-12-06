@@ -5,11 +5,7 @@ gulp.task('default', () => {
     return gulp
     	.src('static/jsx/*.jsx')
         .pipe(babel({
-            presets: ['env','react']
+            presets: ['react', 'env']
         }))
         .pipe(gulp.dest('static/js/react'));
-});
-
-gulp.task('watch', function () {
-    gulp.watch('js/*.js', ['default']);
 });

@@ -1,33 +1,36 @@
 {
-  "name": "learning",
-  "version": "1.0.0",
-  "description": "my learning page",
-  "main": "main.js",
-  "dependencies": {
-    "babel-core": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "consolidate": "^0.15.0",
-    "cookie-parser": "^1.4.3",
-    "express": "^4.16.2",
-    "express-session": "^1.15.6",
-    "gulp": "^3.9.1",
-    "gulp-babel": "^7.0.0",
-    "multer": "^1.3.0",
-    "pug": "^2.0.0-rc.4",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "redis": "^2.8.0"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "git pull && npm run gulp && node main.js",
-    "gulp": "gulp"
-  },
-  "author": "markus@clardy.eu",
-  "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/m50/nodejs-learning.git"
-  }
+	"name": "learning",
+	"version": "1.0.0",
+	"description": "my learning page",
+	"main": "main.js",
+	"dependencies": {
+		"babel-core": "^6.26.0",
+		"babel-preset-env": "^1.6.1",
+		"babel-preset-react": "^6.24.1",
+		"consolidate": "^0.15.0",
+		"cookie-parser": "^1.4.3",
+		"express": "^4.16.2",
+		"express-session": "^1.15.6",
+		"gulp": "^3.9.1",
+		"gulp-babel": "^7.0.0",
+		"multer": "^1.3.0",
+		"pug": "^2.0.0-rc.4",
+		"react": "^16.2.0",
+		"react-dom": "^16.2.0",
+		"redis": "^2.8.0"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "git pull && npm run gulp && node main.js",
+		"gulp": "gulp"
+	},
+	"author": "markus@clardy.eu",
+	"license": "ISC",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/m50/nodejs-learning.git"
+	},
+	"babel": {
+		"presets": ["env", "react"]
+	}
 }
