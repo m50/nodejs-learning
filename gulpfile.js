@@ -69,4 +69,4 @@ gulp.task('sass:watch', function () {
 
 gulp.task('build', function() { return compile(); });
 gulp.task('watch', ['sass:watch'], function() { return watch();  });
-gulp.task('default', ['watch', 'sass']);
+gulp.task('default', ['watch']);
