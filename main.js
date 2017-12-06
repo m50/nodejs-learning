@@ -1,6 +1,16 @@
 const express = require('express');
 const path = require('path');
+const gulp = require('gulp');
+const babel = require('gulp-babel');
 var app = express();
+
+gulp.task("babel", function(){
+    return gulp.src("./static/jsx/*.jsx").
+        pipe(babel({
+            plugins: ['transform-react-jsx']
+        })).
+        pipe(gulp.dest("src/js/react/"));
+});
 
 app.set('view engine', 'pug');
 app.set('views','./views');
