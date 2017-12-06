@@ -1,9 +1,5 @@
 const express = require('express');
-const gulp = require('gulp');
-const babel = require('gulp-babel');
 var app = express();
-
-
 
 app.set('view engine', 'pug');
 app.set('views','./views');
@@ -23,9 +19,6 @@ app.use('/url', urlshortenerjs);
 app.use('/react', reactjs);
 
 app.listen(6080, '127.0.0.1', () => {
-	gulp.task("default", () => {
-		gulp.src( "./static/jsx/*.jsx" ).pipe( babel({ plugins: ['transform-react-jsx'] }) ).pipe( gulp.dest("./static/js/react/") );
-		console.log('gulp');
-	});
+
 	console.log('listening on 127.0.0.1:6080');
 });
