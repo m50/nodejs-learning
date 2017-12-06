@@ -6,7 +6,7 @@ var router = express.Router();
 
 router.get('/', function(req, res){
 	res.render('react', {
-		pageTitle: title,
+		pageTitle: 'Learning React',
    	});
 });
 
