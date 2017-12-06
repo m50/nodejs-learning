@@ -13,7 +13,7 @@ const conf = {
 	destSass: 'static/style',
 
 	srcJsx: 'static/jsx',
-	destJsx: 'static/js/react',
+	destJs: 'static/js/react',
 	appName: 'index.jsx',
 	destName: 'index.js'
 };
@@ -29,7 +29,7 @@ const conf = {
 
 function compile(watch) {
   var bundler = watchify(
-    browserify(conf.srcJs + '/' + conf.appName, { debug: true })
+    browserify(conf.srcJsx + '/' + conf.appName, { debug: true })
       .transform(babel.configure({ presets: ['es2015', 'react'] }))
     );
 
