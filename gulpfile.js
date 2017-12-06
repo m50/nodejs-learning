@@ -30,7 +30,7 @@ const conf = {
 function compile(watch) {
   var bundler = watchify(
     browserify(conf.srcJsx + '/' + conf.appName, { debug: true })
-      .transform(babel.configure({ presets: ['es2015', 'react'] }))
+      .transform(babel.configure({ presets: ['env', 'react'] }))
     );
 
   function rebundle() {
