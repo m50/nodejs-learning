@@ -41,12 +41,12 @@
 		&:hover {
 			background: #5A29E7;
 		}
-		$margin: 10px;
+		$margin-side: 25px;
+		$margin-height: 10px
 
 		display: inline-block;
 		background: #383c4a;
-		margin-left: $margin;
-		margin-right: $margin;
+		margin: $margin-side $margin-height;
 		font-size: 20px;
 	}
 	list-style: none;
