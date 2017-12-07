@@ -40,14 +40,19 @@
 	.navitem {
 		&:hover {
 			background: #5A29E7;
+			color: white;
 		}
-		$margin-side: 25px;
-		$margin-height: 10px;
+		&.current {
+			color: white;
+		}
+		$padding-side: 25px;
+		$padding-height: 10px;
 
 		display: inline-block;
 		background: #383c4a;
-		margin: $margin-side $margin-height;
+		padding: $padding-height $padding-side;
 		font-size: 20px;
+		color: #afb9bf;
 	}
 	list-style: none;
 	background: #383c4a;
