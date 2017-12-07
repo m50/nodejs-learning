@@ -30,8 +30,8 @@
 		"watchify": "^3.9.0"
 	},
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
 		"start": "git pull && npm run gulp && node main.js",
+		"compile": "git pull && npm run gulp",
 		"gulp": "gulp"
 	},
 	"author": "markus@clardy.eu",
