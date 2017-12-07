@@ -13,11 +13,11 @@ class Navbar extends React.Component {
 	render () {
 		var navbar = (
 			<ul className='navbar'>
-				<Navitem curPage={this.props.page} onClick={this.onClick} page='root' pageTitle='Root' externalSite='http://l.clardy.eu/' />
-				<Navitem curPage={this.props.page} onClick={this.onClick} page='main' pageTitle='Main' />
-				<Navitem curPage={this.props.page} onClick={this.onClick} page='page2' pageTitle='Page 2' />
-				<Navitem curPage={this.props.page} onClick={this.onClick} page='cv' pageTitle='CV' externalSite='https://clardy.eu/markus/' />
-				<Navitem curPage={this.props.page} onClick={this.onClick} page='shorturl' pageTitle='URL Shortener' externalSite='http://l.clardy.eu/url/' />
+				<Navitem curPage={this.props.page} onclick={this.onClick} page='root' pageTitle='Root' externalSite='http://l.clardy.eu/' />
+				<Navitem curPage={this.props.page} onclick={this.onClick} page='main' pageTitle='Main' />
+				<Navitem curPage={this.props.page} onclick={this.onClick} page='page2' pageTitle='Page 2' />
+				<Navitem curPage={this.props.page} onclick={this.onClick} page='cv' pageTitle='CV' externalSite='https://clardy.eu/markus/' />
+				<Navitem curPage={this.props.page} onclick={this.onClick} page='shorturl' pageTitle='URL Shortener' externalSite='http://l.clardy.eu/url/' />
 			</ul>);
 		return navbar;
 	}
