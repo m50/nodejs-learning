@@ -66,10 +66,17 @@ class NavDropdown extends React.Component {
 			image: '/static/imgs/menu.png',
 			alt: '='
 		};
-		this.onHover = this.onHover.bind(this);
+		this.onEnter = this.onEnter.bind(this);
+		this.onExit = this.onExit.bind(this);
 	}
 
-	onHover (e) {
+	onEnter (e) {
+		this.setState({
+			image: '/static/imgs/menu-hover.png',
+			alt: '--'
+		});
+	}
+	onExit (e) {
 		this.setState({
 			image: '/static/imgs/menu-hover.png',
 			alt: '--'
@@ -77,7 +84,7 @@ class NavDropdown extends React.Component {
 	}
 
 	render () {
-		return <li className='navDropdown' onMouseOver={this.onHover}><img src={this.state.image} alt={this.state.alt} height='50px' width='50px' /></li>;
+		return <li className='navDropdown' onMouseEnter={this.onEnter} onMouseOut={this.onExit}><img src={this.state.image} alt={this.state.alt} height='50px' width='50px' /></li>;
 	}
 }
 
