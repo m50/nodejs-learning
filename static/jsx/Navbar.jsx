@@ -6,16 +6,18 @@ class Navbar extends React.Component {
 		this.onClick = this.onClick.bind(this);
 	}
 
-	onClick (e) {
-		console.log(e.target.id);
-		this.props.onclick(e.target.id);
+	onClick (text) {
+		this.props.onclick(text);
 	}
 
 	render () {
 		var navbar = (
 			<ul className='navbar'>
-				<li className={this.props.page == 'main' ? 'navitem current' : 'navitem'} id='main' onClick={this.onClick}>Main</li>
-				<li className={this.props.page == 'page2' ? 'navitem current' : 'navitem'} id='page2' onClick={this.onClick}>Page 2</li>
+				<Navitem curPage={this.props.page} page='root' pageTitle='Root' externalSite='http://l.clardy.eu/' />
+				<Navitem curPage={this.props.page} page='main' pageTitle='Main' />
+				<Navitem curPage={this.props.page} page='page2' pageTitle='Page 2' />
+				<Navitem curPage={this.props.page} page='cv' pageTitle='CV' externalSite='https://clardy.eu/markus/' />
+				<Navitem curPage={this.props.page} page='shorturl' pageTitle='URL Shortener' externalSite='http://l.clardy.eu/url/' />
 			</ul>);
 		return navbar;
 	}
@@ -24,5 +26,33 @@ class Navbar extends React.Component {
 Navbar.defaultProps = {
 	page: 'main'
 };
+
+class Navitem extends React.Component {
+	constructor (props) {
+		super(props);
+		this.onClick = this.onClick.bind(this);
+	}
+
+	onClick (e) {
+		if(this.props.externalSite !== '') {
+			window.location.replace(this.props.externalSite);
+			return;
+		}
+		console.log(e.target.id);
+		this.props.onclick(e.target.id);
+	}
+
+	render () {
+		var className = 'navitem';
+		if(this.props.curPage == this.props.page) className += ' active'
+		return <li className={className} id={this.props.page} onClick={this.onClick}>{this.props.pageTitle}</li>;
+	}
+}
+
+Navitem.defaultProps = {
+	page: 'main',
+	pageTitle: 'Main',
+	curPage: 'main'
+}
 
 export default Navbar;

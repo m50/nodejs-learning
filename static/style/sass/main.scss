@@ -1,6 +1,5 @@
 $font-color: #afb9bf;
 
-
 #body {
 	input {
 		border: none;
@@ -43,7 +42,7 @@ $font-color: #afb9bf;
 			background: #5A29E7;
 			color: white;
 		}
-		&.current {
+		&.active {
 			color: white;
 		}
 		$padding-side: 25px;
