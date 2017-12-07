@@ -1,14 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './App';
 
-const div = (
-	<div id='body'>
-		<p>This is a another test!</p>
-		<p>Just updating</p>
-	</div>
-);
 
 ReactDOM.render(
-	div,
+	<App />,
 	document.getElementById('root')
 );
