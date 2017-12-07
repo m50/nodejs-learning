@@ -47,4 +47,4 @@ gulp.task('compile-coffeescript', () => {
 		.pipe(gulp.dest(conf.destCoffee));
 });
 
-gulp.task('default', ['sass', 'jsx']);
+gulp.task('default', ['compile-sass', 'compile-jsx', 'compile-coffeescript']);
