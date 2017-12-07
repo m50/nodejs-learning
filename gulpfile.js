@@ -12,7 +12,9 @@ const conf = {
 	destSass: 'static/style',
 
 	srcJsx: 'static/jsx',
-	destJs: 'static/js/react'
+	destJs: 'static/js/react',
+
+	appName: 'main.js'
 };
 
 gulp.task('sass', () => {
@@ -29,7 +31,7 @@ gulp.task('jsx', () => {
 
 	return bundler.bundle()
 		.on('error', function(err) { console.error(err); this.emit('end'); })
-		.pipe(source('main.js'))
+		.pipe(source(conf.appName))
 		.pipe(buffer())
 		.pipe(sourcemaps.init({ loadMaps: true }))
 		.pipe(sourcemaps.write('./'))
