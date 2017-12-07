@@ -15,7 +15,7 @@ const conf = {
 	srcJsx: 'static/jsx',
 	destJs: 'static/js/react',
 
-	appName: 'app.js'
+	appName: 'index.js'
 };
 
 gulp.task('sass', () => {
