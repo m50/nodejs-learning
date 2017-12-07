@@ -36,7 +36,17 @@
 	font-family: Arial, Helvetica, sans-serif;
 }
 
-
+.navbar {
+	.navitem {
+		&:hover {
+			background: #5A29E7;
+		}
+		display: inline-block;
+		background: #383c4a;
+	}
+	list-style: none;
+	background: #383c4a;
+}
 
 #header {
 	h1 {
@@ -45,10 +55,10 @@
 		text-align: center;
 		vertical-align: center;
 	}
-	background: #EEE;
+	background: #383c4a;
 	margin: 0px;
 	padding: 5px;
-	border-bottom: 1px solid black;
+	border-bottom: 1px solid #2f343f;
 	font-family: Arial, Helvetica, sans-serif;
 }
 

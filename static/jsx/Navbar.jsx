@@ -13,8 +13,8 @@ class Navbar extends React.Component {
 	render () {
 		const navbar = (
 			<ul class='navbar'>
-				<li class='navitem' value='main'>Main</li>
-				<li class='navitem' value='page2'>Page 2</li>
+				<li class='navitem' value='main' onClick={onClick}>Main</li>
+				<li class='navitem' value='page2' onClick={onClick}>Page 2</li>
 			</ul>);
 		return navbar;
 	}
