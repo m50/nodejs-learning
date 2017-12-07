@@ -4,23 +4,47 @@ class Navbar extends React.Component {
 	constructor (props) {
 		super(props);
 		this.onClick = this.onClick.bind(this);
+		this.burgerToggle = this.burgerToggle.bind(this);
 	}
 
 	onClick (text) {
 		this.props.onclick(text);
 	}
 
+	burgerToggle () {
+		let linksEl = document.querySelector('.narrowLinks');
+		if (linksEl.style.display === 'block') {
+			linksEl.style.display = 'none';
+		} else {
+			linksEl.style.display = 'block';
+		}
+	}
+
 	render () {
 		var navbar = (
-			<ul className='navbar'>
-				<Navitem curPage={this.props.page} onclick={this.onClick} page='root' pageTitle='Root' externalSite='http://l.clardy.eu/' />
-				<Navitem curPage={this.props.page} onclick={this.onClick} page='main' pageTitle='Main' />
-				<Navitem curPage={this.props.page} onclick={this.onClick} page='page2' pageTitle='Page 2' />
-				<Navitem curPage={this.props.page} onclick={this.onClick} page='cv' pageTitle='CV' externalSite='https://clardy.eu/markus/' />
-				<Navitem curPage={this.props.page} onclick={this.onClick} page='shorturl' pageTitle='URL Shortener' externalSite='http://l.clardy.eu/url/' />
-				<Navitem curPage={this.props.page} onclick={this.onClick} page='shorturl' pageTitle='Test Form' externalSite='http://l.clardy.eu/form/' />
-				<NavDropdown />
-			</ul>);
+			<nav className='navbar'>
+				<div className='navWide'>
+					<div className='wideDiv'>
+						<Navitem curPage={this.props.page} onclick={this.onClick} page='root' pageTitle='Root' externalSite='http://l.clardy.eu/' />
+						<Navitem curPage={this.props.page} onclick={this.onClick} page='main' pageTitle='Main' />
+						<Navitem curPage={this.props.page} onclick={this.onClick} page='page2' pageTitle='Page 2' />
+						<Navitem curPage={this.props.page} onclick={this.onClick} page='cv' pageTitle='CV' externalSite='https://clardy.eu/markus/' />
+						<Navitem curPage={this.props.page} onclick={this.onClick} page='shorturl' pageTitle='URL Shortener' externalSite='http://l.clardy.eu/url/' />
+						<Navitem curPage={this.props.page} onclick={this.onClick} page='shorturl' pageTitle='Test Form' externalSite='http://l.clardy.eu/form/' />
+					</div>
+				</div>
+				<div className='navNarrow'>
+					<i className="fa fa-bars fa-2x"></i>
+					<div className='narrowLinks'>
+						<Navitem curPage={this.props.page} onclick={this.onClick} page='root' pageTitle='Root' externalSite='http://l.clardy.eu/' />
+						<Navitem curPage={this.props.page} onclick={this.onClick} page='main' pageTitle='Main' />
+						<Navitem curPage={this.props.page} onclick={this.onClick} page='page2' pageTitle='Page 2' />
+						<Navitem curPage={this.props.page} onclick={this.onClick} page='cv' pageTitle='CV' externalSite='https://clardy.eu/markus/' />
+						<Navitem curPage={this.props.page} onclick={this.onClick} page='shorturl' pageTitle='URL Shortener' externalSite='http://l.clardy.eu/url/' />
+						<Navitem curPage={this.props.page} onclick={this.onClick} page='shorturl' pageTitle='Test Form' externalSite='http://l.clardy.eu/form/' />
+					</div>
+				</div>
+			</nav>);
 		return navbar;
 	}
 }
@@ -48,7 +72,7 @@ class Navitem extends React.Component {
 	render () {
 		var className = 'navitem';
 		if(this.props.curPage == this.props.page) className += ' active'
-		return <li className={className} id={this.props.page} onClick={this.onClick}>{this.props.pageTitle}</li>;
+		return <span className={className} id={this.props.page} onClick={this.onClick}>{this.props.pageTitle}</span>;
 	}
 }
 
@@ -57,35 +81,6 @@ Navitem.defaultProps = {
 	pageTitle: 'Main',
 	curPage: 'main',
 	externalSite: ''
-}
-
-class NavDropdown extends React.Component {
-	constructor (props) {
-		super(props);
-		this.state = {
-			image: '/static/imgs/menu.png',
-			alt: '='
-		};
-		this.onEnter = this.onEnter.bind(this);
-		this.onExit = this.onExit.bind(this);
-	}
-
-	onEnter (e) {
-		this.setState({
-			image: '/static/imgs/menu-hover.png',
-			alt: '--'
-		});
-	}
-	onExit (e) {
-		this.setState({
-			image: '/static/imgs/menu-hover.png',
-			alt: '--'
-		});
-	}
-
-	render () {
-		return <li className='navDropdown' onMouseEnter={this.onEnter} onMouseOut={this.onExit}><img src={this.state.image} alt={this.state.alt} height='50px' width='50px' /></li>;
-	}
 }
 
 export default Navbar;
