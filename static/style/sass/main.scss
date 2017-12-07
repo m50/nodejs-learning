@@ -1,5 +1,9 @@
 $font-color: #afb9bf;
+$button-color: #5a29e7;
 $border-color: #2f343f;
+
+$padding-side: 25px;
+$padding-height: 10px;
 
 #body {
 	input {
@@ -8,20 +12,21 @@ $border-color: #2f343f;
 		background: none;
 		font-size: 18px;
 		font-family: Arial, Helvetica, sans-serif;
-		color: white;
+		color: $font-color;
 	}
 	label, p {
 		font-size: 18px;
+		color: $font-color;
 		font-family: Arial, Helvetica, sans-serif;
 	}
 
 	button {
 		&:hover {
-			background: $font-color;
+			background: $button-color;
 		}
 		border: 1px solid $border-color;
 		background: #888;
-		padding: 5px;
+		padding: $padding-height $padding-side;
 		border-radius: 5px;
 		color: white;
 		-webkit-transition: 50ms;
@@ -41,15 +46,12 @@ $border-color: #2f343f;
 .navbar {
 	.navitem {
 		&:hover {
-			background: #5A29E7;
+			background: $button-color;
 			color: white;
 		}
 		&.active {
 			color: white;
 		}
-		$padding-side: 25px;
-		$padding-height: 10px;
-
 		display: inline-block;
 		background: $border-color;
 		padding: $padding-height $padding-side;
