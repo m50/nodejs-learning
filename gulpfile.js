@@ -1,30 +1,34 @@
 'use strict';
 
-const gulp       = require('gulp');
-const babel      = require("babelify");
-const sass       = require('gulp-sass');
-const browserify = require('browserify');
-const source     = require('vinyl-source-stream');
-const buffer     = require('vinyl-buffer');
-const sourcemaps = require('gulp-sourcemaps');
+const gulp         = require('gulp');
+const babel        = require("babelify");
+const sass         = require('gulp-sass');
+const browserify   = require('browserify');
+const source       = require('vinyl-source-stream');
+const buffer       = require('vinyl-buffer');
+const sourcemaps   = require('gulp-sourcemaps');
+const coffeescript = require('gulp-coffeescript')
 
 const conf = {
 	srcSass: 'static/style/sass',
 	destSass: 'static/style',
 
 	srcJsx: 'static/jsx',
-	destJs: 'static/js/react',
+	destJsx: 'static/js/react',
+
+	srcCoffee: 'static/coffee',
+	destCoffee: 'static/js/coffee',
 
 	appName: 'index.js'
 };
 
-gulp.task('sass', () => {
+gulp.task('compile-sass', () => {
 	return gulp.src(conf.srcSass + '/*.scss')
 		.pipe(sass.sync().on('error', sass.logError))
 		.pipe(gulp.dest(conf.destSass));
 });
 
-gulp.task('jsx', (cb) => { 
+gulp.task('compile-jsx', () => { 
 	var bundler = browserify(conf.srcJsx + '/index.jsx', { debug: true })
 					.transform(babel.configure({ presets: ['env', 'react'] }));
 
@@ -34,6 +38,13 @@ gulp.task('jsx', (cb) => {
 		.pipe(buffer())
 		.pipe(sourcemaps.init({ loadMaps: true }))
 		.pipe(sourcemaps.write('./'))
-		.pipe(gulp.dest(conf.destJs));
+		.pipe(gulp.dest(conf.destJsx));
 });
+
+gulp.task('compile-coffeescript', () => {
+	return gulp.src(conf.srcCoffee + '/*.coffee')
+		.pipe(coffeescript({bare: true}).on('error', (err) => { console.log(err); }))
+		.pipe(gulp.dest(conf.destCoffee));
+});
+
 gulp.task('default', ['sass', 'jsx']);
