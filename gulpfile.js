@@ -1,3 +1,5 @@
+'use strict';
+
 const gulp       = require('gulp');
 const babel      = require("babelify");
 const sass       = require('gulp-sass');
@@ -14,7 +16,7 @@ const conf = {
 	srcJsx: 'static/jsx',
 	destJs: 'static/js/react',
 
-	appName: 'main.js'
+	appName: 'app.js'
 };
 
 gulp.task('sass', () => {
@@ -23,14 +25,17 @@ gulp.task('sass', () => {
 		.pipe(gulp.dest(conf.destSass));
 });
 
-gulp.task('jsx', () => { 
-	var bundler = watchify(
-		browserify(conf.srcJsx + '/index.jsx', { debug: true })
-		.transform(babel.configure({ presets: ['env', 'react'] }))
-	);
+gulp.task('jsx', (cb) => { 
+	// var bundler = watchify(
+	// 	browserify(conf.srcJsx + '/index.jsx', { debug: true })
+	// 	.transform(babel.configure({ presets: ['env', 'react'] }))
+	// );
 
-	return bundler.bundle()
-		.on('error', function(err) { console.error(err); this.emit('end'); })
+	var bundler = browserify(conf.srcJsx + '/index.jsx', { debug: true })
+					.transform(babel.configure({ presets: ['env', 'react'] }));
+
+	bundler.bundle()
+		.on('error', (err) => { console.error(err); this.emit('end'); })
 		.pipe(source(conf.appName))
 		.pipe(buffer())
 		.pipe(sourcemaps.init({ loadMaps: true }))
