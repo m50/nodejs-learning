@@ -18,7 +18,7 @@ const conf = {
 };
 
 
-function compile {
+function compile () {
 	var bundler = watchify(
 		browserify(conf.srcJsx + '/' + conf.appName, { debug: true })
 		.transform(babel.configure({ presets: ['env', 'react'] }))
