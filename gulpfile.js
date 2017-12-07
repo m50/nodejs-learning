@@ -27,9 +27,9 @@ function compile () {
 	return bundler.bundle()
 		.on('error', function(err) { console.error(err); this.emit('end'); })
 		.pipe(source(conf.destName))
-		.pipe(buffer())
-		.pipe(sourcemaps.init({ loadMaps: true }))
-		.pipe(sourcemaps.write('./'))
+		// .pipe(buffer())
+		// .pipe(sourcemaps.init({ loadMaps: true }))
+		// .pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest(conf.destJs));
 }
 
