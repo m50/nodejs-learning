@@ -19,6 +19,9 @@ $padding-height: 10px;
 		&:visited {
 			color: $font-color;
 		}
+		&:hover {
+			color: white;
+		}
 		text-decoration: underline;
 	}
 	label, p {
