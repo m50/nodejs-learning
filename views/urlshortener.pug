@@ -15,9 +15,8 @@ html
 	body
 		include ./header.pug
 		form#body(action = "/url", method = "post")
-			div
-				label(for = "url") URL to shorten:&nbsp;
-				input(name = "url" value = "https://google.com/")
+			label(for = "url") URL to shorten:&nbsp;
+			input(name = "url" value = "https://google.com/")
 			br
 			button(type = "submit") Generate!
 		include ./footer.pug
