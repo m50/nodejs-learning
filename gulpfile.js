@@ -24,12 +24,12 @@ function compile () {
 		.transform(babel.configure({ presets: ['env', 'react'] }))
 	);
 
-	return bundler.bundle()
+	bundler.bundle()
 		.on('error', function(err) { console.error(err); this.emit('end'); })
 		.pipe(source(conf.destName))
-		// .pipe(buffer())
-		// .pipe(sourcemaps.init({ loadMaps: true }))
-		// .pipe(sourcemaps.write('./'))
+		.pipe(buffer())
+		.pipe(sourcemaps.init({ loadMaps: true }))
+		.pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest(conf.destJs));
 }
 
@@ -39,5 +39,5 @@ gulp.task('sass', function () {
 		.pipe(gulp.dest(conf.destSass));
 });
 
-gulp.task('build', ['sass'], function() { return compile(); });
+gulp.task('build', ['sass'], function(cb) { compile().on('end', cb); });
 gulp.task('default', ['build']);
