@@ -24,7 +24,7 @@ function compile () {
 		.transform(babel.configure({ presets: ['env', 'react'] }))
 	);
 
-	bundler.bundle()
+	return bundler.bundle()
 		.on('error', function(err) { console.error(err); this.emit('end'); })
 		.pipe(source(conf.destName))
 		.pipe(buffer())
