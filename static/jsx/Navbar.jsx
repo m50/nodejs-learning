@@ -18,6 +18,7 @@ class Navbar extends React.Component {
 				<Navitem curPage={this.props.page} onclick={this.onClick} page='page2' pageTitle='Page 2' />
 				<Navitem curPage={this.props.page} onclick={this.onClick} page='cv' pageTitle='CV' externalSite='https://clardy.eu/markus/' />
 				<Navitem curPage={this.props.page} onclick={this.onClick} page='shorturl' pageTitle='URL Shortener' externalSite='http://l.clardy.eu/url/' />
+				<Navitem curPage={this.props.page} onclick={this.onClick} page='shorturl' pageTitle='Test Form' externalSite='http://l.clardy.eu/form/' />
 			</ul>);
 		return navbar;
 	}
@@ -55,6 +56,28 @@ Navitem.defaultProps = {
 	pageTitle: 'Main',
 	curPage: 'main',
 	externalSite: ''
+}
+
+class NavDropdown extends React.Component {
+	constructor (props) {
+		super(props);
+		this.state = {
+			image: '/static/imgs/menu.png',
+			alt: '='
+		};
+		this.onHover = this.onHover.bind(this);
+	}
+
+	onHover (e) {
+		this.setState({
+			image: '/static/imgs/menu-hover.png',
+			alt: '--'
+		});
+	}
+
+	render () {
+		return <li className='navDropdown'><img src={this.state.image} alt={this.state.alt} /></li>;
+	}
 }
 
 export default Navbar;
