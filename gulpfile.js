@@ -18,47 +18,27 @@ const conf = {
 };
 
 
-function compile(watch) {
+function compile {
 	var bundler = watchify(
 		browserify(conf.srcJsx + '/' + conf.appName, { debug: true })
 		.transform(babel.configure({ presets: ['env', 'react'] }))
 	);
-
-	function rebundle() {
-		console.log('->rebundle function')
-		bundler.bundle()
-			.on('error', function(err) { console.error(err); this.emit('end'); })
-			.pipe(source(conf.destName))
-			.pipe(buffer())
-			.pipe(sourcemaps.init({ loadMaps: true }))
-			.pipe(sourcemaps.write('./'))
-			.pipe(gulp.dest(conf.destJs));
-	}
-
-	if (watch) {
-		bundler.on('update', function() {
-			console.log('->bundling...');
-			rebundle();
-			console.log('->Done');
-		});
-	} else {
-		rebundle();		
-	}
+	console.log('->rebundle started');
+	bundler.bundle()
+		.on('error', function(err) { console.error(err); this.emit('end'); })
+		.pipe(source(conf.destName))
+		.pipe(buffer())
+		.pipe(sourcemaps.init({ loadMaps: true }))
+		.pipe(sourcemaps.write('./'))
+		.pipe(gulp.dest(conf.destJs));
+	console.log('->rebundle finished');
 }
-
-function watch() {
-	return compile(true);
-};
 
 gulp.task('sass', function () {
 	return gulp.src(conf.srcSass + '/*.scss')
 		.pipe(sass.sync().on('error', sass.logError))
 		.pipe(gulp.dest(conf.destSass));
 });
-gulp.task('sass:watch', function () {
-	gulp.watch(conf.srcSass + '/*.scss', ['sass']);
-});
 
-gulp.task('build', function() { return compile(); });
-gulp.task('watch', ['sass:watch'], function() { return watch(); }, function() { console.log('Finished'); });
-gulp.task('default', ['watch']);
+gulp.task('build', ['sass'], function() { return compile(); });
+gulp.task('default', ['build']);
