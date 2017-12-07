@@ -17,8 +17,13 @@ const conf = {
 	destName: 'index.js'
 };
 
+gulp.task('sass', () => {
+	return gulp.src(conf.srcSass + '/*.scss')
+		.pipe(sass.sync().on('error', sass.logError))
+		.pipe(gulp.dest(conf.destSass));
+});
 
-function compile (cb) {
+gulp.task('jsx', () => { 
 	var bundler = watchify(
 		browserify(conf.srcJsx + '/' + conf.appName, { debug: true })
 		.transform(babel.configure({ presets: ['env', 'react'] }))
@@ -32,14 +37,6 @@ function compile (cb) {
 		.pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest(conf.destJs));
 
-	cb();
-}
-
-gulp.task('sass', function () {
-	return gulp.src(conf.srcSass + '/*.scss')
-		.pipe(sass.sync().on('error', sass.logError))
-		.pipe(gulp.dest(conf.destSass));
+	return bundler;
 });
-
-gulp.task('build', ['sass'], function(cb) { compile(cb); });
-gulp.task('default', ['build']);
+gulp.task('default', ['sass', 'jsx']);
