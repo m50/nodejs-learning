@@ -23,15 +23,14 @@ function compile () {
 		browserify(conf.srcJsx + '/' + conf.appName, { debug: true })
 		.transform(babel.configure({ presets: ['env', 'react'] }))
 	);
-	console.log('->rebundle started');
-	bundler.bundle()
+
+	return bundler.bundle()
 		.on('error', function(err) { console.error(err); this.emit('end'); })
 		.pipe(source(conf.destName))
 		.pipe(buffer())
 		.pipe(sourcemaps.init({ loadMaps: true }))
 		.pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest(conf.destJs));
-	console.log('->rebundle finished');
 }
 
 gulp.task('sass', function () {
