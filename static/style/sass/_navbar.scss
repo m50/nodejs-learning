@@ -1,0 +1,55 @@
+.navbar {
+	.widenav {
+		display: none;
+	}
+	.narrownav {
+		h1 {
+			font-size: 30px;
+		}
+		.navitems {
+			a {
+				display: block;
+				float: left;
+				clear: left;
+			}
+			display: none;
+		}
+	}
+	list-style: none;
+	background: $border-color;
+	margin: 0px;
+
+	// prevent user selection on Nav Bar
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.navitem {
+	&:hover {
+		background: $button-color;
+		color: white;
+	}
+	&.active {
+		color: white;
+	}
+	display: inline-block;
+	background: $border-color;
+	padding: $padding-height $padding-side;
+	font-size: 20px;
+	color: $font-color;
+}
+
+@media (min-width: 480px) {
+    .navbar {
+        .widenav {
+            display: block;
+        }
+        .narrownav {
+            display: none;
+        }
+    }
+}

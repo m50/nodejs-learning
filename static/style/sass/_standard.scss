@@ -1,0 +1,78 @@
+html, body {
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0px;
+	padding: 0px;
+}
+
+.fr {
+	float: right;
+}
+
+#header {
+	h1 {
+		font-size: 50px;
+		font-family: Arial, Helvetica, sans-serif;
+		text-align: center;
+		vertical-align: center;
+	}
+	background: $background-color;
+	margin: 0px;
+	padding: 5px;
+	border-bottom: 1px solid $border-color;
+	font-family: Arial, Helvetica, sans-serif;
+	color: $font-color;
+	display: none;
+}
+
+#body {
+	input {
+		border: none;
+		border-bottom: 2px solid $font-color;
+		background: none;
+		font-size: 18px;
+		font-family: Arial, Helvetica, sans-serif;
+		color: $font-color;
+	}
+	a {
+		&:visited {
+			color: $font-color;
+		}
+		&:hover {
+			color: white;
+		}
+		text-decoration: underline;
+	}
+	label, p {
+		font-size: 18px;
+		color: $font-color;
+		font-family: Arial, Helvetica, sans-serif;
+	}
+
+	button {
+		&:hover {
+			background: $button-color;
+		}
+		border: 1px solid $border-color;
+		background: #888;
+		padding: $padding-height $padding-side;
+		border-radius: 5px;
+		color: white;
+		-webkit-transition: 50ms;
+	    transition: 50ms;
+	    font-size: 20px;
+	    font-family: Arial, Helvetica, sans-serif;
+	}
+	margin: 10px;
+	border: 1px solid black;
+	background: $background-color;
+	padding: 10px;
+	border-radius: 5px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: $font-color;
+}
+
+@media (min-width: 480px) {
+    #header {
+    	display: block;
+    }
+}
