@@ -25,7 +25,7 @@ gulp.task('sass', () => {
 
 gulp.task('jsx', () => { 
 	var bundler = watchify(
-		browserify(conf.srcJsx + '/*.jsx', { debug: true })
+		browserify(conf.srcJsx + '/index.jsx', { debug: true })
 		.transform(babel.configure({ presets: ['env', 'react'] }))
 	);
 
