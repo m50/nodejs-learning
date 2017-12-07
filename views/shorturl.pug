@@ -1,20 +1,10 @@
 doctype html
 html
-	head
-		title=pageTitle
-		meta(name="decription" content="Home page for learning Markus")
-		meta(name="author" content="Markus Clardy")
-		meta(name="author-email" content="markus@clardy.eu")
-		meta(property="og:title" content="Home page for Markus Clardy")
-		meta(property="og:type" content="Homepage")
-		meta(property="og:url" content="https://clardy.eu")
-		meta(property="og:description" content="Home page for Markus Clardy")
-		meta(name="keywords" content="programming,email,website,personal")
-		link(rel="icon" type="image/x-icon" href="https://clardy.eu/imgs/favicon.png")
-		link(rel="stylesheet" type="text/css" href="/static/style/main.css")
+	include ./includes/head.pug
 	body
-		include ./header.pug
+		include ./includes/header.pug
+		include ./includes/navbar.pug
 		div#body
 			label Your url is: 
 			a(href=url target="_blank") #{url}
-		include ./footer.pug
+		include ./includes/footer.pug

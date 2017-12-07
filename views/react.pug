@@ -1,20 +1,8 @@
 doctype html
 html
-	head
-		title=pageTitle
-		meta(name="decription" content="Home page for learning Markus")
-		meta(name="author" content="Markus Clardy")
-		meta(name="author-email" content="markus@clardy.eu")
-		meta(property="og:title" content="Home page for Markus Clardy")
-		meta(property="og:type" content="Homepage")
-		meta(property="og:url" content="https://clardy.eu")
-		meta(property="og:description" content="Home page for Markus Clardy")
-		meta(name="keywords" content="programming,email,website,personal")
-		link(rel="icon" type="image/x-icon" href="https://clardy.eu/imgs/favicon.png")
-		link(rel="stylesheet" type="text/css" href="/static/style/main.css")
-		script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+	include ./includes/head.pug
 	body
-		include ./header.pug
+		include ./includes/header.pug
 		div#root
 		script(src="/static/js/react/index.js")
-		include ./footer.pug
+		include ./includes/footer.pug

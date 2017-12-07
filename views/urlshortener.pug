@@ -1,23 +1,13 @@
 doctype html
 html
-	head
-		title=pageTitle
-		meta(name="decription" content="Home page for learning Markus")
-		meta(name="author" content="Markus Clardy")
-		meta(name="author-email" content="markus@clardy.eu")
-		meta(property="og:title" content="Home page for Markus Clardy")
-		meta(property="og:type" content="Homepage")
-		meta(property="og:url" content="https://clardy.eu")
-		meta(property="og:description" content="Home page for Markus Clardy")
-		meta(name="keywords" content="programming,email,website,personal")
-		link(rel="icon" type="image/x-icon" href="https://clardy.eu/imgs/favicon.png")
-		link(rel="stylesheet" type="text/css" href="/static/style/main.css")
+	include ./includes/head.pug
 	body
-		include ./header.pug
+		include ./includes/header.pug
+		include ./includes/navbar.pug
 		form#body(action = "/url", method = "post")
 			label(for = "url") URL to shorten:&nbsp;
 			input(name = "url" value = "https://google.com/")
 			br
 			br
 			button(type = "submit") Generate!
-		include ./footer.pug
+		include ./includes/footer.pug
