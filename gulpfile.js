@@ -23,7 +23,7 @@ const conf = {
 };
 
 gulp.task('compile-sass', () => {
-	return gulp.src(conf.srcSass + '/*.scss')
+	return gulp.src(conf.srcSass + '/**/*.scss')
 		.pipe(sass.sync().on('error', sass.logError))
 		.pipe(gulp.dest(conf.destSass));
 });
