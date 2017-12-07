@@ -1,6 +1,7 @@
 $font-color: #afb9bf;
 $button-color: #5a29e7;
 $border-color: #2f343f;
+$background-color: #383c4a;
 
 $padding-side: 25px;
 $padding-height: 10px;
@@ -36,7 +37,7 @@ $padding-height: 10px;
 	}
 	margin: 10px;
 	border: 1px solid black;
-	background: #404552;
+	background: $background-color;
 	padding: 10px;
 	border-radius: 5px;
 	font-family: Arial, Helvetica, sans-serif;
@@ -70,7 +71,7 @@ $padding-height: 10px;
 		text-align: center;
 		vertical-align: center;
 	}
-	background: #383c4a;
+	background: $background-color;
 	margin: 0px;
 	padding: 5px;
 	border-bottom: 1px solid $border-color;
