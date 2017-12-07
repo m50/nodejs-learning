@@ -60,5 +60,5 @@ gulp.task('sass:watch', function () {
 });
 
 gulp.task('build', function() { return compile(); });
-gulp.task('watch', ['sass:watch'], function() { return watch();  });
+gulp.task('watch', ['sass:watch'], function() { return watch(); }, function() { console.log('Finished'); });
 gulp.task('default', ['watch']);
