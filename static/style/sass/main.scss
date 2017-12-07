@@ -16,6 +16,12 @@ $padding-height: 10px;
 		color: $font-color;
 	}
 	label, p {
+		a {
+			&:visited {
+				color: $font-color;
+			}
+			text-decoration: underline;
+		}
 		font-size: 18px;
 		color: $font-color;
 		font-family: Arial, Helvetica, sans-serif;
