@@ -19,6 +19,7 @@ class Navbar extends React.Component {
 				<Navitem curPage={this.props.page} onclick={this.onClick} page='cv' pageTitle='CV' externalSite='https://clardy.eu/markus/' />
 				<Navitem curPage={this.props.page} onclick={this.onClick} page='shorturl' pageTitle='URL Shortener' externalSite='http://l.clardy.eu/url/' />
 				<Navitem curPage={this.props.page} onclick={this.onClick} page='shorturl' pageTitle='Test Form' externalSite='http://l.clardy.eu/form/' />
+				<NavDropdown />
 			</ul>);
 		return navbar;
 	}
