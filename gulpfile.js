@@ -4,7 +4,6 @@ const gulp       = require('gulp');
 const babel      = require("babelify");
 const sass       = require('gulp-sass');
 const browserify = require('browserify');
-const watchify   = require('watchify');
 const source     = require('vinyl-source-stream');
 const buffer     = require('vinyl-buffer');
 const sourcemaps = require('gulp-sourcemaps');
@@ -26,15 +25,10 @@ gulp.task('sass', () => {
 });
 
 gulp.task('jsx', (cb) => { 
-	// var bundler = watchify(
-	// 	browserify(conf.srcJsx + '/index.jsx', { debug: true })
-	// 	.transform(babel.configure({ presets: ['env', 'react'] }))
-	// );
-
 	var bundler = browserify(conf.srcJsx + '/index.jsx', { debug: true })
 					.transform(babel.configure({ presets: ['env', 'react'] }));
 
-	bundler.bundle()
+	return bundler.bundle()
 		.on('error', (err) => { console.error(err); this.emit('end'); })
 		.pipe(source(conf.appName))
 		.pipe(buffer())
