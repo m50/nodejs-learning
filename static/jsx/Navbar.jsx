@@ -21,29 +21,38 @@ class Navbar extends React.Component {
 	}
 
 	render () {
+		// var navbar = (
+		// 	<nav className='navbar'>
+		// 		<div className='navWide'>
+		// 			<div className='wideDiv'>
+		// 				<Navitem curPage={this.props.page} onclick={this.onClick} page='root' pageTitle='Root' externalSite='http://l.clardy.eu/' />
+		// 				<Navitem curPage={this.props.page} onclick={this.onClick} page='main' pageTitle='Main' />
+		// 				<Navitem curPage={this.props.page} onclick={this.onClick} page='page2' pageTitle='Page 2' />
+		// 				<Navitem curPage={this.props.page} onclick={this.onClick} page='cv' pageTitle='CV' externalSite='https://clardy.eu/markus/' />
+		// 				<Navitem curPage={this.props.page} onclick={this.onClick} page='shorturl' pageTitle='URL Shortener' externalSite='http://l.clardy.eu/url/' />
+		// 				<Navitem curPage={this.props.page} onclick={this.onClick} page='shorturl' pageTitle='Test Form' externalSite='http://l.clardy.eu/form/' />
+		// 			</div>
+		// 		</div>
+		// 		<div className='navNarrow'>
+		// 			<i className="fa fa-bars fa-2x"></i>
+		// 			<div className='narrowLinks'>
+		// 				<Navitem curPage={this.props.page} onclick={this.onClick} page='root' pageTitle='Root' externalSite='http://l.clardy.eu/' />
+		// 				<Navitem curPage={this.props.page} onclick={this.onClick} page='main' pageTitle='Main' />
+		// 				<Navitem curPage={this.props.page} onclick={this.onClick} page='page2' pageTitle='Page 2' />
+		// 				<Navitem curPage={this.props.page} onclick={this.onClick} page='cv' pageTitle='CV' externalSite='https://clardy.eu/markus/' />
+		// 				<Navitem curPage={this.props.page} onclick={this.onClick} page='shorturl' pageTitle='URL Shortener' externalSite='http://l.clardy.eu/url/' />
+		// 				<Navitem curPage={this.props.page} onclick={this.onClick} page='shorturl' pageTitle='Test Form' externalSite='http://l.clardy.eu/form/' />
+		// 			</div>
+		// 		</div>
+		// 	</nav>);
 		var navbar = (
 			<nav className='navbar'>
-				<div className='navWide'>
-					<div className='wideDiv'>
-						<Navitem curPage={this.props.page} onclick={this.onClick} page='root' pageTitle='Root' externalSite='http://l.clardy.eu/' />
-						<Navitem curPage={this.props.page} onclick={this.onClick} page='main' pageTitle='Main' />
-						<Navitem curPage={this.props.page} onclick={this.onClick} page='page2' pageTitle='Page 2' />
-						<Navitem curPage={this.props.page} onclick={this.onClick} page='cv' pageTitle='CV' externalSite='https://clardy.eu/markus/' />
-						<Navitem curPage={this.props.page} onclick={this.onClick} page='shorturl' pageTitle='URL Shortener' externalSite='http://l.clardy.eu/url/' />
-						<Navitem curPage={this.props.page} onclick={this.onClick} page='shorturl' pageTitle='Test Form' externalSite='http://l.clardy.eu/form/' />
-					</div>
-				</div>
-				<div className='navNarrow'>
-					<i className="fa fa-bars fa-2x"></i>
-					<div className='narrowLinks'>
-						<Navitem curPage={this.props.page} onclick={this.onClick} page='root' pageTitle='Root' externalSite='http://l.clardy.eu/' />
-						<Navitem curPage={this.props.page} onclick={this.onClick} page='main' pageTitle='Main' />
-						<Navitem curPage={this.props.page} onclick={this.onClick} page='page2' pageTitle='Page 2' />
-						<Navitem curPage={this.props.page} onclick={this.onClick} page='cv' pageTitle='CV' externalSite='https://clardy.eu/markus/' />
-						<Navitem curPage={this.props.page} onclick={this.onClick} page='shorturl' pageTitle='URL Shortener' externalSite='http://l.clardy.eu/url/' />
-						<Navitem curPage={this.props.page} onclick={this.onClick} page='shorturl' pageTitle='Test Form' externalSite='http://l.clardy.eu/form/' />
-					</div>
-				</div>
+				<Navitem curPage={this.props.page} onclick={this.onClick} page='root' pageTitle='Root' externalSite='http://l.clardy.eu/' />
+				<Navitem curPage={this.props.page} onclick={this.onClick} page='main' pageTitle='Main' />
+				<Navitem curPage={this.props.page} onclick={this.onClick} page='page2' pageTitle='Page 2' />
+				<Navitem curPage={this.props.page} onclick={this.onClick} page='cv' pageTitle='CV' externalSite='https://clardy.eu/markus/' />
+				<Navitem curPage={this.props.page} onclick={this.onClick} page='shorturl' pageTitle='URL Shortener' externalSite='http://l.clardy.eu/url/' />
+				<Navitem curPage={this.props.page} onclick={this.onClick} page='shorturl' pageTitle='Test Form' externalSite='http://l.clardy.eu/form/' />
 			</nav>);
 		return navbar;
 	}
