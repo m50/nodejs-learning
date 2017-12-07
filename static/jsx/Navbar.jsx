@@ -16,11 +16,12 @@ class Navbar extends React.Component {
 				<li class='navitem' value='main'>Main</li>
 				<li class='navitem' value='page2'>Page 2</li>
 			</ul>);
+		return navbar;
 	}
 }
 
 Navbar.defaultProps = {
 	page: 'main'
-}
+};
 
 export default Navbar;

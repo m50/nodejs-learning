@@ -29,6 +29,6 @@ class Content extends React.Component {
 
 Content.defaultProps = {
 	page: 'main'
-}
+};
 
-export default Navbar;
+export default Content;
