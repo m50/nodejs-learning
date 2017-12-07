@@ -1,3 +1,6 @@
+$font-color: #afb9bf;
+
+
 #body {
 	input {
 		border: none;
@@ -31,6 +34,7 @@
 	padding: 10px;
 	border-radius: 5px;
 	font-family: Arial, Helvetica, sans-serif;
+	color: $font-color;
 }
 
 .navbar {
@@ -49,7 +53,7 @@
 		background: #2f343f;
 		padding: $padding-height $padding-side;
 		font-size: 20px;
-		color: #afb9bf;
+		color: $font-color;
 	}
 	list-style: none;
 	background: #2f343f;
@@ -68,7 +72,7 @@
 	padding: 5px;
 	border-bottom: 1px solid #2f343f;
 	font-family: Arial, Helvetica, sans-serif;
-	color: #afb9bf;
+	color: $font-color;
 }
 
 html, body {
