@@ -7,15 +7,15 @@ class Navbar extends React.Component {
 	}
 
 	onClick (e) {
-		console.log(e.target.value);
-		this.props.onclick(e.target.value);
+		console.log(e.target.id);
+		this.props.onclick(e.target.id);
 	}
 
 	render () {
 		const navbar = (
 			<ul className='navbar'>
-				<li className='navitem current' value='main' onClick={this.onClick}>Main</li>
-				<li className='navitem' value='page2' onClick={this.onClick}>Page 2</li>
+				<li className='navitem current' id='main' onClick={this.onClick}>Main</li>
+				<li className='navitem' id='page2' onClick={this.onClick}>Page 2</li>
 			</ul>);
 		return navbar;
 	}
