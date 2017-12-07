@@ -12,9 +12,7 @@ const conf = {
 	destSass: 'static/style',
 
 	srcJsx: 'static/jsx',
-	destJs: 'static/js/react',
-	appName: 'index.jsx',
-	destName: 'index.js'
+	destJs: 'static/js/react'
 };
 
 gulp.task('sass', () => {
@@ -25,18 +23,16 @@ gulp.task('sass', () => {
 
 gulp.task('jsx', () => { 
 	var bundler = watchify(
-		browserify(conf.srcJsx + '/' + conf.appName, { debug: true })
+		browserify(conf.srcJsx + '/*.jsx', { debug: true })
 		.transform(babel.configure({ presets: ['env', 'react'] }))
 	);
 
-	bundler.bundle()
+	return bundler.bundle()
 		.on('error', function(err) { console.error(err); this.emit('end'); })
-		.pipe(source(conf.destName))
+		.pipe(source(conf.srcJsx + '/*.jsx'))
 		.pipe(buffer())
 		.pipe(sourcemaps.init({ loadMaps: true }))
 		.pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest(conf.destJs));
-
-	return bundler;
 });
 gulp.task('default', ['sass', 'jsx']);
