@@ -52,7 +52,8 @@ class Navitem extends React.Component {
 Navitem.defaultProps = {
 	page: 'main',
 	pageTitle: 'Main',
-	curPage: 'main'
+	curPage: 'main',
+	externalSite: ''
 }
 
 export default Navbar;
