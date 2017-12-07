@@ -18,19 +18,21 @@ const conf = {
 };
 
 
-function compile () {
+function compile (cb) {
 	var bundler = watchify(
 		browserify(conf.srcJsx + '/' + conf.appName, { debug: true })
 		.transform(babel.configure({ presets: ['env', 'react'] }))
 	);
 
-	return bundler.bundle()
+	bundler.bundle()
 		.on('error', function(err) { console.error(err); this.emit('end'); })
 		.pipe(source(conf.destName))
 		.pipe(buffer())
 		.pipe(sourcemaps.init({ loadMaps: true }))
 		.pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest(conf.destJs));
+
+	cb();
 }
 
 gulp.task('sass', function () {
@@ -39,5 +41,5 @@ gulp.task('sass', function () {
 		.pipe(gulp.dest(conf.destSass));
 });
 
-gulp.task('build', ['sass'], function(cb) { compile().on('end', cb); });
+gulp.task('build', ['sass'], function(cb) { compile(cb); });
 gulp.task('default', ['build']);
