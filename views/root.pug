@@ -1,9 +1,9 @@
 doctype html
 html
-	include ./head.pug
+	include ./includes/head.pug
 	body
-		include ./header.pug
-		include ./navbar.pug
+		include ./includes/header.pug
+		include ./includes/navbar.pug
 		div#body
 			a(href='/form') Form test
 			br
@@ -15,4 +15,4 @@ html
 			else
 				p Page Views: #{visits}
 		script(src="/static/js/root.js")
-		include ./footer.pug
+		include ./includes/footer.pug
