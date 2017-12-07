@@ -77,7 +77,7 @@ class NavDropdown extends React.Component {
 	}
 
 	render () {
-		return <li className='navDropdown'><img src={this.state.image} alt={this.state.alt} /></li>;
+		return <li className='navDropdown'><img src={this.state.image} alt={this.state.alt} height='50px' width='50px' /></li>;
 	}
 }
 
