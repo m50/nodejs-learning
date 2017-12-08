@@ -35,6 +35,7 @@ html, body {
 	border-bottom: $border;
 	color: $font-color;
 	z-index: 100;
+	position: relative;
 }
 a {
 	&:visited {
