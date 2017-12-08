@@ -1,6 +1,6 @@
 .navbar {
 	.widenav {
-		width: 100%;
+		width: 100% - $body-side * 2;
 		background: $border-color;
 		padding-left: $body-side;
 		padding-right: $body-side;
