@@ -25,7 +25,7 @@
 		}
 		h1 {
 			font-size: 25px;
-			font-family: Arial, Helvetica, sans-serif;
+			// font-family: Arial, Helvetica, sans-serif;
 			vertical-align: center;
 			color: $font-color;
 			padding: 0px $padding-side-small;
@@ -46,8 +46,8 @@
 		.navitems {
 			a {
 				display: block;
-				float: left;
-				clear: left;
+				// float: left;
+				// clear: left;
 				width: 100%;
 			}
 			display: none;
