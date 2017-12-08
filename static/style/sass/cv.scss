@@ -1,40 +1,25 @@
 @import 'variables';
 
-// Colors
-$sectionBackground: #AAA;
-$subSectionBackground: #DDD;
-$primaryColor: #17BEBB;
 $secondaryColor: #0E7C7B;
 $tertiaryColor: #D62246;
 
-
-// padding
-$primPadding: 10px;
-
-// font
-$primFont: Arial;
-
 .section {
 	h2 {
-		font: $primFont;
-		background: $primaryColor;
-		padding: $primPadding;
+		background: $border-color;
+		padding: $padding-height;
 	}
 	.subsection {
 		h3 {
-			font: $primFont;
-			padding: $primPadding;
+			padding: $padding-height;
 			background: $secondaryColor;
-			color: $subSectionBackground;
+			color: $section-background;
 		}
 		border: 2px solid $secondaryColor;
-		background: $subSectionBackground;
-		font: $primFont;
+		background: $section-background;
 	}
-	background: $sectionBackground;
-	border: 2px solid $primaryColor;
+	background: $section-background;
+	border: 2px solid $border-color;
 	color: $font-color;
-	font: $primFont;
 }
 
 .minimize-button {
