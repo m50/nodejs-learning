@@ -1,5 +1,6 @@
 $ ->
 	$('.minimize-button').on 'click', ->
+		console.log($(this).text())
 		if $(this).text() == '[ - ]'
 			$(this).text('[ + ]')
 		else
