@@ -9,12 +9,12 @@
 		h3 {
 			padding: $padding-height;
 			background: $border-color;
-			color: $section-background;
+			color: $font-color;
 		}
 		border: 2px solid $border-color;
-		background: $section-background;
+		background: $background-color;
 	}
-	background: $section-background;
+	background: $section-color;
 	border: 2px solid $border-color;
 	color: $font-color;
 }
