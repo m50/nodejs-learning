@@ -4,7 +4,6 @@ class Navbar extends React.Component {
 	constructor (props) {
 		super(props);
 		this.onClick = this.onClick.bind(this);
-		this.burgerToggle = this.burgerToggle.bind(this);
 	}
 
 	onClick (text) {
