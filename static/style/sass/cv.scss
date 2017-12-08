@@ -57,6 +57,12 @@
 	font-weight: bold;
 	padding-right: $padding-side;
 }
+.value {
+	padding-left: $padding-side * 2;
+	@import phone {
+		padding-left: $padding-side;
+	}
+}
 ul.sublist {
 	list-style: circle;
 }
