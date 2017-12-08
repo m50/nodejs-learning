@@ -1,12 +1,13 @@
 .navbar {
 	.widenav {
-		width: 100% - $body-side * 2;
+		width: 100%;
 		background: $border-color;
 
 		@include desktop {
 			display: block;
 			padding-left: $body-side;
 			padding-right: $body-side;
+			width: 100% - $body-side * 2;
 		}
 		@include tablet {
 			display: block;
