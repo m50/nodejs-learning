@@ -20,6 +20,11 @@ app.use('/react', reactjs);
 app.use('/url', urlshortenerjs);
 app.use('/lorem', longpage);
 
+app.get('*', function(req, res){
+	res.sendFile('./views/404.html');
+});
+
+
 app.listen(6080, '127.0.0.1', () => {
 	console.log('listening on 127.0.0.1:6080');
 });
