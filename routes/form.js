@@ -24,4 +24,8 @@ router.post('/', function(req, res){
    res.render('generic-accept', { pageTitle: 'Form Test', content: 'Received your request! You said: ' + req.body.say + ' To: ' + req.body.to });
 });
 
+router.get('*', function(req, res){
+   component.page404(req, res);
+});
+
 module.exports = router;

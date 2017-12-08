@@ -30,4 +30,8 @@ router.post('/', (req, res) => {
 	});
 });
 
+router.get('*', function(req, res){
+   component.page404(req, res);
+});
+
 module.exports = router;

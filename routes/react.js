@@ -9,5 +9,9 @@ router.get('/', function(req, res){
    	});
 });
 
+router.get('*', function(req, res){
+   component.page404(req, res);
+});
+
 //export this router to use in our index.js
 module.exports = router;
