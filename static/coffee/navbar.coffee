@@ -12,8 +12,10 @@ $(window).on "scroll", ->
 		else
 			$('.navbar').removeClass('fixed')
 	else
-		if $(this).scrollTop() < lastScrollPos
-			$('.navbar').slideDown()
-		else
-			$('.navbar').slideUp()
+		$('.navbar').addClass('fixed')
+		if $(this).scrollTop() > 50
+			if $(this).scrollTop() > lastScrollPos
+				$('.navbar').slideUp()
+			else
+				$('.navbar').slideDown()
 	lastScrollPos = $(this).scrollTop()
