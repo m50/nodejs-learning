@@ -1,5 +1,7 @@
 goto = (url) -> window.location.replace(url)
 
-$('.narrownav').children('.fr').click ->
+# .children('i')
+
+$('.narrownav').click ->
 	console.log('toggling navitems')
 	$('.narrownav').children('.navitems').slideToggle()
