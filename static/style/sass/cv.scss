@@ -1,15 +1,12 @@
+@import 'variables';
+
 // Colors
-$background: #FFF;
 $sectionBackground: #AAA;
 $subSectionBackground: #DDD;
-$textColor: #222;
 $primaryColor: #17BEBB;
 $secondaryColor: #0E7C7B;
 $tertiaryColor: #D62246;
 
-// margins
-$primMargin: 10px;
-$sideMargin: 40px;
 
 // padding
 $primPadding: 10px;
@@ -22,29 +19,21 @@ $primFont: Arial;
 		font: $primFont;
 		background: $primaryColor;
 		padding: $primPadding;
-		margin: 0;
 	}
 	.subsection {
 		h3 {
 			font: $primFont;
 			padding: $primPadding;
-			margin: 0;
 			background: $secondaryColor;
 			color: $subSectionBackground;
 		}
 		border: 2px solid $secondaryColor;
 		background: $subSectionBackground;
-		margin: $primMargin;
-		margin-left: $sideMargin;
-		margin-right: $sideMargin;
 		font: $primFont;
 	}
 	background: $sectionBackground;
 	border: 2px solid $primaryColor;
-	color: $textColor;
-	margin: $primMargin;
-	margin-left: $sideMargin;
-	margin-right: $sideMargin;
+	color: $font-color;
 	font: $primFont;
 }
 
@@ -56,11 +45,8 @@ $primFont: Arial;
 
 .label {
 	font-weight: bold;
-	margin: $primMargin;
-	width: 50%;
 }
 .value {
-	margin: $primMargin;
 }
 ul.sublist {
 	list-style: circle;
