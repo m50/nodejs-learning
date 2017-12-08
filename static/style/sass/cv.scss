@@ -4,6 +4,7 @@
 	a.minimize-button {
 		float: right;
 		text-decoration: none;
+		color: inherit;
 	}
 }
 
@@ -11,8 +12,8 @@
 	.section-header {
 		h2 {
 			// display: inline-block;
+			@include minimizebutton;
 		}
-		@include minimizebutton;
 		background: $border-color;
 		padding: $padding-height;
 	}
@@ -23,8 +24,8 @@
 		.section-header {
 			h3 {
 				// display: inline-block;
+				@include minimizebutton;
 			}
-			@include minimizebutton;
 			padding: $padding-height;
 			background: $border-color;
 			color: $font-color;
