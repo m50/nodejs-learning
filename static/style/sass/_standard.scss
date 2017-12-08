@@ -28,7 +28,7 @@ html, body {
 	background: $background-color;
 	margin: 0px;
 	padding: 5px;
-	border-bottom: 1px solid $border-color;
+	border-bottom: $border;
 	// font-family: Arial, Helvetica, sans-serif;
 	color: $font-color;
 }
@@ -71,10 +71,10 @@ html, body {
 	    font-size: 20px;
 	    // font-family: Arial, Helvetica, sans-serif;
 	}
-	margin: 10px;
-	border: 1px solid black;
+	margin: $body-height $body-side;
+	border: $border;
 	background: $background-color;
-	padding: 10px;
+	padding: $padding-height $padding-side;
 	border-radius: 5px;
 	// font-family: Arial, Helvetica, sans-serif;
 	color: $font-color;
