@@ -1,8 +1,8 @@
-div.widenav
-	include ./navitems.pug
-div.narrownav
-	div.bar
+nav.navbar
+	div.widenav
+		include ./navitems.pug
+	div.narrownav
 		h1=pageTitle
 		i.fr.fas.fa-bars.fa-2x#navexpand
-	include ./navitems.pug
+		include ./navitems.pug
 script(src="/static/js/coffee/navbar.js")

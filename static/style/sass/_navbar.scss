@@ -1,28 +1,28 @@
-.widenav {
-	width: 100%;
-	background: $border-color;
+.navbar {
+	.widenav {
+		width: 100%;
+		background: $border-color;
 
-	@include desktop {
-		display: block;
+		@include desktop {
+			display: block;
+		}
+		@include tablet {
+			display: block;
+		}
+		@include phone {
+			display: none;
+		}
 	}
-	@include tablet {
-		display: block;
-	}
-	@include phone {
-		display: none;
-	}
-}
-.narrownav {
-	@include desktop {
-		display: none;
-	}
-	@include tablet {
-		display: none;
-	}
-	@include phone {
-		display: block;
-	}
-	.bar {
+	.narrownav {
+		@include desktop {
+			display: none;
+		}
+		@include tablet {
+			display: none;
+		}
+		@include phone {
+			display: block;
+		}
 		h1 {
 			font-size: 25px;
 			font-family: Arial, Helvetica, sans-serif;
@@ -30,7 +30,7 @@
 			color: $font-color;
 			padding: 0px $padding-side-small;
 			display: inline-block;
-
+	
 			@include nonselect;
 		}
 		i {
@@ -43,20 +43,20 @@
 				color: $button-color;
 			}
 		}
-		background: $background-color;
-	}
-	.navitems {
-		a {
-			display: block;
-			float: left;
-			clear: left;
-			width: 100%;
+		.navitems {
+			a {
+				display: block;
+				float: left;
+				clear: left;
+				width: 100%;
+			}
+			display: none;
+			margin-bottom: $padding-height-small;
 		}
-		display: none;
-		margin-bottom: $padding-height-small;
+		margin: 0px;
 	}
+	background: $background-color;
 	margin: 0px;
-
 }
 .navitems {
 	.navitem {
