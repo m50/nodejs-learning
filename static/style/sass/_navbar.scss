@@ -1,15 +1,27 @@
 .navbar {
 	.widenav {
-		display: none;
 		width: 100%;
 		background: $border-color;
-		@media #{$smallscreen} and #{$retina} {
+
+		@include desktop {
 			display: block;
+		}
+		@include tablet {
+			display: block;
+		}
+		@include phone {
+			display: none;
 		}
 	}
 	.narrownav {
-		@media #{$smallscreen} and #{$retina} {
+		@include desktop {
 			display: none;
+		}
+		@include tablet {
+			display: none;
+		}
+		@include phone {
+			display: block;
 		}
 		h1 {
 			font-size: 25px;

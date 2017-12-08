@@ -9,7 +9,13 @@ html, body {
 }
 
 #header {
-	@media #{$smallscreen} and #{$retina} {
+	@include phone {
+		display: none;
+	}
+	@include tablet {
+		display: block;
+	}
+	@include desktop {
 		display: block;
 	}
 	h1 {
@@ -25,7 +31,6 @@ html, body {
 	border-bottom: 1px solid $border-color;
 	font-family: Arial, Helvetica, sans-serif;
 	color: $font-color;
-	display: none;
 }
 
 #body {

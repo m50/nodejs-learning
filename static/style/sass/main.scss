@@ -8,10 +8,27 @@ $padding-height: 10px;
 
 $transition-speed: 1s;
 
+$phone-width: 481px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
 
-$retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
-$smallscreen: "(min-width: 481px)";
+@mixin desktop {
+	@media (min-width: #{$desktop-width}) {
+		@content;
+	}
+}
 
+@mixin tablet {
+	@media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+		@content;
+	}
+}
+
+@mixin phone {
+	@media (max-width: #{$tablet-width - 1px}) {
+		@content;
+	}
+}
 
 @mixin nonselect {
 	// prevent user selection on Nav Bar
