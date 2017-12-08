@@ -2,6 +2,8 @@
 	.widenav {
 		width: 100%;
 		background: $border-color;
+		padding-left: $body-side;
+		padding-right: $body-side;
 
 		@include desktop {
 			display: block;
