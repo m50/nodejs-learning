@@ -3,8 +3,14 @@
 		display: none;
 		width: 100%;
 		background: $border-color;
+		@media #{$retina} and #{$smallscreen} {
+			display: block;
+		}
 	}
 	.narrownav {
+		@media #{$retina} and #{$smallscreen} {
+			display: none;
+		}
 		h1 {
 			font-size: 25px;
 			font-family: Arial, Helvetica, sans-serif;
@@ -72,15 +78,4 @@
 		-ms-user-select: none;
 		user-select: none;
 	}
-}
-
-@media ${retina} and ${smallscreen} {
-    .navbar {
-        .widenav {
-            display: block;
-        }
-        .narrownav {
-            display: none;
-        }
-    }
 }

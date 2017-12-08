@@ -9,6 +9,9 @@ html, body {
 }
 
 #header {
+	@media #{$smallscreen} and #{$retina} {
+		display: block;
+	}
 	h1 {
 		font-size: 50px;
 		font-family: Arial, Helvetica, sans-serif;
@@ -69,10 +72,4 @@ html, body {
 	border-radius: 5px;
 	font-family: Arial, Helvetica, sans-serif;
 	color: $font-color;
-}
-
-@media ${smallscreen} and ${retina} {
-    #header {
-    	display: block;
-    }
 }
