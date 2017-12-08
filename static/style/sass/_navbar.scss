@@ -49,12 +49,10 @@
 		margin: 0px;
 	}
 	list-style: none;
-	background: $border-color;
+	background: $background-color;
 	margin: 0px;
 }
 .navitems {
-	background: $border-color;
-
 	.navitem {
 		&:hover {
 			background: $button-color;
@@ -64,7 +62,7 @@
 			color: white;
 		}
 		display: inline-block;
-		background: $border-color;
+		background: transparent;
 		padding: $padding-height $padding-side;
 		font-size: 20px;
 		color: $font-color;
