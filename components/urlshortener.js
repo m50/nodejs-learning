@@ -17,7 +17,7 @@ function makeid() {
 
 component.createShortener = (uri, res, callback) => {
 	client.get('urishort:uri:'+uri, (err, reply) => {
-		var linkuri = 'http://l.clardy.eu/url/';
+		var linkuri = 'https://clardy.eu/url/';
 		if(err || reply == null) {
 			const key = makeid();
 			client.set("urishort:key:"+key, uri, 'EX', 604800);
