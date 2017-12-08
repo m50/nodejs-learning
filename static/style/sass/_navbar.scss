@@ -2,11 +2,11 @@
 	.widenav {
 		width: 100% - $body-side * 2;
 		background: $border-color;
-		padding-left: $body-side;
-		padding-right: $body-side;
 
 		@include desktop {
 			display: block;
+			padding-left: $body-side;
+			padding-right: $body-side;
 		}
 		@include tablet {
 			display: block;
