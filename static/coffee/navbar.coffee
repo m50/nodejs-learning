@@ -1,4 +1,4 @@
 goto = (url) -> window.location.href = url
 
-$('.narrownav').children('i').on "click", ->
+$('#navexpand').on "click", ->
 	$('.narrownav').children('.navitems').slideToggle()
