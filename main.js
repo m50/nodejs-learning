@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 var app = express();
 
 app.set('view engine', 'pug');
@@ -21,7 +22,7 @@ app.use('/url', urlshortenerjs);
 app.use('/lorem', longpage);
 
 app.get('*', function(req, res){
-	res.sendFile('./views/404.html');
+	res.sendFile(path.resolve('./views/404.html'));
 });
 
 
