@@ -1,38 +1,44 @@
 @import 'variables';
 
+@mixin minimizebutton {
+	a.minimize-button {
+		float: right;
+		text-decoration: none;
+	}
+}
+
 .section {
 	h2 {
 		background: $border-color;
 		padding: $padding-height;
+		display: inline-block;
 	}
 	.subsection {
 		h3 {
 			padding: $padding-height;
 			background: $border-color;
 			color: $font-color;
+			display: inline-block;
 		}
 		border: 2px solid $border-color;
+		border-radius: 5px;
 		background: $background-color;
 		padding: 0px;
 		margin-bottom: 10px;
+		@include minimizebutton;
 	}
+	@include minimizebutton;
 	background: $section-color;
 	border: 2px solid $border-color;
 	color: $font-color;
 	padding: 0px;
 	margin-bottom: 10px;
+	border-radius: 5px;
 }
 
-.minimize-button {
-	float: right;
-	text-decoration: none;
-	color: inherit;
-}
 
 .label {
 	font-weight: bold;
-}
-.value {
 }
 ul.sublist {
 	list-style: circle;
