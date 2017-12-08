@@ -26,10 +26,9 @@
 		h1 {
 			font-size: 25px;
 			font-family: Arial, Helvetica, sans-serif;
-			text-align: center;
 			vertical-align: center;
 			color: $font-color;
-			padding: $padding-height-small $padding-side-small;
+			padding: 0px $padding-side-small;
 			display: inline-block;
 	
 			@include nonselect;
