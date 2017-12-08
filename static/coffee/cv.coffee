@@ -1,5 +1,5 @@
 $ ->
-	$('.minimize-button').on 'click' ->
+	$('.minimize-button').on 'click', ->
 		if $(this).text() == '[ - ]'
 			$(this).text('[ + ]')
 		else
