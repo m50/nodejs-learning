@@ -59,7 +59,7 @@
 }
 .value {
 	padding-left: $padding-side * 2;
-	@import phone {
+	@include phone {
 		padding-left: $padding-side;
 	}
 }
