@@ -23,3 +23,7 @@ $ ->
 				else
 					$('.navbar').slideDown()
 		lastScrollPos = $(this).scrollTop()
+
+	$('.navitems').children('.navitem').each ->
+		if $('#header').children('h1').text() == $(this).text()
+			$(this).css('color', 'white')
