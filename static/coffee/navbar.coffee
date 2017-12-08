@@ -13,7 +13,8 @@ $(window).on "scroll", ->
 			$('.navbar').removeClass('fixed')
 	else
 		$('.navbar').addClass('fixed')
-		if $(this).scrollTop() > 50
+		$('#body').css('margin-top', $('.navbar').height() + 10)
+		if $(this).scrollTop() > 150
 			if $(this).scrollTop() > lastScrollPos
 				$('.navbar').slideUp()
 			else
