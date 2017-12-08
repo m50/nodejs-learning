@@ -5,6 +5,7 @@ app.set('view engine', 'pug');
 app.set('views','./views');
 
 app.get('*', (req, res, next) => {
+	console.log(req.headers["x-forwarded-proto"]);
 	if (req.headers["x-forwarded-proto"] === "https"){
 		return next();
 	}
