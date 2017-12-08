@@ -6,16 +6,16 @@ app.set('views','./views');
 
 const rootjs = require('./routes/root.js');
 const testjs = require('./routes/test.js');
+const cvjs = require('./routes/cv.js');
 const formjs = require('./routes/form.js');
 const reactjs = require('./routes/react.js');
-// const moviesjs = require('./routes/movies.js');
 const urlshortenerjs = require('./routes/urlshortener.js');
 
 app.use('/', rootjs);
 app.use('/test', testjs);
+app.use('/markus', cvjs);
 app.use('/form', formjs);
 app.use('/react', reactjs);
-// app.use('/movies', moviesjs);
 app.use('/url', urlshortenerjs);
 
 app.listen(6080, '127.0.0.1', () => {

@@ -6,7 +6,7 @@ var router = express.Router();
 
 
 router.get('/', function(req, res){
-   res.render('form', { pageTitle: 'URL Shortener' });
+   res.render('form', { pageTitle: 'Form Test' });
 });
 
 // for parsing routerlication/json
@@ -21,7 +21,7 @@ router.use(upload.array());
 
 router.post('/', function(req, res){
    console.log(req.body);
-   res.send("recieved your request!");
+   res.render('generic-accept', { pageTitle: 'Form Test', content: 'Received your request!' });
 });
 
 module.exports = router;
