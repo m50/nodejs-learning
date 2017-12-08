@@ -1,3 +1,15 @@
+//- Mixins
+mixin section-header(name)
+	div.section-header
+		h2=name
+		a.minimize-button(href='javascript:void(0)') [ - ]
+
+mixin subsection-header(name)
+	div.section-header
+		h3=name
+		a.minimize-button(href='javascript:void(0)') [ - ]
+
+//- Actual HTML file
 doctype html
 html
 	head
@@ -9,8 +21,7 @@ html
 		div#body
 			//- Contact Info
 			div.section#contactinfo
-				h2 Contact Info 
-				a.minimize-button(href='javascript:void(0)') [ - ]
+				+section-header('Contact Info')
 				ul.sectionbody
 					li
 						span#address
@@ -28,12 +39,10 @@ html
 
 			//- Education
 			div.section#education
-				h2 Educations 
-				a.minimize-button(href='javascript:void(0)') [ - ]
+				+section-header('Education')
 				div.sectionbody
 					div.subsection#college1
-						h3 NYU Tandon School Of Engineering 
-						a.minimize-button(href='javascript:void(0)') [ - ]
+						+subsection-header('NYU Tandon School Of Engineering')
 						ul.sectionbody
 							li
 								span#college1-loc
@@ -50,8 +59,7 @@ html
 						
 					
 					div.subsection#highschool
-						h3 James Bowie High School 
-						a.minimize-button(href='javascript:void(0)') [ - ]
+						+subsection-header('James Bowie High School')
 						ul.sectionbody
 							li
 								span#highschool-loc
@@ -64,12 +72,10 @@ html
 
 			//- Skills and Abilities
 			div.section#skillsandabilities
-				h2 Skills and Abilities 
-				a.minimize-button(href='javascript:void(0)') [ - ]
+				+section-header('Skills and Abilities')
 				div.sectionbody
 					div.subsection#programming
-						h3 Programming 
-						a.minimize-button(href='javascript:void(0)') [ - ]
+						+subsection-header('Programming')
 						ul.sectionbody
 							li
 								span.label Web Development
@@ -114,8 +120,7 @@ html
 										li Mono
 					
 					div.subsection#techOther
-						h3 Other Environments
-						a.minimize-button(href='javascript:void(0)') [ - ]
+						+subsection-header('Other Environment')
 						ul.sectionbody
 							li
 								span.label Mail Relay
@@ -150,12 +155,10 @@ html
 
 			//- Experience
 			div.section#experience
-				h2 Work Experience 
-				a.minimize-button(href='javascript:void(0)') [ - ]
+				+section-header('Work Experience')
 				div.sectionbody
 					div.subsection#titanhq
-						h3 TitanHQ 
-						a.minimize-button(href='javascript:void(0)') [ - ]
+						+subsection-header('TitanHQ')
 						ul.sectionbody
 							li
 								span#titanhq-pos
@@ -172,8 +175,7 @@ html
 						
 					
 					div.subsection#pcworld
-						h3 PCWorld/Currys 
-						a.minimize-button(href='javascript:void(0)') [ - ]
+						+subsection-header('PCWorld/Currys')
 						ul.sectionbody
 							li
 								span#pcworld-pos
@@ -193,8 +195,7 @@ html
 						
 					
 					div.subsection#subway
-						h3 Subway 
-						a.minimize-button(href='javascript:void(0)') [ - ]
+						+subsection-header('Subway')
 						ul.sectionbody
 							li
 								span#subway-pos
@@ -208,8 +209,7 @@ html
 						
 					
 					div.subsection#panerabread
-						h3 Panera Bread 
-						a.minimize-button(href='javascript:void(0)') [ - ]
+						+subsection-header('Panera Bread')
 						ul.sectionbody
 							li
 								span#panerabread-pos
@@ -238,8 +238,7 @@ html
 						
 					
 					div.subsection#frc
-						h3 FRC High School First Robotics Team 2468 
-						a.minimize-button(href='javascript:void(0)') [ - ]
+						+subsection-header('FRC High School First Robotics Team 2468')
 						ul.sectionbody
 							li
 								span#frc-pos
@@ -262,12 +261,10 @@ html
 			
 			//- Achievements
 			div.section#achievements
-				h2 Achievements 
-				a.minimize-button(href='javascript:void(0)') [ - ]
+				+section-header('Achievements')
 				div.sectionbody
 					div.subsection#frcach
-						h32012 FRC - Dallas West Regional 
-						a.minimize-button(href='javascript:void(0)') [ - ]
+						+subsection-header('2012 FRC - Dallas West Regional')
 						ul.sectionbody
 							li
 								span#frcach-loc
@@ -281,8 +278,7 @@ html
 						
 					
 					div.subsection#arcsf
-						h3 2011 Austin Regional Science Fair 
-						a.minimize-button(href='javascript:void(0)') [ - ]
+						+subsection-header('2011 Austin Regional Science Fair')
 						ul.sectionbody
 							li
 								span#arcsf-loc
