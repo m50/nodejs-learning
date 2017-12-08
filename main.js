@@ -4,9 +4,11 @@ var app = express();
 app.set('view engine', 'pug');
 app.set('views','./views');
 
-app.get('*', (req, res) => {
-	if(!req.secure())
-    	res.redirect('https://' + req.headers.host + req.url);
+app.get('*', (req, res, next) => {
+	if (req.headers["x-forwarded-proto"] === "https"){
+		return next();
+	}
+    res.redirect('https://' + req.headers.host + req.url);
 })
 
 const rootjs = require('./routes/root.js');
