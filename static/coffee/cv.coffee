@@ -5,5 +5,5 @@ $ ->
 			$(this).text('[ + ]')
 		else
 			$(this).text('[ - ]')
-		parent = $(this).parent().parent()
-		parent.children('.sectionbody').slideToggle()
+		parent = $(this).parent().parent().parent()
+		parent.children('.section-body').slideToggle()
