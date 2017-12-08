@@ -1,4 +1,4 @@
 goto = (url) -> window.location.replace(url)
 
-$('.narrownav').child('i').on "click", ->
-	$('.narrownav').child('.navitems').slideToggle()
+$('.narrownav').children('i').on "click", ->
+	$('.narrownav').children('.navitems').slideToggle()
