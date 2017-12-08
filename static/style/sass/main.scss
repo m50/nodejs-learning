@@ -12,5 +12,16 @@ $transition-speed: 1s;
 $retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
 $smallscreen: "(min-width: 481px)";
 
+
+@mixin nonselect {
+	// prevent user selection on Nav Bar
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
 @import 'standard';
 @import 'navbar';
