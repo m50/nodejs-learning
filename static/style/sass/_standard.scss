@@ -71,7 +71,7 @@ html, body {
 	color: $font-color;
 }
 
-@media (min-width: 480px) {
+@media ${smallscreen} and ${retina} {
     #header {
     	display: block;
     }

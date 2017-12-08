@@ -74,7 +74,7 @@
 	}
 }
 
-@media (min-width: 480px) {
+@media ${retina} and ${smallscreen} {
     .navbar {
         .widenav {
             display: block;
