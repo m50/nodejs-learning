@@ -57,7 +57,7 @@
 	}
 	background: $background-color;
 	margin: 0px;
-	@include absolutePos;
+	@include absolutePos(0,0);
 }
 .navitems {
 	.navitem {
