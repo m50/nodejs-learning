@@ -8,6 +8,10 @@ html, body {
 	float: right;
 }
 
+.fixed {
+	@include pos(0,0);
+}
+
 #header {
 	@include phone {
 		display: none;
