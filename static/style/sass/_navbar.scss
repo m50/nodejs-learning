@@ -4,7 +4,7 @@
 	}
 	.narrownav {
 		h1 {
-			font-size: 30px;
+			font-size: 25px;
 			font-family: Arial, Helvetica, sans-serif;
 			vertical-align: center;
 			color: $font-color;
@@ -15,9 +15,7 @@
 			cursor: pointer;
 			color: $font-color;
 			vertical-align: center;
-			padding: 5px $padding-side;
-			-webkit-transition: $transition-speed;
-			transition: $transition-speed;
+			padding: $padding-height $padding-side;
 			&:hover {
 				color: $button-color;
 			}
