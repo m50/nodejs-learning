@@ -1,6 +1,10 @@
 .navbar {
 	.widenav {
 		display: none;
+		width: 100%;
+		.navitems {
+			width: 100%;
+		}
 	}
 	.narrownav {
 		h1 {
@@ -53,13 +57,13 @@
 	&.active {
 		color: white;
 	}
-	display: inline-block;
+	display: inline;
 	background: $border-color;
 	padding: $padding-height $padding-side;
 	font-size: 20px;
 	color: $font-color;
 	text-decoration: none;
-	
+
 	// prevent user selection on Nav Bar
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
