@@ -15,6 +15,9 @@
 			cursor: pointer;
 			color: $font-color;
 			vertical-align: center;
+			padding: 5px $padding-side;
+			-webkit-transition: $transition-speed;
+			transition: $transition-speed;
 			&:hover {
 				color: $button-color;
 			}
