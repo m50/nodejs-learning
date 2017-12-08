@@ -7,6 +7,11 @@
 		color: inherit;
 	}
 }
+@mixin sectionbody {
+	padding: 10px;
+	list-style: none;
+	display: none;
+}
 
 .section {
 	line-height: 25px;
@@ -18,10 +23,7 @@
 		background: $border-color;
 		padding: $padding-height;
 	}
-	.section-body {
-		padding: 10px;
-		list-style: none;
-	}
+	@include sectionbody;
 	.subsection {
 		.section-header {
 			h3 {
@@ -32,10 +34,7 @@
 			background: $border-color;
 			color: $font-color;
 		}
-		.section-body {
-			padding: 10px;
-			list-style: none;
-		}
+		@include sectionbody;
 		border: 2px solid $border-color;
 		border-radius: 5px;
 		background: $background-color;
