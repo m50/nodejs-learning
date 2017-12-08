@@ -29,4 +29,4 @@ $ ->
 	$('.navitems').children('.navitem').each ->
 		if $('#header').children('h1').text() == $(this).text()
 			$(this).css('color', 'white')
-	$('.navbar').css('box-shadow', 'none');
+	$('#header').css('box-shadow', 'none');
