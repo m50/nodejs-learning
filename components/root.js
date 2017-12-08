@@ -14,7 +14,7 @@ component.get_req = (req) => {
 	if (req.query.name) {
 		return req.query.name;
 	} else {
-		return "Root";
+		return "Home";
 	}
 };
 
