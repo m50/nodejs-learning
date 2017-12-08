@@ -29,7 +29,6 @@ html, body {
 	padding: 5px;
 	border-bottom: $border;
 	color: $font-color;
-	@include absolutePos(0,0);
 }
 
 #body {

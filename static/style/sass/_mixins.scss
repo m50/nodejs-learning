@@ -26,8 +26,8 @@
 	user-select: none;
 }
 
-@mixin absolutePos($left, $top, $width: 100%, $height: auto) {
-	position: absolute;
+@mixin pos($left, $top, $width: 100%, $height: auto, $position: fixed) {
+	position: $position;
 	left: $left;
 	top: $top;
 	width: $width;
