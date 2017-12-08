@@ -8,5 +8,9 @@ $padding-height: 10px;
 
 $transition-speed: 1s;
 
+@media (min-width: 480px) {
+	$font-color: red;
+}
+
 @import 'standard';
 @import 'navbar';
