@@ -31,7 +31,7 @@ router.post('/', (req, res) => {
 });
 
 router.get('*', function(req, res){
-   component.page404(req, res);
+	res.sendFile(path.resolve('./views/404.html'));
 });
 
 module.exports = router;
