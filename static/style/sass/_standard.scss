@@ -35,6 +35,15 @@ html, body {
 	border-bottom: $border;
 	color: $font-color;
 }
+a {
+	&:visited {
+		color: $font-color;
+	}
+	&:hover {
+		color: white;
+	}
+	text-decoration: underline;
+}
 
 #body {
 	input {
@@ -43,15 +52,6 @@ html, body {
 		background: none;
 		font-size: 18px;
 		color: $font-color;
-	}
-	a {
-		&:visited {
-			color: $font-color;
-		}
-		&:hover {
-			color: white;
-		}
-		text-decoration: underline;
 	}
 	label, p {
 		font-size: 18px;
