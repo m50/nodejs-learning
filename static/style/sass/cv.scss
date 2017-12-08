@@ -6,7 +6,8 @@
 		text-decoration: none;
 		color: inherit;
 		&:hover {
-			color: $button-color;
+			background: $button-color;
+			color: white;
 		}
 	}
 }
