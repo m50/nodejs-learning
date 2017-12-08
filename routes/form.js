@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const multer = require('multer');
+const path = require('path');
 var upload = multer();
 var router = express.Router();
 

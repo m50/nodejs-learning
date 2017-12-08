@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const multer = require('multer');
 const component = require('../components/urlshortener.js');
+const path = require('path');
 var upload = multer();
 var router = express.Router();
 
