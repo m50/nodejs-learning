@@ -10,7 +10,7 @@
 .section {
 	.section-header {
 		h2 {
-			display: inline-block;
+			// display: inline-block;
 		}
 		@include minimizebutton;
 		background: $border-color;
@@ -22,7 +22,7 @@
 	.subsection {
 		.section-header {
 			h3 {
-				display: inline-block;
+				// display: inline-block;
 			}
 			@include minimizebutton;
 			padding: $padding-height;
