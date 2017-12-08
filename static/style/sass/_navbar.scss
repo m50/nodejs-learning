@@ -2,9 +2,7 @@
 	.widenav {
 		display: none;
 		width: 100%;
-		.navitems {
-			width: 100%;
-		}
+		background: $border-color;
 	}
 	.narrownav {
 		h1 {
@@ -48,29 +46,32 @@
 	background: $border-color;
 	margin: 0px;
 }
-
-.navitem {
-	&:hover {
-		background: $button-color;
-		color: white;
-	}
-	&.active {
-		color: white;
-	}
-	display: inline;
+.navitems {
 	background: $border-color;
-	padding: $padding-height $padding-side;
-	font-size: 20px;
-	color: $font-color;
-	text-decoration: none;
 
-	// prevent user selection on Nav Bar
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+	.navitem {
+		&:hover {
+			background: $button-color;
+			color: white;
+		}
+		&.active {
+			color: white;
+		}
+		display: inline-block;
+		background: $border-color;
+		padding: $padding-height $padding-side;
+		font-size: 20px;
+		color: $font-color;
+		text-decoration: none;
+
+		// prevent user selection on Nav Bar
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
 }
 
 @media (min-width: 480px) {
