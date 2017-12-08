@@ -8,9 +8,11 @@
 	}
 }
 @mixin sectionbody {
-	padding: 10px;
-	list-style: none;
-	display: none;
+	.section-body {
+		padding: 10px;
+		list-style: none;
+		display: none;
+	}
 }
 
 .section {
