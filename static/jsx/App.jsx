@@ -15,7 +15,7 @@ class App extends React.Component {
 	render () {
 		const App = (
 			<div>
-				<Navbar onclick={this.onNavbar} page={this.state.page} />
+				// <Navbar onclick={this.onNavbar} page={this.state.page} />
 				<Content page={this.state.page} />
 			</div>
 			);
