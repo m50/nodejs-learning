@@ -1,7 +1,7 @@
 @import 'variables';
 
 @mixin minimizebutton {
-	a.minimize-button {
+	a {
 		float: right;
 		text-decoration: none;
 		color: inherit;
