@@ -4,8 +4,9 @@ var app = express();
 app.set('view engine', 'pug');
 app.set('views','./views');
 
-app.get('*', (req, res) => {  
-    res.redirect('https://' + req.headers.host + req.url);
+app.get('*', (req, res) => {
+	if(!req.secure())
+    	res.redirect('https://' + req.headers.host + req.url);
 })
 
 const rootjs = require('./routes/root.js');
