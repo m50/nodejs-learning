@@ -6,6 +6,10 @@ $ ->
 
 	lastScrollPos = 0;
 
+	if $(window).width() < 768
+		$('.navbar').addClass('fixed')
+		$('#body').css('margin-top', $('.navbar').height() + 10)
+
 	$(window).on "scroll", ->
 		if $(window).width() >= 768 
 			if $(this).scrollTop() > ($('#header').height() - 10)
@@ -15,8 +19,6 @@ $ ->
 				$('.navbar').removeClass('fixed')
 				$('#body').css('margin-top', 10)
 		else
-			$('.navbar').addClass('fixed')
-			$('#body').css('margin-top', $('.navbar').height() + 10)
 			if $(this).scrollTop() > 150
 				if $(this).scrollTop() > lastScrollPos
 					$('.navbar').slideUp()
