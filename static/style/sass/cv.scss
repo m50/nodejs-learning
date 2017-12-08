@@ -1,8 +1,5 @@
 @import 'variables';
 
-$secondaryColor: #0E7C7B;
-$tertiaryColor: #D62246;
-
 .section {
 	h2 {
 		background: $border-color;
@@ -11,10 +8,10 @@ $tertiaryColor: #D62246;
 	.subsection {
 		h3 {
 			padding: $padding-height;
-			background: $secondaryColor;
+			background: $border-color;
 			color: $section-background;
 		}
-		border: 2px solid $secondaryColor;
+		border: 2px solid $border-color;
 		background: $section-background;
 	}
 	background: $section-background;
