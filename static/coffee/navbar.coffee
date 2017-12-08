@@ -6,7 +6,7 @@ $('#navexpand').on "click", ->
 $(window).on "scroll", ->
 	console.log('scrolling... ' + $(this).scrollTop())
 	if $(window).width() >= 768 
-		if $(this).scrollTop() > $('#header').height()
+		if $(this).scrollTop() > ($('#header').height() - $('.navbar').height())
 			$('.navbar').addClass('fixed')
 		else
 			$('.navbar').removeClass('fixed')
