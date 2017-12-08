@@ -21,7 +21,7 @@ router.use(upload.array());
 
 router.post('/', function(req, res){
    console.log(req.body);
-   res.render('generic-accept', { pageTitle: 'Form Test', content: 'Received your request! You said: ' + req.body });
+   res.render('generic-accept', { pageTitle: 'Form Test', content: 'Received your request! You said: ' + req.body.say + ' To: ' + req.body.to });
 });
 
 module.exports = router;
