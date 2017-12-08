@@ -9,7 +9,7 @@ html, body {
 }
 
 #header {
-	@media screen and #{$smallscreen} and #{$retina} {
+	@media #{$smallscreen} and #{$retina} {
 		display: block;
 	}
 	h1 {

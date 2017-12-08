@@ -3,12 +3,12 @@
 		display: none;
 		width: 100%;
 		background: $border-color;
-		@media screen and #{$smallscreen} and #{$retina} {
+		@media #{$smallscreen} and #{$retina} {
 			display: block;
 		}
 	}
 	.narrownav {
-		@media screen and #{$smallscreen} and #{$retina} {
+		@media #{$smallscreen} and #{$retina} {
 			display: none;
 		}
 		h1 {
