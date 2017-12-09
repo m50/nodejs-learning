@@ -3,9 +3,8 @@ import React from 'react';
 class Navbar extends React.Component {
 	constructor (props) {
 		super(props);
-		this.onClick = this.onClick.bind(this);
 	}
-	
+
 	render () {
 		var navbar = (
 			<nav className='navitems'>
