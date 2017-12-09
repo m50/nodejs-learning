@@ -9,7 +9,8 @@
 	[
 		{
 			"name": "commit",
-			"shell_cmd": "git add * && git commit -m 'build process' && git push"
+			"shell_cmd": "git add * && git commit -m 'build process' && git push",
+			"working_dir": "./"
 		}
 	]
 }
