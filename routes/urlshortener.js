@@ -6,7 +6,7 @@ const path = require('path');
 var upload = multer();
 var router = express.Router();
 
-callbacks.apiNoURL = (res) => {
+apiNoURL = (res) => {
 	res.status(404);
 	res.json({ status: 'Failure', message: 'No URL provided' });
 };
@@ -46,21 +46,21 @@ router.post('/', (req, res) => {
 
 router.post('/api', (req, res) => {
 	if(!req.body.url) {
-		callbacks.apiNoURL(res);
+		apiNoURL(res);
 	}
 	component.createShortener(req.body.url, (key, uri) => { res.json({ status: 'Success', message: 'New URL created', location: '/api/'+key, url: uri }); });
 });
 
 router.put('/api/:key', (req, res) => {
 	if(!req.body.url) {
-		callbacks.apiNoURL(res);
+		apiNoURL(res);
 	}
 	component.editShortener(req.body.url, req.params.key, (key, uri) => { res.json({ status: 'Success', message: 'New URL created', location: '/api/'+key, url: uri }); }, () => { res.status(404); res.json({ status: 'Failure', message: 'Not Found' }); });
 });
 
 router.delete('/api/:key', (req, res) => {
 	if(!req.body.url) {
-		callbacks.apiNoURL(res);
+		apiNoURL(res);
 	}
 	component.deleteShortener(req.params.key, () => { res.json({ status: 'Success', message: 'Shortened URL (key: '+req.params.key+') deleted.' }) }, () => { res.status(404); res.json({ status: 'Failure', message: 'Not Found' }); });
 });

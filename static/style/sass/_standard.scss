@@ -29,6 +29,9 @@ html, body {
 		vertical-align: center;
 		@include nonselect;
 	}
+	&.error {
+		box-shadow: $nav-shadow;
+	}
 	background: $background-color;
 	margin: 0px;
 	padding: 5px;
