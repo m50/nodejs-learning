@@ -23,9 +23,6 @@ class App extends React.Component {
 				<div>
 					<h2>Main</h2>
 					<p>The content text!!!</p>
-					<p>This is a another test!</p>
-					<p>Just updating</p>
-					<p>This is a test of seperating my jsx files</p>
 				</div>
 				);
 		} else if(this.state.page=='page2') {
@@ -40,9 +37,9 @@ class App extends React.Component {
 		}
 		var body = (<div id='body'>
 						<Navbar page={this.state.page}>
-							<Navitem curPage={this.props.page} onclick={this.onNavbar} page='main' pageTitle='Main' />
-							<Navitem curPage={this.props.page} onclick={this.onNavbar} page='page2' pageTitle='Page 2' />
-							<Navitem curPage={this.props.page} onclick={this.onNavbar} page='url' pageTitle='URL Shortener MK2' />
+							<Navitem curPage={this.state.page} onclick={this.onNavbar} page='main' pageTitle='Main' />
+							<Navitem curPage={this.state.page} onclick={this.onNavbar} page='page2' pageTitle='Page 2' />
+							<Navitem curPage={this.state.page} onclick={this.onNavbar} page='url' pageTitle='URL Shortener MK2' />
 						</Navbar>
 						{content}
 					</div>);
