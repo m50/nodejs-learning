@@ -31,11 +31,6 @@ class Navitem extends React.Component {
 	}
 
 	onClick (e) {
-		if(this.props.externalSite !== '') {
-			console.log(this.props.externalSite);
-			window.location.replace(this.props.externalSite);
-			return;
-		}
 		console.log(e.target.id);
 		this.props.onclick(e.target.id);
 	}
@@ -50,8 +45,7 @@ class Navitem extends React.Component {
 Navitem.defaultProps = {
 	page: 'main',
 	pageTitle: 'Main',
-	curPage: 'main',
-	externalSite: ''
+	curPage: 'main'
 }
 
 export default Navbar;

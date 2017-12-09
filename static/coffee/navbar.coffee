@@ -28,4 +28,4 @@ $ ->
 
 	$('.navitems').children('.navitem').each ->
 		if $('#header').children('h1').text() == $(this).text()
-			$(this).css('color', 'white')
+			$(this).addClass('active')

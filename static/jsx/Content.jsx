@@ -35,7 +35,7 @@ class Content extends React.Component {
 				);
 		}
 		var body = (<div id='body'>
-						<Navbar onClick={this.onNavbar} />
+						<Navbar onclick={this.onNavbar} page={this.state.page} />
 						{content}
 					</div>);
 
