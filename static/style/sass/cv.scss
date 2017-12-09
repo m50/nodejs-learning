@@ -28,6 +28,9 @@
 				font-size: 18px;
 			}
 		}
+			@include phone {
+				padding: $padding-height-small;
+			}
 		background: $border-color;
 		padding: $padding-height;
 	}
@@ -39,6 +42,9 @@
 				@include phone {
 					font-size: 14px;
 				}
+			}
+			@include phone {
+				padding: $padding-height-small;
 			}
 			padding: $padding-height;
 			background: $border-color;
