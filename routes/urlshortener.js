@@ -6,21 +6,7 @@ const path = require('path');
 var upload = multer();
 var router = express.Router();
 
-var callbacks = {};
-
-callbacks.renderShortUrl = (key, uri) => {
-	res.render('shorturl', { pageTitle: 'URL Shortener', url: uri });
-};
-
-callbacks.apiSuccess = (key, uri) => {
-	res.json({ status: 'Success', message: 'New URL created', location: '/api/'+key, url: uri });
-};
-
-callbacks.apiNotFound = () => {
-	res.status(404);
-	res.json({ status: 'Failure', message: 'Not Found' });
-};
-callbacks.apiNoURL = () => {
+callbacks.apiNoURL = (res) => {
 	res.status(404);
 	res.json({ status: 'Failure', message: 'No URL provided' });
 };
@@ -43,7 +29,7 @@ router.get('/api/:key', (req, res) => {
 	if(uri) {
 		res.json({ url: uri });
 	} else {
-		callbacks.apiNotFound();
+		() => { res.status(404); res.json({ status: 'Failure', message: 'Not Found' }); }();
 	}
 });
 
@@ -52,28 +38,30 @@ router.use(bodyParser.urlencoded({ extended: true }));
 router.use(upload.array());
 
 router.post('/', (req, res) => {
-	component.createShortener(req.body.url, callbacks.renderShortUrl);
+	component.createShortener(req.body.url, (key, uri) => {
+		res.render('shorturl', { pageTitle: 'URL Shortener', url: uri });
+	});
 });
 
 router.post('/api', (req, res) => {
 	if(!req.body.url) {
-		callbacks.apiNoURL();
+		callbacks.apiNoURL(res);
 	}
-	component.createShortener(req.body.url, callbacks.apiSuccess);
+	component.createShortener(req.body.url, (key, uri) => { res.json({ status: 'Success', message: 'New URL created', location: '/api/'+key, url: uri }); });
 });
 
 router.put('/api/:key', (req, res) => {
 	if(!req.body.url) {
-		callbacks.apiNoURL();
+		callbacks.apiNoURL(res);
 	}
-	component.editShortener(req.body.url, req.params.key, callbacks.apiSuccess, callbacks.apiNotFound);
+	component.editShortener(req.body.url, req.params.key, (key, uri) => { res.json({ status: 'Success', message: 'New URL created', location: '/api/'+key, url: uri }); }, () => { res.status(404); res.json({ status: 'Failure', message: 'Not Found' }); });
 });
 
 router.delete('/api/:key', (req, res) => {
 	if(!req.body.url) {
-		callbacks.apiNoURL();
+		callbacks.apiNoURL(res);
 	}
-	component.deleteShortener(req.params.key, () => { res.json({ status: 'Success', message: 'Shortened URL (key: '+req.params.key+') deleted.' }) }, callbacks.apiNotFound);
+	component.deleteShortener(req.params.key, () => { res.json({ status: 'Success', message: 'Shortened URL (key: '+req.params.key+') deleted.' }) }, () => { res.status(404); res.json({ status: 'Failure', message: 'Not Found' }); });
 });
 
 router.get('*', function(req, res){
