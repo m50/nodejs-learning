@@ -25,7 +25,7 @@
 		h2 {
 			@include minimizebutton;
 			@include phone {
-				font-size: 15px;
+				font-size: 18px;
 			}
 		}
 		background: $border-color;
@@ -37,7 +37,7 @@
 			h3 {
 				@include minimizebutton;
 				@include phone {
-					font-size: 12px;
+					font-size: 15px;
 				}
 			}
 			padding: $padding-height;
