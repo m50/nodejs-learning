@@ -8,16 +8,16 @@ $ ->
 
 	if $(window).width() < 768
 		$('.navbar').addClass('fixed')
-		$('#body').css('margin-top', $('.navbar').height() + 10)
+		$('#body').css('margin-top', $('.navbar').height() + 25)
 
 	$(window).on "scroll", ->
 		if $(window).width() >= 768 
-			if $(this).scrollTop() > ($('#header').height() - 10)
+			if $(this).scrollTop() > ($('#header').height() - 25)
 				$('.navbar').addClass('fixed')
-				$('#body').css('margin-top', $('.navbar').height() + 10)
+				$('#body').css('margin-top', $('.navbar').height() + 25)
 			else
 				$('.navbar').removeClass('fixed')
-				$('#body').css('margin-top', 10)
+				$('#body').css('margin-top', 25)
 		else
 			if $(this).scrollTop() > 150
 				if $(this).scrollTop() > lastScrollPos
