@@ -29,7 +29,8 @@ router.get('/api/:key', (req, res) => {
 	if(uri) {
 		res.json({ url: uri });
 	} else {
-		() => { res.status(404); res.json({ status: 'Failure', message: 'Not Found' }); }();
+		res.status(404);
+		res.json({ status: 'Failure', message: 'Not Found' });
 	}
 });
 
