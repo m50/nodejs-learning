@@ -1,7 +1,6 @@
 import React from 'react';
 import Navbar from './Navbar.jsx';
 import Navitem from './Navitem.jsx';
-import URLShortener from './URLShortener.jsx';
 
 class App extends React.Component {
 	constructor (props) {
@@ -32,14 +31,11 @@ class App extends React.Component {
 					<p>Other content text!!!</p>
 				</div>
 				);
-		} else if(this.state.page=='url') {
-			content = <URLShortener />;
 		}
 		var body = (<div id='body'>
 						<Navbar page={this.state.page}>
-							<Navitem curPage={this.state.page} onclick={this.onNavbar} page='main' pageTitle='Main' />
-							<Navitem curPage={this.state.page} onclick={this.onNavbar} page='page2' pageTitle='Page 2' />
-							<Navitem curPage={this.state.page} onclick={this.onNavbar} page='url' pageTitle='URL Shortener MK2' />
+							<Navitem curPage={this.state.page} onclick={this.onNavbar} page='main' pageTitle='Test Page 1' />
+							<Navitem curPage={this.state.page} onclick={this.onNavbar} page='page2' pageTitle='Test Page 2' />
 						</Navbar>
 						{content}
 					</div>);
