@@ -36,7 +36,6 @@ class App extends React.Component {
 				</div>
 				);
 		} else if(this.state.page=='url') {
-			
 			content = <URLShortener />;
 		}
 		var body = (<div id='body'>
