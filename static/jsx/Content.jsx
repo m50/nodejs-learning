@@ -1,12 +1,24 @@
 import React from 'react';
+import Navbar from './Navbar.jsx'
 
 class Content extends React.Component {
-	render() {
-		var body = <div id='body'></div>;
+	constructor (props) {
+		super(props);
+		this.state = {page: 'main'};
 
-		if(this.props.page=='main') {
-			body = (
-				<div id='body'>
+		this.onNavbar = this.onNavbar.bind(this);
+	}
+
+	onNavbar(page) {
+		this.setState({ page: page });
+	}
+
+	render() {
+		var content = <div></div>;
+
+		if(this.state.page=='main') {
+			content = (
+				<div>
 					<h2>Main</h2>
 					<p>The content text!!!</p>
 					<p>This is a another test!</p>
@@ -14,21 +26,21 @@ class Content extends React.Component {
 					<p>This is a test of seperating my jsx files</p>
 				</div>
 				);
-		} else if(this.props.page=='page2') {
-			body = (
-				<div id='body'>
+		} else if(this.state.page=='page2') {
+			content = (
+				<div>
 					<h2>Second Page</h2>
 					<p>Other content text!!!</p>
 				</div>
 				);
 		}
+		var body = (<div id='body'>
+						<Navbar onClick={this.onNavbar} />
+						{content}
+					</div>);
 
 		return body;
 	}
 }
-
-Content.defaultProps = {
-	page: 'main'
-};
 
 export default Content;
