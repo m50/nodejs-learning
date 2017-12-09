@@ -1,0 +1,401 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"conne",
+				"connectionString"
+			],
+			[
+				"urlsho",
+				"urlshortenerjs"
+			],
+			[
+				"compo",
+				"component"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "static/jsx/App.jsx",
+			"settings":
+			{
+				"buffer_size": 209,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "static/jsx/Content.jsx",
+			"settings":
+			{
+				"buffer_size": 876,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "static/jsx/Navbar.jsx",
+			"settings":
+			{
+				"buffer_size": 1133,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 155.0,
+		"last_filter": "install",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"sssass",
+				"Set Syntax: Sass"
+			],
+			[
+				"isntall",
+				"Package Control: Install Package"
+			],
+			[
+				"sscss",
+				"Set Syntax: CSS"
+			],
+			[
+				"conver tabs",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"convtab",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"sspu",
+				"Set Syntax: Pug"
+			],
+			[
+				"minima",
+				"View: Toggle Minimap"
+			],
+			[
+				"status",
+				"View: Toggle Status Bar"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 489.0
+	},
+	"console":
+	{
+		"height": 164.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/marisa/Documents/src/nodejs-learning",
+		"/home/marisa/Documents/src/nodejs-learning/components",
+		"/home/marisa/Documents/src/nodejs-learning/routes",
+		"/home/marisa/Documents/src/nodejs-learning/static",
+		"/home/marisa/Documents/src/nodejs-learning/static/coffee",
+		"/home/marisa/Documents/src/nodejs-learning/static/jsx",
+		"/home/marisa/Documents/src/nodejs-learning/views"
+	],
+	"file_history":
+	[
+		"/home/marisa/Documents/src/nodejs-learning/static/coffee/navbar.coffee",
+		"/home/marisa/Documents/src/nodejs-learning/static/style/sass/_variables.scss",
+		"/home/marisa/Documents/src/nodejs-learning/static/style/sass/_standard.scss",
+		"/home/marisa/Documents/src/nodejs-learning/static/style/sass/_navbar.scss",
+		"/home/marisa/Documents/src/nodejs-learning/static/style/sass/main.scss",
+		"/home/marisa/Documents/src/nodejs-learning/views/includes/navitems.pug",
+		"/home/marisa/Documents/src/nodejs-learning/views/includes/navbar.pug",
+		"/home/marisa/Documents/src/nodejs-learning/static/js/root.js",
+		"/home/marisa/Documents/src/nodejs-learning/views/includes/head.pug",
+		"/home/marisa/Documents/src/nodejs-learning/gulpfile.js",
+		"/home/marisa/Documents/src/nodejs-learning/static/style/sass/fontawesome/_variables.scss",
+		"/home/marisa/Documents/src/nodejs-learning/package.json",
+		"/home/marisa/Documents/src/nodejs-learning/static/jsx/App.jsx",
+		"/home/marisa/Documents/src/nodejs-learning/main.js",
+		"/home/marisa/Documents/src/nodejs-learning/routes/mail.js",
+		"/home/marisa/Documents/src/nodejs-learning/views/mail.pug",
+		"/home/marisa/Documents/src/nodejs-learning/components/mail.js",
+		"/home/marisa/Documents/src/nodejs-learning/views/shorturl.pug",
+		"/home/marisa/Documents/src/nodejs-learning/static/urlshortener.css",
+		"/home/marisa/Documents/src/nodejs-learning/views/urlshortener.pug",
+		"/home/marisa/Documents/src/nodejs-learning/routes/urlshortener.js",
+		"/home/marisa/Documents/src/nodejs-learning/views/root.pug",
+		"/home/marisa/Documents/src/nodejs-learning/routes/root.js",
+		"/home/marisa/Documents/src/nodejs-learning/components/urlshortener.js",
+		"/home/marisa/Documents/src/nodejs-learning/components/root.js",
+		"/home/marisa/Documents/src/nodejs-learning/static/root.js",
+		"/home/marisa/Documents/src/nodejs-learning/routes/test.js",
+		"/home/marisa/Documents/src/nodejs-learning/views/first_view.pug",
+		"/home/marisa/Documents/src/nodejs-learning/views/index.html",
+		"/home/marisa/Documents/src/nodejs-learning/components/test.js",
+		"/home/marisa/Documents/src/nodejs-learning/views/form.pug",
+		"/home/marisa/Documents/src/nodejs-learning/routes/movies.js",
+		"/home/marisa/Documents/src/nodejs-learning/routes/form.js",
+		"/home/marisa/Documents/src/nodejs-learning/views/404.html",
+		"/home/marisa/Reputation.pm"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"props",
+			"10",
+			"child",
+			"2s",
+			"width",
+			"path",
+			"margin",
+			"16px",
+			"firstview",
+			">",
+			"<link ",
+			"meta property",
+			"  <meta",
+			" />",
+			"var",
+			"app",
+			"var",
+			"env_from_addr",
+			"execute([",
+			"execute",
+			"$self->{db}",
+			"$self->{ip}->{resolver}",
+			" or syslog(0, \"Reputation: Failed Query, $!\")",
+			"->{resolver}"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "static/jsx/App.jsx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 209,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								151,
+								151
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Simple JSX/JSX.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "static/jsx/Content.jsx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 876,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								796,
+								796
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Simple JSX/JSX.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "static/jsx/Navbar.jsx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1133,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								926,
+								926
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Simple JSX/JSX.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 285.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 29.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "nodejs.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 213.0,
+	"status_bar_visible": false,
+	"template_settings":
+	{
+	}
+}
