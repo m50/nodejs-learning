@@ -5,9 +5,6 @@ const path = require('path');
 var router = express.Router();
 
 router.get('/', (req, res) => {
-	if(req.query.getPosts) {
-		return;
-	}
 	res.render('blog', {
 		pageTitle: 'Blog',
 		post: '-1'
@@ -15,9 +12,6 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id(\d+)', (req, res) => {
-	if(req.query.getPost) {
-		return;
-	}
 	res.render('blog', {
 		pageTitle: 'Blog',
 		post: req.params.id
@@ -28,7 +22,7 @@ router.get('/posts', (req, res) => {
 	res.json
 });
 
-router.get('/posts/:id(\d+)' (req, res) => {
+router.get('/posts/:id(\d+)', (req, res) => {
 
 });
 
