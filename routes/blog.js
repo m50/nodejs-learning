@@ -1,9 +1,9 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
-const { Client } = require('pg');
+const { Pool } = require('pg');
 const path = require('path');
-const client = new Client({
+const pool = new Pool({
 	user: 'mailu',
 	host: '127.0.0.1',
 	port: 5432,
@@ -27,26 +27,27 @@ router.get('/:id(\d+)', (req, res) => {
 });
 
 router.get('/posts', (req, res) => {
-	client.connect();
+	await pool.connect();
 	try {
-		var req = await client.query('SELECT id, time_written AS date, text AS post FROM posts');
-		res.json({ status: "Success", posts: res });
+		var posts = await pool.query('SELECT id, time_written AS date, text AS post FROM posts');
+		res.json({ status: "Success", posts: posts });
 	} catch (err) {
 		res.status(404);
 		res.json({ status: "Failure", error: err });		
 	}
+	await pool.end();
 });
 
 router.get('/posts/:id(\d+)', (req, res) => {
-	await client.connect();
+	pool.connect();
 	try {
-		var req = await client.query('SELECT id, time_written AS date, text AS post FROM posts WHERE id = $1', [ req.params.id ]);
-		res.json({ status: "Success", posts: res });
+		var posts = await pool.query('SELECT id, time_written AS date, text AS post FROM posts WHERE id = $1', [ req.params.id ]);
+		res.json({ status: "Success", posts: posts });
 	} catch (err) {
 		res.status(404);
 		res.json({ status: "Failure", error: err });		
 	}
-	await client.end();
+	await pool.end();
 });
 
 router.get('/wiki', (req, res) => {
