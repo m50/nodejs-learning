@@ -14,10 +14,12 @@
 		}
 		.postdate {
 			font-size: 12px;
-			line-height: 0px;
+			line-height: 0px
 			@include phone {
 				font-size: 8px;
+				line-height: 0px;
 			}
+			line-height: 5px;
 		}
 		@include phone {
 			padding: $padding-height-small;
@@ -34,5 +36,5 @@
 	margin-bottom: 5px;
 	margin-top: 5px;
 	border-radius: 5px;
-	line-height: 5px;
+	line-height: 25px;
 }
