@@ -12,7 +12,7 @@ class Posts extends React.Component {
 		if(id > 0) {
 			$.getJSON('/blog/posts/'+id, (data) => {
 				console.log(data);
-				const posts = data.postsmap(post => (
+				const posts = data.posts.map(post => (
 					<div id={'post_'+post.id}>
 						<h3>{post.title}</h3>
 						<p>Post Date: {post.date}</p>
@@ -24,7 +24,7 @@ class Posts extends React.Component {
 		} else {
 			$.getJSON('/blog/posts', (data) => {
 				console.log(data);
-				const posts = data.postsmap(post => (
+				const posts = data.posts.map(post => (
 					<div id={'post_'+post.id}>
 						<h3>{post.title}</h3>
 						<p>Post Date: {post.date}</p>
