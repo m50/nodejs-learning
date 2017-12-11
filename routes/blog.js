@@ -10,6 +10,7 @@ const pool = new Pool({
 	database: 'blog',
 	password: 'mail-passwd'
 });
+pool.connect();
 var router = express.Router();
 
 router.get('/', (req, res) => {
@@ -40,7 +41,6 @@ router.get('/posts', (req, res) => {
 });
 
 router.get('/posts/:id(\d+)', (req, res) => {
-	pool.connect();
 	pool.query('SELECT id, time_written AS date, text AS post FROM posts WHERE id = $1', [ req.params.id ], (err, posts) => {
 		if(err) {
 			res.status(404);
@@ -48,7 +48,6 @@ router.get('/posts/:id(\d+)', (req, res) => {
 		} else {
 			res.json({ status: "Success", posts: posts });
 		}
-		pool.end();
 	});
 });
 
