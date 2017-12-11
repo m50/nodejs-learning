@@ -35,20 +35,20 @@ router.get('/posts', (req, res) => {
 		} else {
 			res.json({ status: "Success", posts: res });
 		}
-		cliend.end();
+		client.end();
 	});
 });
 
 router.get('/posts/:id(\d+)', (req, res) => {
 	client.connect();
-	client.query('SELECT id, time_written AS date, text AS post FROM posts WHERE id = $1::INT', [ req.params.id ], (err, res) => {
+	client.query('SELECT id, time_written AS date, text AS post FROM posts WHERE id = $1', [ req.params.id ], (err, res) => {
 		if(err) {
 			res.status(404);
 			res.json({ status: "Failure", error: err });
 		} else {
 			res.json({ status: "Success", posts: res });
 		}
-		cliend.end();
+		client.end();
 	});
 });
 
