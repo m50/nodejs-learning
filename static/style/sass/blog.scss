@@ -1,6 +1,13 @@
 @import 'variables';
 @import 'mixins';
 
+#Blog {
+	h2 {
+		cursor: pointer;
+		@include nonselect;
+	}
+}
+
 .post {
 	.postheader {
 		.posttitle {
