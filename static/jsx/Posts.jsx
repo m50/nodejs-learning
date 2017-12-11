@@ -9,6 +9,7 @@ class Posts extends React.Component {
 	}
 	componentDidMount() {
 		const id = this.props.id;
+		console.log(id);
 		if(id > 0) {
 			$.getJSON('/blog/posts/'+id, (data) => {
 				console.log(data);
@@ -18,7 +19,6 @@ class Posts extends React.Component {
 							<h3 className='posttitle'>{post.title}</h3>
 							<span className='postdate'>Post Date: {post.date.split('T').join(' ').split('.')[0]}</span>
 						</div>
-						<div className='postcontent'>{post.post}</div>
 					</div>
 					));
 				this.setState({ posts: posts });
@@ -33,7 +33,7 @@ class Posts extends React.Component {
 							<span className='postdate'>Post Date: {post.date.split('T').join(' ').split('.')[0]}</span>
 						</div>
 						<div className='postcontent'>{post.post}</div>
-						<div>I am testing insert <b>HTML</b>. Go to <a href='https://google.ie'>Google</a>.</div>
+						{console.log(post.post)}
 					</div>
 					));
 				this.setState({ posts: posts });
