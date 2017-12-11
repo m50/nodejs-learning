@@ -59,10 +59,6 @@ a {
 		font-size: 18px;
 		color: $font-color;
 	}
-	label, p {
-		font-size: 18px;
-		color: $font-color;
-	}
 
 	button {
 		&:hover {
@@ -88,4 +84,9 @@ a {
 	border-radius: 5px;
 	color: $font-color;
 	box-shadow: $body-shadow;
+}
+
+label, p {
+	font-size: 18px;
+	color: $font-color;
 }

@@ -7,11 +7,13 @@
 			@include phone {
 				font-size: 18px;
 			}
-			font-size: 22px;
+			font-size: 25px;
+			margin: 0px;
+			display: inline-block;
 		}
 		.postdate {
 			font-size: 12px;
-			line-height: auto;
+			line-height: 0px
 		}
 		@include phone {
 			padding: $padding-height-small;
@@ -28,5 +30,5 @@
 	margin-bottom: 5px;
 	margin-top: 5px;
 	border-radius: 5px;
-	line-height: 25px;
+	line-height: 5px;
 }
