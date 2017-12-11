@@ -34,7 +34,7 @@ router.get('/posts', (req, res) => {
 			res.status(404);
 			res.json({ status: "Failure", error: err });
 		} else {
-			res.json({ status: "Success", posts: posts });
+			res.json({ status: "Success", posts: posts.rows });
 		}
 		pool.end();
 	});
@@ -46,7 +46,7 @@ router.get('/posts/:id(\d+)', (req, res) => {
 			res.status(404);
 			res.json({ status: "Failure", error: err });
 		} else {
-			res.json({ status: "Success", posts: posts });
+			res.json({ status: "Success", posts: posts.rows });
 		}
 	});
 });
