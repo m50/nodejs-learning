@@ -38,7 +38,7 @@ router.get('/posts', (req, res) => {
 });
 
 router.get('/posts/:id(\d+)', (req, res) => {
-	client.connect();
+	await client.connect();
 	try {
 		var req = await client.query('SELECT id, time_written AS date, text AS post FROM posts WHERE id = $1', [ req.params.id ]);
 		res.json({ status: "Success", posts: res });
@@ -46,7 +46,7 @@ router.get('/posts/:id(\d+)', (req, res) => {
 		res.status(404);
 		res.json({ status: "Failure", error: err });		
 	}
-	client.end();
+	await client.end();
 });
 
 router.get('/wiki', (req, res) => {
