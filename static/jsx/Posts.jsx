@@ -15,7 +15,7 @@ class Posts extends React.Component {
 		}
 		$.getJSON('/blog/posts'+page, (data) => {
 			const posts = data.posts.map(post => (
-				<div key={post.id} id={'post_'+post.id} className='post'>
+				<div val={post.id} key={post.id} id={'post_'+post.id} className='post'>
 					<div className='postheader'>
 						<h3 className='posttitle'>{post.title}</h3>
 						<span className='postdate'>Post Date: {post.date.split('T').join(' ').split('.')[0]}</span>
@@ -31,7 +31,7 @@ class Posts extends React.Component {
 	componentDidUpdate() {
 		$('.postheader').on('click', () => {
 			console.log($(this).parent().attr('key'));
-			window.location.replace('/blog/'+$(this).parent().attr('id').split('_')[1])
+			window.location.replace('/blog/'+$(this).parent().val());
 		});
 	}
 
