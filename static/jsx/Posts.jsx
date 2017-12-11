@@ -22,7 +22,7 @@ class Posts extends React.Component {
 						<h3 className='posttitle'>{post.title}</h3>
 						<span className='postdate'>Post Date: {post.date.split('T').join(' ').split('.')[0]}</span>
 					</div>
-					<div className='postcontent' dangerouslySetInnerHTML={{post.post}}></div>
+					<div className='postcontent' dangerouslySetInnerHTML={{ __html: post.post }}></div>
 				</div>
 				));
 			this.setState({ posts: posts });
