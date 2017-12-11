@@ -9,13 +9,11 @@ class Posts extends React.Component {
 	}
 	componentDidMount() {
 		const id = this.props.id;
-		console.log(id);
 		var page = '';
 		if(id > 0) {
 			page = '/'+id;
 		}
 		$.getJSON('/blog/posts'+page, (data) => {
-			console.log(data);
 			const posts = data.posts.map(post => (
 				<div key={post.id} id={'post_'+post.id} className='post'>
 					<div className='postheader'>
