@@ -25,10 +25,10 @@ class Posts extends React.Component {
 			$.getJSON('/blog/posts', (data) => {
 				console.log(data);
 				const posts = data.posts.map(post => (
-					<div id={'post_'+post.id} className='post'>
+					<div key={post.id} id={'post_'+post.id} className='post'>
 						<div className='postheader'>
 							<h3 className='posttitle'>{post.title}</h3>
-							<p className='postdate'>Post Date: {post.date}</p>
+							<p className='postdate'>Post Date: {post.date.split('T').join(' ').split('.')[0]}</p>
 						</div>
 						<p className='postcontent'>{post.post}</p>
 					</div>
