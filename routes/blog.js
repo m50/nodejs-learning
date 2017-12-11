@@ -8,7 +8,7 @@ const client = new Client({
 	host: '127.0.0.1',
 	port: 5432,
 	database: 'blog',
-	password: 'mailu-passwd'
+	password: 'mail-passwd'
 });
 var router = express.Router();
 
