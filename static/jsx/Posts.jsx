@@ -25,6 +25,10 @@ class Posts extends React.Component {
 				));
 			this.setState({ posts: posts });
 		});
+		$('.postheader').on('click', () => {
+			console.log($(this).parent().attr('key'));
+			window.location.replace('/blog/'+$(this).parent().attr('key'))
+		});
 	}
 
 	render () {
