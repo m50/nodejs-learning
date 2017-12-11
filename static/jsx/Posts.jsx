@@ -25,12 +25,12 @@ class Posts extends React.Component {
 			$.getJSON('/blog/posts', (data) => {
 				console.log(data);
 				const posts = data.posts.map(post => (
-					<div id={'post_'+post.id} class='post'>
-						<div class='postheader'>
-							<h3 class='posttitle'>{post.title}</h3>
-							<p class='postdate'>Post Date: {post.date}</p>
+					<div id={'post_'+post.id} className='post'>
+						<div className='postheader'>
+							<h3 className='posttitle'>{post.title}</h3>
+							<p className='postdate'>Post Date: {post.date}</p>
 						</div>
-						<p class='postcontent'>{post.post}</p>
+						<p className='postcontent'>{post.post}</p>
 					</div>
 					));
 				this.setState({ posts: posts });
