@@ -6,29 +6,63 @@ const path = require('path');
 var upload = multer();
 var router = express.Router();
 
+apiNoURL = (res) => {
+	res.status(404);
+	res.json({ status: 'Failure', message: 'No URL provided' });
+};
 
 router.get('/', (req, res) => {
    res.render('urlshortener', { pageTitle: 'URL Shortener' });
 });
 
 router.get('/:key', (req, res) => {
-	component.getURI(req.params.key, res);
+	component.redirectURI(req.params.key, res);
 });
 
-// for parsing routerlication/json
+router.get('/api', (req, res) => {
+	let database = component.getDatabase();
+	res.json(database);
+});
+
+router.get('/api/:key', (req, res) => {
+	let uri = component.getURI(key);
+	if(uri) {
+		res.json({ url: uri });
+	} else {
+		res.status(404);
+		res.json({ status: 'Failure', message: 'Not Found' });
+	}
+});
+
 router.use(bodyParser.json()); 
-
-// for parsing routerlication/xwww-
 router.use(bodyParser.urlencoded({ extended: true })); 
-//form-urlencoded
-
-// for parsing multipart/form-data
 router.use(upload.array());
 
 router.post('/', (req, res) => {
-	component.createShortener(req.body.url, res, (uri) => {
+	component.createShortener(req.body.url, (key, uri) => {
 		res.render('shorturl', { pageTitle: 'URL Shortener', url: uri });
 	});
+});
+
+router.post('/api', (req, res) => {
+	if(!req.body.url) {
+		apiNoURL(res);
+	}
+	component.createShortener(req.body.url, (key, uri) => { res.json({ status: 'Success', message: 'New URL created', location: '/api/'+key, url: uri }); });
+});
+
+router.put('/api/:key', (req, res) => {
+	if(!req.body.url) {
+		apiNoURL(res);
+	}
+	component.editShortener(req.body.url, req.params.key, (key, uri) => { res.json({ status: 'Success', message: 'New URL created', location: '/api/'+key, url: uri }); }, () => { res.status(404); res.json({ status: 'Failure', message: 'Not Found' }); });
+});
+
+router.delete('/api/:key', (req, res) => {
+	if(!req.body.url) {
+		apiNoURL(res);
+	}
+	component.deleteShortener(req.params.key, () => { res.json({ status: 'Success', message: 'Shortened URL (key: '+req.params.key+') deleted.' }) }, () => { res.status(404); res.json({ status: 'Failure', message: 'Not Found' }); });
 });
 
 router.get('*', function(req, res){

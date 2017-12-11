@@ -23,9 +23,14 @@
 	line-height: 25px;
 	.section-header {
 		h2 {
-			// display: inline-block;
 			@include minimizebutton;
+			@include phone {
+				font-size: 18px;
+			}
 		}
+			@include phone {
+				padding: $padding-height-small;
+			}
 		background: $border-color;
 		padding: $padding-height;
 	}
@@ -33,8 +38,13 @@
 	.subsection {
 		.section-header {
 			h3 {
-				// display: inline-block;
 				@include minimizebutton;
+				@include phone {
+					font-size: 14px;
+				}
+			}
+			@include phone {
+				padding: $padding-height-small;
 			}
 			padding: $padding-height;
 			background: $border-color;

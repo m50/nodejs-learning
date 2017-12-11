@@ -9,14 +9,15 @@ $border:               2px solid $border-color;
 
 $padding-side:         25px;
 $padding-height:       10px;
-$padding-side-small:   15px;
+$padding-side-small:   10px;
 $padding-height-small: 7.5px;
 $body-side:            15%;
-$body-height:          10px;
+$body-height:          25px;
 
 $transition-speed:     1s;
 
 $tablet-width:         768px;
-$desktop-width:        1366px;
+$desktop-width:        1024px;
 
-$drop-shadow:          0px 2px 20px black;
+$nav-shadow:           0px 2px 20px black;
+$body-shadow:          0px 0px 20px 2px black;

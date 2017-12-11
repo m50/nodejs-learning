@@ -3,7 +3,6 @@ const redis = require('redis');
 client = redis.createClient();
 
 var component = {};
-var BreakException = {};
 
 function makeid() {
   var text = "";
@@ -15,7 +14,7 @@ function makeid() {
   return text;
 }
 
-component.createShortener = (uri, res, callback) => {
+component.createShortener = (uri, callback) => {
 	client.get('urishort:uri:'+uri, (err, reply) => {
 		var linkuri = 'https://clardy.eu/url/';
 		if(err || reply == null) {
@@ -23,18 +22,53 @@ component.createShortener = (uri, res, callback) => {
 			client.set("urishort:key:"+key, uri, 'EX', 604800);
 			client.set("urishort:uri:"+uri, key, 'EX', 604800);
 			linkuri += key;
-			callback(linkuri);
+			callback(key, linkuri);
 		} else {
 			linkuri += reply.toString();
-			callback(linkuri);
+			callback(reply, linkuri);
 		}
 	});
 };
 
-component.getURI = (key, res) => {
+component.editShortener = (newURI, key, success, failure) => {
+	client.get('urishort:key:'+key, (err, reply) => {
+		var linkuri = 'https://clardy.eu/url/'+newURI;
+		if(err || reply == null) {
+			failure();
+		} else {
+			client.del('urishort:key:'+key);
+			client.del('urishort:url:'+reply);
+			client.set("urishort:key:"+key, uri, 'EX', 604800);
+			client.set("urishort:url:"+newURI, key, 'EX', 604800);
+			success(key, linkuri);
+		}
+	});
+};
+
+component.deleteShortener = (key, success, failure) => {
+	client.get('urishort:key:'+key, (err, reply) => {
+		if(err || reply == null) {
+			failure();
+		} else {
+			client.del('urishort:key:'+key);
+			client.del('urishort:url:'+reply);
+			success();
+		}
+	});
+};
+
+component.redirectURI = (key, res) => {
 	client.get("urishort:key:"+key, (err, reply) => {
 		res.redirect(reply);
 	});
+};
+
+component.getDatabase = () => {
+
+};
+
+component.getURI = (key) => {
+
 };
 
 

@@ -1,0 +1,16 @@
+{
+	"folders":
+	[
+		{
+			"path": "."
+		}
+	],
+	"build_systems": 
+	[
+		{
+			"name": "commit",
+			"shell_cmd": "git add * && git commit -m 'build process' && git push",
+			"working_dir": "./"
+		}
+	]
+}

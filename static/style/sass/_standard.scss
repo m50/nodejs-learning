@@ -29,6 +29,9 @@ html, body {
 		vertical-align: center;
 		@include nonselect;
 	}
+	&.error {
+		box-shadow: $nav-shadow;
+	}
 	background: $background-color;
 	margin: 0px;
 	padding: 5px;
@@ -84,4 +87,5 @@ a {
 	padding: $padding-height $padding-side;
 	border-radius: 5px;
 	color: $font-color;
+	box-shadow: $body-shadow;
 }

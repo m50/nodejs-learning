@@ -2,12 +2,12 @@
 mixin section-header(name)
 	div.section-header
 		h2=name
-			a.minimize-button(href='javascript:void(0)') [ - ]
+			a.minimize-button(href='javascript:void(0)') [ + ]
 
 mixin subsection-header(name)
 	div.section-header
 		h3=name
-			a.minimize-button(href='javascript:void(0)') [ - ]
+			a.minimize-button(href='javascript:void(0)') [ + ]
 
 //- Actual HTML file
 doctype html
@@ -46,7 +46,7 @@ html
 				+section-header('Education')
 				div.section-body
 					div.subsection#college1
-						+subsection-header('NYU Tandon School Of Engineering')
+						+subsection-header('NYU School Of Engineering')
 						ul.section-body
 							li
 								span#college1-loc
@@ -283,7 +283,7 @@ html
 									span.value Received Customer Satisfaction award.
 						
 					div.subsection#frc
-						+subsection-header('FRC High School First Robotics Team 2468')
+						+subsection-header('FRC High School Team 2468')
 						ul.section-body
 							li
 								span#frc-pos
