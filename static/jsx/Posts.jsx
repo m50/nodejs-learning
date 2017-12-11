@@ -31,7 +31,7 @@ class Posts extends React.Component {
 	componentDidUpdate() {
 		$('.postheader').on('click', () => {
 			console.log($(this).parent().attr('key'));
-			window.location.replace('/blog/'+$(this).parent().id().split('_')[1])
+			window.location.replace('/blog/'+$(this).parent().attr('id').split('_')[1])
 		});
 	}
 
