@@ -1,0 +1,65 @@
+.section {
+  line-height: 25px;
+  background: #404552;
+  border: 2px solid #2f343f;
+  color: #afb9bf;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  border-radius: 5px; }
+  .section .section-header {
+    background: #2f343f;
+    padding: 10px; }
+    .section .section-header h2 a.minimize-button {
+      float: right;
+      text-decoration: none;
+      color: inherit; }
+      .section .section-header h2 a.minimize-button:hover {
+        color: #5a29e7; }
+    @media (max-width: 767px) {
+      .section .section-header h2 {
+        font-size: 18px; } }
+    @media (max-width: 767px) {
+      .section .section-header {
+        padding: 7.5px; } }
+  .section .section-body {
+    padding: 10px;
+    list-style: none;
+    display: none; }
+  .section .subsection {
+    border: 2px solid #2f343f;
+    border-radius: 5px;
+    background: #383c4a;
+    margin-bottom: 10px; }
+    .section .subsection .section-header {
+      padding: 10px;
+      background: #2f343f;
+      color: #afb9bf; }
+      .section .subsection .section-header h3 a.minimize-button {
+        float: right;
+        text-decoration: none;
+        color: inherit; }
+        .section .subsection .section-header h3 a.minimize-button:hover {
+          color: #5a29e7; }
+      @media (max-width: 767px) {
+        .section .subsection .section-header h3 {
+          font-size: 14px; } }
+      @media (max-width: 767px) {
+        .section .subsection .section-header {
+          padding: 7.5px; } }
+    .section .subsection .section-body {
+      padding: 10px;
+      list-style: none;
+      display: none; }
+
+.label {
+  font-weight: bold;
+  padding-right: 25px; }
+
+.value {
+  padding-left: 50px; }
+  @media (max-width: 767px) {
+    .value {
+      padding-left: 25px; } }
+
+ul.sublist {
+  list-style: circle; }
