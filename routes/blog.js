@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
    	});
 });
 
-router.get('/:id(\d+)', (req, res) => {
+router.get('/:id([0-9]+)', (req, res) => {
 	res.render('blog', {
 		pageTitle: 'Blog',
 		post: req.params.id
@@ -28,7 +28,7 @@ router.get('/:id(\d+)', (req, res) => {
 });
 
 router.get('/posts', (req, res) => {
-	pool.query('SELECT id, time_written::timestamp AS date, text AS post, title FROM posts', (err, posts) => {
+	pool.query('SELECT id, time_written::timestamp AS date, text AS post, title FROM posts ORDER BY id DESC LIMIT 20', (err, posts) => {
 		if(err) {
 			res.status(404);
 			res.json({ status: "Failure", error: err });
@@ -38,7 +38,7 @@ router.get('/posts', (req, res) => {
 	});
 });
 
-router.get('/posts/:id(\d+)', (req, res) => {
+router.get('/posts/:id([0-9]+)', (req, res) => {
 	console.log(req.params.id);
 	pool.query('SELECT id, time_written::timestamp AS date, text AS post, title FROM posts WHERE id = $1', [ req.params.id ], (err, posts) => {
 		if(err) {
