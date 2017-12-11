@@ -10,20 +10,22 @@ class Posts extends React.Component {
 	componentDidMount() {
 		const id = this.props.id;
 		if(id > 0) {
-			$.ajax({ uri: '/blog/posts/'+id }).done((data) => {
+			$.getJSON('/blog/posts'+id, (data) => {
 				console.log(data);
-				const posts = data.posts.map(post => (
+				console.log(this);
+				const posts = data.posts; /*.map(post => (
 					<div id={'post_'+post.id}>
 						<h3>{post.title}</h3>
 						<p>Post Date: {post.date}</p>
 						<p>{post.post}</p>
 					</div>
-					));
+					));*/
 				this.setState({ posts: posts });
 			});
 		} else {
-			$.ajax({ uri: '/blog/posts' }).done((data) => {
+			$.getJSON('/blog/posts', (data) => {
 				console.log(data);
+				console.log(this);
 				const posts = data.posts; /*.map(post => (
 					<div id={'post_'+post.id}>
 						<h3>{post.title}</h3>
