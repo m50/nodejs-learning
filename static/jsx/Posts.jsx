@@ -30,7 +30,7 @@ class Posts extends React.Component {
 
 	componentDidUpdate() {
 		$('.postheader').on('click', () => {
-			console.log($(this).parent().html());
+			console.log($(this).html());
 			// window.location.replace('/blog/'+$(this).parent().val());
 		});
 	}
