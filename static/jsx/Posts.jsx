@@ -12,14 +12,13 @@ class Posts extends React.Component {
 		if(id > 0) {
 			$.getJSON('/blog/posts'+id, (data) => {
 				console.log(data);
-				console.log(this);
-				const posts = data.posts; /*.map(post => (
+				const posts = data.postsmap(post => (
 					<div id={'post_'+post.id}>
 						<h3>{post.title}</h3>
 						<p>Post Date: {post.date}</p>
 						<p>{post.post}</p>
 					</div>
-					));*/
+					));
 				this.setState({ posts: posts });
 			});
 		} else {
