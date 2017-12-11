@@ -5,20 +5,20 @@ var app = express();
 app.set('view engine', 'pug');
 app.set('views','./views');
 
-const rootjs = require('./routes/root.js');
-const testjs = require('./routes/test.js');
-const cvjs = require('./routes/cv.js');
-const formjs = require('./routes/form.js');
-const reactjs = require('./routes/react.js');
-const urlshortenerjs = require('./routes/urlshortener.js');
+const home = require('./routes/home.js');
+const test = require('./routes/test.js');
+const cv = require('./routes/cv.js');
+const form = require('./routes/form.js');
+const react = require('./routes/react.js');
+const urlshortener = require('./routes/urlshortener.js');
 const longpage = require('./routes/longpage-test.js');
 
-app.use('/', rootjs);
-app.use('/test', testjs);
-app.use('/markus', cvjs);
-app.use('/form', formjs);
-app.use('/react', reactjs);
-app.use('/url', urlshortenerjs);
+app.use('/', home);
+app.use('/test', test);
+app.use('/markus', cv);
+app.use('/form', form);
+app.use('/react', react);
+app.use('/url', urlshortener);
 app.use('/lorem', longpage);
 
 app.get('*', function(req, res){
