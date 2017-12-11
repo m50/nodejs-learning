@@ -28,9 +28,9 @@
 				font-size: 18px;
 			}
 		}
-			@include phone {
-				padding: $padding-height-small;
-			}
+		@include phone {
+			padding: $padding-height-small;
+		}
 		background: $border-color;
 		padding: $padding-height;
 	}
