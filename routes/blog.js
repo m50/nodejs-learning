@@ -5,8 +5,22 @@ const path = require('path');
 var router = express.Router();
 
 router.get('/', function(req, res){
-	res.render('react', {
-		pageTitle: 'Learning React'
+	if(req.query.getPosts) {
+		return;
+	}
+	res.render('blog', {
+		pageTitle: 'Blog',
+		post: '-1'
+   	});
+});
+
+router.get('/:post', function(req, res){
+	if(req.query.getPost) {
+		return;
+	}
+	res.render('blog', {
+		pageTitle: 'Blog',
+		post: req.params.post
    	});
 });
 

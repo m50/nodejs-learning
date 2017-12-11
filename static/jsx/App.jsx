@@ -7,7 +7,7 @@ import Wiki from './Wiki.jsx';
 class App extends React.Component {
 	constructor (props) {
 		super(props);
-		this.state = {page: 'main'};
+		this.state = {page: 'posts'};
 
 		this.onNavbar = this.onNavbar.bind(this);
 	}
@@ -19,25 +19,16 @@ class App extends React.Component {
 	render() {
 		var content = <div></div>;
 
-		if(this.state.page=='main') {
-			content = (
-				<div>
-					<h2>Main</h2>
-					<p>The content text!!!</p>
-				</div>
-				);
-		} else if(this.state.page=='page2') {
-			content = (
-				<div>
-					<h2>Second Page</h2>
-					<p>Other content text!!!</p>
-				</div>
-				);
+		if(this.state.page=='posts') {
+			const postNumber = $('#post-id').val();
+			content = <Posts postNumber={postNumber} />;
+		} else if(this.state.page=='wiki') {
+			content = <Wiki />;
 		}
 		var body = (<div id='body'>
 						<Navbar page={this.state.page}>
-							<Navitem curPage={this.state.page} onclick={this.onNavbar} page='main' pageTitle='Posts' />
-							<Navitem curPage={this.state.page} onclick={this.onNavbar} page='page2' pageTitle='Wiki' />
+							<Navitem curPage={this.state.page} onclick={this.onNavbar} page='posts' pageTitle='Posts' />
+							<Navitem curPage={this.state.page} onclick={this.onNavbar} page='wiki' pageTitle='Wiki' />
 						</Navbar>
 						{content}
 					</div>);
