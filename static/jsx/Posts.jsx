@@ -30,10 +30,12 @@ class Posts extends React.Component {
 	render () {
 		var lastSection = <div className='blogNav'></div>;
 		if(this.props.id > 0) {
+			const nextPage = this.props.id+1;
+			const prevPage = this.props.id-1;
 			lastSection = (
 				<div className='blogNav'>
-					<a href={"/blog/"+(this.props.id - 1)}>&lt;</a>
-					<a className='fr' href={"/blog/"+(this.props.id + 1)}>&gt;</a>
+					<a href={"/blog/"+prevPage}>&lt;</a>
+					<a className='fr' href={"/blog/"+nextPage}>&gt;</a>
 				</div>
 				);
 		}
