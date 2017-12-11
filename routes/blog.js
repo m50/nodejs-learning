@@ -28,7 +28,6 @@ router.get('/:id(\d+)', (req, res) => {
 });
 
 router.get('/posts', (req, res) => {
-	pool.connect();
 	pool.query('SELECT id, time_written::timestamp AS date, text AS post, title FROM posts', (err, posts) => {
 		if(err) {
 			res.status(404);
@@ -36,7 +35,6 @@ router.get('/posts', (req, res) => {
 		} else {
 			res.json({ status: "Success", posts: posts.rows });
 		}
-		pool.end();
 	});
 });
 
