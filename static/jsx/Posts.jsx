@@ -30,10 +30,20 @@ class Posts extends React.Component {
 	}
 
 	render () {
+		var lastSection = <div className='blogNav'></div>;
+		if(this.props.id > 0) {
+			lastSection = (
+				<div className='blogNav'>
+					<a href={"/blog/"+(this.props.id - 1)}>&lt;</a>
+					<a className='fr' href={"/blog/"+(this.props.id + 1)}>&gt;</a>
+				</div>
+				);
+		}
 		return (
 			<div id='Blog'>
 				<h2>Blog</h2>
 				{this.state.posts}
+				{lastSection}
 			</div>
 			);
 	}
