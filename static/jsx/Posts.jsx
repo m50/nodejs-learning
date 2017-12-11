@@ -19,7 +19,6 @@ class Posts extends React.Component {
 							<span className='postdate'>Post Date: {post.date.split('T').join(' ').split('.')[0]}</span>
 						</div>
 						<div className='postcontent'>{post.post}</div>
-						<div>I am testing insert <b>HTML</b>. Go to <a href='https://google.ie'>Google</a>.</div>
 					</div>
 					));
 				this.setState({ posts: posts });
@@ -34,6 +33,7 @@ class Posts extends React.Component {
 							<span className='postdate'>Post Date: {post.date.split('T').join(' ').split('.')[0]}</span>
 						</div>
 						<div className='postcontent'>{post.post}</div>
+						<div>I am testing insert <b>HTML</b>. Go to <a href='https://google.ie'>Google</a>.</div>
 					</div>
 					));
 				this.setState({ posts: posts });
