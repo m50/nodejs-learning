@@ -25,6 +25,7 @@
 		background: $border-color;
 		padding: $padding-height;
 		cursor: pointer;
+		@include nonselect;
 	}
 	.postcontent {
 		padding: 10px;
