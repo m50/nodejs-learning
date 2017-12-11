@@ -16,9 +16,9 @@ class Posts extends React.Component {
 					<div key={post.id} id={'post_'+post.id} className='post'>
 						<div className='postheader'>
 							<h3 className='posttitle'>{post.title}</h3>
-							<p className='postdate fr'>Post Date: {post.date.split('T').join(' ').split('.')[0]}</p>
+							<span className='postdate'>Post Date: {post.date.split('T').join(' ').split('.')[0]}</span>
 						</div>
-						<p className='postcontent'>{post.post}</p>
+						<div className='postcontent'>{post.post}</div>
 					</div>
 					));
 				this.setState({ posts: posts });
@@ -30,9 +30,9 @@ class Posts extends React.Component {
 					<div key={post.id} id={'post_'+post.id} className='post'>
 						<div className='postheader'>
 							<h3 className='posttitle'>{post.title}</h3>
-							<p className='postdate fr'>Post Date: {post.date.split('T').join(' ').split('.')[0]}</p>
+							<span className='postdate'>Post Date: {post.date.split('T').join(' ').split('.')[0]}</span>
 						</div>
-						<p className='postcontent'>{post.post}</p>
+						<div className='postcontent'>{post.post}</div>
 					</div>
 					));
 				this.setState({ posts: posts });
