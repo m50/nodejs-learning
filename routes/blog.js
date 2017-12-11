@@ -28,28 +28,25 @@ router.get('/:id(\d+)', (req, res) => {
 
 router.get('/posts', (req, res) => {
 	client.connect();
-	client.query('SELECT id, time_written AS date, text AS post FROM posts', (err, res) => {
-		if(err) {
-			res.status(404);
-			res.json({ status: "Failure", error: err });
-		} else {
-			res.json({ status: "Success", posts: res });
-		}
-		client.end();
-	});
+	try {
+		var req = await client.query('SELECT id, time_written AS date, text AS post FROM posts');
+		res.json({ status: "Success", posts: res });
+	} catch (err) {
+		res.status(404);
+		res.json({ status: "Failure", error: err });		
+	}
 });
 
 router.get('/posts/:id(\d+)', (req, res) => {
 	client.connect();
-	client.query('SELECT id, time_written AS date, text AS post FROM posts WHERE id = $1', [ req.params.id ], (err, res) => {
-		if(err) {
-			res.status(404);
-			res.json({ status: "Failure", error: err });
-		} else {
-			res.json({ status: "Success", posts: res });
-		}
-		client.end();
-	});
+	try {
+		var req = await client.query('SELECT id, time_written AS date, text AS post FROM posts WHERE id = $1', [ req.params.id ]);
+		res.json({ status: "Success", posts: res });
+	} catch (err) {
+		res.status(404);
+		res.json({ status: "Failure", error: err });		
+	}
+	client.end();
 });
 
 router.get('/wiki', (req, res) => {
