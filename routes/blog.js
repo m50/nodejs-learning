@@ -14,13 +14,13 @@ router.get('/', (req, res) => {
    	});
 });
 
-router.get('/:post(\d+)', (req, res) => {
+router.get('/:id(\d+)', (req, res) => {
 	if(req.query.getPost) {
 		return;
 	}
 	res.render('blog', {
 		pageTitle: 'Blog',
-		post: req.params.post
+		post: req.params.id
    	});
 });
 
