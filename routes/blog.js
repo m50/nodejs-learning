@@ -39,6 +39,7 @@ router.get('/posts', (req, res) => {
 });
 
 router.get('/posts/:id(\d+)', (req, res) => {
+	console.log(req.params.id);
 	pool.query('SELECT id, time_written::timestamp AS date, text AS post, title FROM posts WHERE id = $1', [ req.params.id ], (err, posts) => {
 		if(err) {
 			res.status(404);
