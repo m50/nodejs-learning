@@ -9,7 +9,7 @@ const home = require('./routes/home.js');
 const test = require('./routes/test.js');
 const cv = require('./routes/cv.js');
 const form = require('./routes/form.js');
-const react = require('./routes/react.js');
+const blog = require('./routes/blog.js');
 const urlshortener = require('./routes/urlshortener.js');
 const longpage = require('./routes/longpage-test.js');
 
@@ -17,7 +17,7 @@ app.use('/', home);
 app.use('/test', test);
 app.use('/markus', cv);
 app.use('/form', form);
-app.use('/react', react);
+app.use('/blog', blog);
 app.use('/url', urlshortener);
 app.use('/lorem', longpage);
 

@@ -1,6 +1,8 @@
 import React from 'react';
 import Navbar from './Navbar.jsx';
 import Navitem from './Navitem.jsx';
+import Posts from './Posts.jsx';
+import Wiki from './Wiki.jsx';
 
 class App extends React.Component {
 	constructor (props) {
@@ -34,8 +36,8 @@ class App extends React.Component {
 		}
 		var body = (<div id='body'>
 						<Navbar page={this.state.page}>
-							<Navitem curPage={this.state.page} onclick={this.onNavbar} page='main' pageTitle='Test Page 1' />
-							<Navitem curPage={this.state.page} onclick={this.onNavbar} page='page2' pageTitle='Test Page 2' />
+							<Navitem curPage={this.state.page} onclick={this.onNavbar} page='main' pageTitle='Posts' />
+							<Navitem curPage={this.state.page} onclick={this.onNavbar} page='page2' pageTitle='Wiki' />
 						</Navbar>
 						{content}
 					</div>);
