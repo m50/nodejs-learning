@@ -17,11 +17,9 @@ class App extends React.Component {
 	}
 
 	render() {
-		var content = <div></div>;
-
 		if(this.state.page=='posts') {
 			const postNumber = $('#post-id').val();
-			content = <Posts postNumber={postNumber} />;
+			content = <Posts id={postNumber} />;
 		} else if(this.state.page=='wiki') {
 			content = <Wiki />;
 		}

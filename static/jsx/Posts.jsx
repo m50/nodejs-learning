@@ -10,35 +10,23 @@ class Posts extends React.Component {
 	componentDidMount() {
 		const id = this.props.id;
 		console.log(id);
+		var page = '';
 		if(id > 0) {
-			$.getJSON('/blog/posts/'+id, (data) => {
-				console.log(data);
-				const posts = data.posts.map(post => (
-					<div key={post.id} id={'post_'+post.id} className='post'>
-						<div className='postheader'>
-							<h3 className='posttitle'>{post.title}</h3>
-							<span className='postdate'>Post Date: {post.date.split('T').join(' ').split('.')[0]}</span>
-						</div>
-					</div>
-					));
-				this.setState({ posts: posts });
-			});
-		} else {
-			$.getJSON('/blog/posts', (data) => {
-				console.log(data);
-				const posts = data.posts.map(post => (
-					<div key={post.id} id={'post_'+post.id} className='post'>
-						<div className='postheader'>
-							<h3 className='posttitle'>{post.title}</h3>
-							<span className='postdate'>Post Date: {post.date.split('T').join(' ').split('.')[0]}</span>
-						</div>
-						<div className='postcontent'>{post.post}</div>
-						{console.log(post.post)}
-					</div>
-					));
-				this.setState({ posts: posts });
-			});
+			page = '/'+id;
 		}
+		$.getJSON('/blog/posts', (data) => {
+			console.log(data);
+			const posts = data.posts.map(post => (
+				<div key={post.id} id={'post_'+post.id} className='post'>
+					<div className='postheader'>
+						<h3 className='posttitle'>{post.title}</h3>
+						<span className='postdate'>Post Date: {post.date.split('T').join(' ').split('.')[0]}</span>
+					</div>
+					<div className='postcontent' dangerouslySetInnerHTML={{post.post}}></div>
+				</div>
+				));
+			this.setState({ posts: posts });
+		});
 	}
 
 	render () {
