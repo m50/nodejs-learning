@@ -6,6 +6,7 @@
 		.posttitle {
 			@include phone {
 				font-size: 18px;
+				display: block;
 			}
 			font-size: 25px;
 			margin: 0px;
@@ -14,6 +15,9 @@
 		.postdate {
 			font-size: 12px;
 			line-height: 0px
+			@include phone {
+				font-size: 8px;
+			}
 		}
 		@include phone {
 			padding: $padding-height-small;
