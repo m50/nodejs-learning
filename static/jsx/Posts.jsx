@@ -9,7 +9,8 @@ class Posts extends React.Component {
 	}
 
 	headerClick (id) {
-		const page = '/blog/'+id;
+		var page = '/blog/'+id;
+		if(id == -1) page = '/blog';
 		window.location.replace(page);
 	}
 
@@ -48,7 +49,7 @@ class Posts extends React.Component {
 		}
 		return (
 			<div id='Blog'>
-				<h2>Blog</h2>
+				<h2 onClick={ () => { this.headerClick(-1); } }>Blog</h2>
 				{this.state.posts}
 				{lastSection}
 			</div>
