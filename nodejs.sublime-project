@@ -11,6 +11,10 @@
 			"name": "commit",
 			"shell_cmd": "git add * && git commit -m 'build process' && git push",
 			"working_dir": "./"
+		},{
+			"name": "get",
+			"shell_cmd": "git pull",
+			"working_dir": "./"
 		}
 	]
 }
