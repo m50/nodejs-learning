@@ -27,27 +27,29 @@ router.get('/:id(\d+)', (req, res) => {
 });
 
 router.get('/posts', (req, res) => {
-	await pool.connect();
-	try {
-		var posts = await pool.query('SELECT id, time_written AS date, text AS post FROM posts');
-		res.json({ status: "Success", posts: posts });
-	} catch (err) {
-		res.status(404);
-		res.json({ status: "Failure", error: err });		
-	}
-	await pool.end();
+	pool.connect();
+	pool.query('SELECT id, time_written AS date, text AS post FROM posts', (err, posts) => {
+		if(err) {
+			res.status(404);
+			res.json({ status: "Failure", error: err });
+		} else {
+			res.json({ status: "Success", posts: posts });
+		}
+		pool.end();
+	});
 });
 
 router.get('/posts/:id(\d+)', (req, res) => {
 	pool.connect();
-	try {
-		var posts = await pool.query('SELECT id, time_written AS date, text AS post FROM posts WHERE id = $1', [ req.params.id ]);
-		res.json({ status: "Success", posts: posts });
-	} catch (err) {
-		res.status(404);
-		res.json({ status: "Failure", error: err });		
-	}
-	await pool.end();
+	pool.query('SELECT id, time_written AS date, text AS post FROM posts WHERE id = $1', [ req.params.id ], (err, posts) => {
+		if(err) {
+			res.status(404);
+			res.json({ status: "Failure", error: err });
+		} else {
+			res.json({ status: "Success", posts: posts });
+		}
+		pool.end();
+	});
 });
 
 router.get('/wiki', (req, res) => {
