@@ -8,8 +8,8 @@ class Posts extends React.Component {
 		};
 	}
 
-	headerClick (e) {
-		const page = '/blog/'+e.target.value;
+	headerClick (id) {
+		const page = '/blog/'+id;
 		window.location.replace(page);
 	}
 
@@ -22,7 +22,7 @@ class Posts extends React.Component {
 		$.getJSON('/blog/posts'+page, (data) => {
 			const posts = data.posts.map(post => (
 				<div key={post.id} id={'post_'+post.id} className='post'>
-					<div className='postheader' onClick={this.headerClick} val={post.id}>
+					<div className='postheader' onClick={this.headerClick(post.id)} val={post.id}>
 						<h3 className='posttitle'>{post.title}</h3>
 						<span className='postdate'>Post Date: {post.date.split('T').join(' ').split('.')[0]}</span>
 					</div>
