@@ -39,7 +39,7 @@
 		cursor: pointer;
 		@include nonselect;
 		&:hover {
-			background: $button-color;
+			// background: $button-color;
 			color: white;
 		}
 	}
@@ -54,7 +54,7 @@
 	border-radius: 5px;
 	line-height: 25px;
 	transition: 0.5s;
-	box-shadow: $floating-mid-shadow;
+	box-shadow: $floating-low-shadow;
 	&:hover {
 		box-shadow: $floating-high-shadow;
 	}
