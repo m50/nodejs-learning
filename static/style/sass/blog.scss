@@ -51,15 +51,15 @@
 	border: 2px solid $border-color;
 	color: $font-color;
 	margin-bottom: 10px;
-	margin-top: 5px;
+	margin-top: 10px;
 	border-radius: 5px;
 	line-height: 25px;
 	transition: 0.5s;
 	box-shadow: $floating-low-shadow;
 	&:hover {
 		box-shadow: $floating-high-shadow;
-		margin-top: 2px;
-		margin-bottom: 2px;
+		margin-top: 5px;
+		margin-bottom: 5px;
 		margin-left: -5px;
 		margin-right: -5px;
 		.postcontent {
