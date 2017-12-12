@@ -21,9 +21,6 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id([0-9]+)', (req, res) => {
-	if(req.params.id < 1) {
-		res.redirect(302, "/blog");	
-	}
 	res.render('blog', {
 		pageTitle: 'Blog',
 		post: req.params.id
