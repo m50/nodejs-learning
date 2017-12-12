@@ -53,6 +53,7 @@
 	margin-top: 5px;
 	border-radius: 5px;
 	line-height: 25px;
+	transition: 1s;
 	&:hover {
 		box-shadow: $body-shadow;
 	}
