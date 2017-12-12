@@ -57,6 +57,9 @@
 	box-shadow: $floating-low-shadow;
 	&:hover {
 		box-shadow: $floating-high-shadow;
-		margin-top: 2px -2px;
+		margin-top: 2px;
+		margin-bottom: 2px;
+		margin-left: -5px;
+		margin-right: -5px;
 	}
 }
