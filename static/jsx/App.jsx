@@ -20,7 +20,6 @@ class App extends React.Component {
 		var content = <div />;
 		if(this.state.page=='posts') {
 			const postNumber = $('#post-id').val();
-			if(postNumber == 0) window.location.replace('/blog');
 			content = <Posts id={postNumber} />;
 		} else if(this.state.page=='wiki') {
 			content = <Wiki />;
