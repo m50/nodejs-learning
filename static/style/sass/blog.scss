@@ -6,6 +6,13 @@
 		cursor: pointer;
 		@include nonselect;
 	}
+	margin-top: $padding-height;
+	margin-bottom: $padding-height;
+
+	@include phone {
+		margin-top: $padding-height-small;
+		margin-bottom: $padding-height-small;
+	}
 }
 
 .post {

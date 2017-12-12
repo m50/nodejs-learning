@@ -47,7 +47,6 @@ class Posts extends React.Component {
 				</div>
 				);
 		}
-				// <h2 onClick={ () => { this.headerClick(-1); } }>Blog</h2>
 		return (
 			<div id='Blog'>
 				{this.state.posts}
