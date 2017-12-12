@@ -49,12 +49,13 @@
 	background: $section-color;
 	border: 2px solid $border-color;
 	color: $font-color;
-	margin-bottom: 5px;
+	margin-bottom: 10px;
 	margin-top: 5px;
 	border-radius: 5px;
 	line-height: 25px;
 	transition: 1s;
+	box-shadow: $floating-low-shadow;
 	&:hover {
-		box-shadow: $body-shadow;
+		box-shadow: $floating-mid-shadow;
 	}
 }
