@@ -6,7 +6,7 @@
 		cursor: pointer;
 		@include nonselect;
 	}
-	margin-top: $padding-height * 2;
+	margin-top: $padding-height;
 
 	@include phone {
 		margin-top: $padding-height-small;

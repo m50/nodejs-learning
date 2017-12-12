@@ -49,6 +49,7 @@ class Posts extends React.Component {
 		}
 		return (
 			<div id='Blog'>
+				<br />
 				{this.state.posts}
 				{lastSection}
 			</div>
