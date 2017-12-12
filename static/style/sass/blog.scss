@@ -53,9 +53,9 @@
 	margin-top: 5px;
 	border-radius: 5px;
 	line-height: 25px;
-	transition: 1s;
-	box-shadow: $floating-low-shadow;
+	transition: 0.5s;
+	box-shadow: $floating-mid-shadow;
 	&:hover {
-		box-shadow: $floating-mid-shadow;
+		box-shadow: $floating-high-shadow;
 	}
 }
