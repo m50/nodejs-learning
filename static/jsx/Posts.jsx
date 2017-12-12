@@ -25,7 +25,7 @@ class Posts extends React.Component {
 				<div key={post.id} id={'post_'+post.id} className='post'>
 					<div className='postheader' onClick={ () => { this.headerClick(post.id); } } val={post.id}>
 						<h3 className='posttitle'>{post.title}</h3>
-						<span className='postdate'>Post Date: {post.date.split('T').join(' ').split('.')[0]}</span>
+						<span className='postdate'>Post Date: {post.date.split('T').reverse().join(' ').split('.')[0]}</span>
 					</div>
 					<div className='postcontent' dangerouslySetInnerHTML={{ __html: post.post }}></div>
 				</div>
