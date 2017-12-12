@@ -38,7 +38,7 @@
 		padding: $padding-height;
 		cursor: pointer;
 		@include nonselect;
-		transition-duration: 2s;
+		transition-duration: 1s;
 		&:hover {
 			background: $button-color;
 		}
