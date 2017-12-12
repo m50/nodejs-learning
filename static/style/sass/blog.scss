@@ -38,6 +38,9 @@
 		padding: $padding-height;
 		cursor: pointer;
 		@include nonselect;
+		&:hover {
+			background: $button-color;
+		}
 	}
 	.postcontent {
 		padding: 10px;
