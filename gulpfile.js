@@ -8,6 +8,7 @@ const source       = require('vinyl-source-stream');
 const buffer       = require('vinyl-buffer');
 const sourcemaps   = require('gulp-sourcemaps');
 const coffeescript = require('gulp-coffeescript')
+const cleanCSS     = require('gulp-clean-css')
 
 const conf = {
 	srcSass: 'static/style/sass',
@@ -25,6 +26,7 @@ const conf = {
 gulp.task('compile-sass', () => {
 	return gulp.src(conf.srcSass + '/**/*.scss')
 		.pipe(sass.sync().on('error', sass.logError))
+		.pipe(cleanCSS({compatibility: 'ie8'}))
 		.pipe(gulp.dest(conf.destSass));
 });
 

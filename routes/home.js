@@ -16,6 +16,7 @@ router.get('/', function(req, res){
 	component.page_views(req);
 	const title = component.get_req(req);
 	const unlocked = req.session.page_views >= 5;
+	res.set('Cache-Control', 'max-age=120');
 	res.render('home', {
 		pageTitle: title,
 		url: "http://l.clardy.eu/url",
