@@ -58,13 +58,6 @@
 	box-shadow: $floating-low-shadow;
 	&:hover {
 		box-shadow: $floating-high-shadow;
-		margin-top: 5px;
-		margin-bottom: 5px;
-		margin-left: -5px;
-		margin-right: -5px;
-		.postcontent {
-			padding-left: 20px;
-			padding-right: 20px;
-		}
+		@include transform(scale(1.03));
 	}
 }
