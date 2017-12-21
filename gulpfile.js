@@ -44,6 +44,7 @@ gulp.task('compile-jsx', () => {
 		.pipe(buffer())
 		.pipe(sourcemaps.init({ loadMaps: true }))
 		.pipe(sourcemaps.write('./'))
+		.pipe(buffer())
 		.pipe(minifyjs())
 		.pipe(gulp.dest(conf.destJsx));
 });
