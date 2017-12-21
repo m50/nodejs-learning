@@ -1,6 +1,7 @@
 doctype html
 html
 	head
+		link(rel="stylesheet" type="text/css" href="/static/style/blog.css" media='none' onload="if(media!='all')media='all'")
 		include ./includes/head.pug
 	body
 		include ./includes/header.pug
@@ -9,4 +10,3 @@ html
 		div#root
 		script(type='text/javascript' async src="/static/js/react/index.js")
 		include ./includes/footer.pug
-		link(rel="stylesheet" type="text/css" href="/static/style/blog.css")
