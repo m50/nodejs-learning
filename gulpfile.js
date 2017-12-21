@@ -7,8 +7,9 @@ const browserify   = require('browserify');
 const source       = require('vinyl-source-stream');
 const buffer       = require('vinyl-buffer');
 const sourcemaps   = require('gulp-sourcemaps');
-const coffeescript = require('gulp-coffeescript')
-const cleanCSS     = require('gulp-clean-css')
+const coffeescript = require('gulp-coffeescript');
+const cleanCSS     = require('gulp-clean-css');
+const minifyjs     = require('gulp-js-minify');
 
 const conf = {
 	srcSass: 'static/style/sass',
@@ -19,6 +20,9 @@ const conf = {
 
 	srcCoffee: 'static/coffee',
 	destCoffee: 'static/js/coffee',
+
+	srcJS: 'static/js',
+	destJS: 'static/js',
 
 	appName: 'index.js'
 };
@@ -49,4 +53,10 @@ gulp.task('compile-coffeescript', () => {
 		.pipe(gulp.dest(conf.destCoffee));
 });
 
-gulp.task('default', ['compile-sass', 'compile-jsx', 'compile-coffeescript']);
+gulp.task('minify-js', () => {
+	return gulp.src(conf.srcJS + '/**/*.js')
+		.pipe(minifyjs())
+		.pipe(gulp.dest(const.destJS));
+});
+
+gulp.task('default', ['compile-sass', 'compile-jsx', 'compile-coffeescript'], ['minify-js']);
