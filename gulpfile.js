@@ -9,7 +9,7 @@ const buffer       = require('vinyl-buffer');
 const sourcemaps   = require('gulp-sourcemaps');
 const coffeescript = require('gulp-coffeescript');
 const cleanCSS     = require('gulp-clean-css');
-const minifyjs     = require('gulp-js-minify');
+const uglify       = require('gulp-uglify');
 
 const conf = {
 	srcSass: 'static/style/sass',
@@ -45,14 +45,14 @@ gulp.task('compile-jsx', () => {
 		.pipe(sourcemaps.init({ loadMaps: true }))
 		.pipe(sourcemaps.write('./'))
 		.pipe(buffer())
-		.pipe(minifyjs())
+		.pipe(uglify())
 		.pipe(gulp.dest(conf.destJsx));
 });
 
 gulp.task('compile-coffeescript', () => {
 	return gulp.src(conf.srcCoffee + '/*.coffee')
 		.pipe(coffeescript({bare: true}).on('error', (err) => { console.log(err); }))
-		.pipe(minifyjs())
+		.pipe(uglify())
 		.pipe(gulp.dest(conf.destCoffee));
 });
 
