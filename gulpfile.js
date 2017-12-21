@@ -44,24 +44,15 @@ gulp.task('compile-jsx', () => {
 		.pipe(buffer())
 		.pipe(sourcemaps.init({ loadMaps: true }))
 		.pipe(sourcemaps.write('./'))
+		.pipe(minifyjs())
 		.pipe(gulp.dest(conf.destJsx));
 });
 
 gulp.task('compile-coffeescript', () => {
 	return gulp.src(conf.srcCoffee + '/*.coffee')
 		.pipe(coffeescript({bare: true}).on('error', (err) => { console.log(err); }))
+		.pipe(minifyjs())
 		.pipe(gulp.dest(conf.destCoffee));
 });
 
-gulp.task('minify-js', () => {
-	return gulp.src(conf.srcJS + '/**/*.js')
-		.pipe(minifyjs())
-		.pipe(gulp.dest(conf.destJS));
-});
-
-gulp.task('do-js', () => {
-	gulp.start('compile-jsx');
-	gulp.start('compile-coffeescript');
-	gulp.start('minify-js');
-});
-gulp.task('default', ['compile-sass', 'do-js']);
+gulp.task('default', ['compile-sass', 'compile-jsx', 'compile-coffeescript']);
