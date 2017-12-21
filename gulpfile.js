@@ -59,5 +59,9 @@ gulp.task('minify-js', () => {
 		.pipe(gulp.dest(conf.destJS));
 });
 
-gulp.task('do-js', gulp.series('compile-sass', 'compile-coffeescript', 'minifyjs'));
+gulp.task('do-js', () => {
+	gulp.start('compile-jsx');
+	gulp.start('compile-coffeescript');
+	gulp.start('minify-js');
+});
 gulp.task('default', ['compile-sass', 'do-js']);
