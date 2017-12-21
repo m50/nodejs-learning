@@ -42,9 +42,9 @@ gulp.task('compile-jsx', () => {
 		.on('error', (err) => { console.error(err); this.emit('end'); })
 		.pipe(source(conf.appName))
 		.pipe(buffer())
+		.pipe(uglify())
 		.pipe(sourcemaps.init({ loadMaps: true }))
 		.pipe(sourcemaps.write('./'))
-		.pipe(uglify())
 		.pipe(gulp.dest(conf.destJsx));
 });
 
