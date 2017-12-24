@@ -1,12 +1,13 @@
 doctype html
-html
+html(ng-app="MainPage")
 	head
 		include ./includes/head.pug
 		include ./includes/angular-js.pug
 	body
 		include ./includes/header.pug
 		include ./includes/navbar.pug
-		div#body
-			a(href='#/blah') Blah
+		div(ng-controller="MainController")
+			div(ng-repeat="test in tests")
+				p {{ test }}
 		script(type='text/javascript' defer src="/static/js/coffee/home.js")
 		include ./includes/footer.pug
