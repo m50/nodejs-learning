@@ -1,6 +1,6 @@
-app = angular.module 'MainPage', []
+app = angular.module 'MainPage', ['ngRoute']
 
-mainController = ($scope) ->
-	$scope.tests = ['test1', 'test2']
+mainController = ($scope, $routeParams) ->
+	$scope.tests = ['test1', 'test2', $routeParams.test]
 
-app.controller 'MainController', ['$scope', mainController]
+app.controller 'MainController', ['$scope', '$routeParams', mainController]
