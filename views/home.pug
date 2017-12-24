@@ -2,17 +2,11 @@ doctype html
 html
 	head
 		include ./includes/head.pug
+		include ./includes/angular-js.pug
 	body
 		include ./includes/header.pug
 		include ./includes/navbar.pug
 		div#body
-			a(href='/form') Form test
-			br
-			a(href='/react') React test
-			br
-			if(unlocked)
-				p You unlocked another page!
-				a(href=url) URL Shortener
-			p Page Views: #{visits}
+			a(href='#/blah') Blah
 		script(type='text/javascript' defer src="/static/js/coffee/home.js")
 		include ./includes/footer.pug
