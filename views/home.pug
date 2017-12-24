@@ -6,7 +6,7 @@ html(ng-app="MainPage")
 	body
 		include ./includes/header.pug
 		include ./includes/navbar.pug
-		div(ng-controller="MainController")
+		div#body(ng-controller="MainController")
 			div(ng-repeat="test in tests")
 				p {{ test }}
 		script(type='text/javascript' defer src="/static/js/coffee/home.js")
