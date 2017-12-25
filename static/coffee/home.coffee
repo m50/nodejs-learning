@@ -12,7 +12,7 @@ page2 = ($scope) ->
 app.controller 'HomeController', ['$scope', home]
 app.controller 'Page2Controller', ['$scope', page2]
 
-app.component 'HomePage',
+app.component 'HomePage', ($routeProvider) ->
 	$routeProvider
 		.when '/',
 			controller: 'HomeController',
