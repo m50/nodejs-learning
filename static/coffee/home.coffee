@@ -17,10 +17,10 @@ app.component 'HomePage', ($routeProvider, $locationProvider) ->
 	$routeProvider
 		.when '/',
 			controller: 'HomeController',
-			templateUrl: '/views/html/angular/HomePage.html'
+			templateUrl: 'views/html/angular/HomePage.html'
 		.when '/page2',
 			controller: 'Page2Controller',
-			templateUrl: '/views/html/angular/Page2.html'
+			templateUrl: 'views/html/angular/Page2.html'
 		.otherwise
 			redirectTo: '/'
 	$locationProvider.html5Mode true
