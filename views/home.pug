@@ -1,9 +1,9 @@
 doctype html
-html(ng-app="MainPage")
+html(ng-app="HomePage")
 	head
 		include ./includes/head.pug
 		include ./includes/angular-js.pug
-	body
+	body(ng-controller="MainController")
 		include ./includes/header.pug
 		include ./includes/navbar.pug
 		div#body(ng-view)

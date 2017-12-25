@@ -1,21 +1,24 @@
-app = angular.module 'MainPage', ['ngRoute']
+app = angular.module 'HomePage', ['ngRoute']
 
-app.config ($routeProvider) ->
+main = ($scope, $route) ->
+	$scope.$route = $route
+
+home = ($scope) ->
+	$scope.tests = ['test1', 'test2']
+
+page2 = ($scope) ->
+	$scope.tests = ['test3', 'test4']
+
+app.controller 'HomeController', ['$scope', home]
+app.controller 'Page2Controller', ['$scope', page2]
+
+app.component 'HomePage',
 	$routeProvider
 		.when '/',
-			controller: 'MainController',
+			controller: 'HomeController',
 			templateUrl: '/views/html/angular/HomePage.html'
 		.when '/page2',
 			controller: 'Page2Controller',
 			templateUrl: '/views/html/angular/Page2.html'
 		.otherwise
 			redirectTo: '/'
-
-main = ($scope) ->
-	$scope.tests = ['test1', 'test2']
-
-page2 = ($scope) ->
-	$scope.tests = ['test3', 'test4']
-
-app.controller 'MainController', ['$scope', main]
-app.controller 'Page2Controller', ['$scope', page2]
