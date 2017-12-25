@@ -1,6 +1,21 @@
 app = angular.module 'MainPage', ['ngRoute']
 
-mainController = ($scope) ->
+app.config ($routeProvider) ->
+	$routeProvider
+	.when '/',
+		controller: 'HomeController',
+		templateUrl: 'views/home.html'
+	.when '/page2',
+		controller: 'PhotoController',
+		templateUrl: 'views/photo.html'
+	.otherwise
+		redirectTo: '/'
+
+main = ($scope) ->
 	$scope.tests = ['test1', 'test2']
 
-app.controller 'MainController', ['$scope', mainController]
+page2 = ($scope) ->
+	$scope.tests = ['test3', 'test4']
+
+app.controller 'MainController', ['$scope', main]
+app.controller 'Page2Controller', ['$scope', page2]
