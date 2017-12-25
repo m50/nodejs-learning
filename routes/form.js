@@ -26,6 +26,7 @@ router.post('/', function(req, res){
 });
 
 router.get('*', function(req, res){
+	res.status(404);
 	res.sendFile(path.resolve('./views/html/404.html'));
 });
 

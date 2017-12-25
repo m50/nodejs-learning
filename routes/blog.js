@@ -54,6 +54,7 @@ router.get('/wiki', (req, res) => {
 });
 
 router.get('*', (req, res) => {
+	res.status(404);
 	res.sendFile(path.resolve('./views/html/404.html'));
 });
 

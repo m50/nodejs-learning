@@ -3,7 +3,7 @@ app = angular.module 'MainPage', ['ngRoute']
 app.config ($routeProvider) ->
 	$routeProvider
 		.when '/',
-			controller: 'HomeController',
+			controller: 'MainController',
 			templateUrl: '/views/html/angular/HomePage.html'
 		.when '/page2',
 			controller: 'Page2Controller',

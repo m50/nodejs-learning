@@ -21,7 +21,8 @@ app.use('/blog', blog);
 app.use('/url', urlshortener);
 app.use('/lorem', longpage);
 
-app.get('*', function(req, res){
+app.get('*', (req, res) => {
+	res.status(404);
 	res.sendFile(path.resolve('./views/html/404.html'));
 });
 
