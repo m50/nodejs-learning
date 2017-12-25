@@ -10,6 +10,7 @@ const sourcemaps   = require('gulp-sourcemaps');
 const coffeescript = require('gulp-coffeescript');
 const cleanCSS     = require('gulp-clean-css');
 const uglify       = require('gulp-uglify');
+const pug          = require('gulp-pug');
 
 const conf = {
 	srcSass: 'static/style/sass',
@@ -24,8 +25,17 @@ const conf = {
 	srcJS: 'static/js',
 	destJS: 'static/js',
 
+	srcPug: 'views/html/pug',
+	destPug: 'views/html'
+
 	appName: 'index.js'
 };
+
+gulp.task('compile-pug', () => {
+	return gulp.src(conf.srcPug + '/**/*.pug')
+		.pipe(pug())
+		.pipe(gulp.dest(conf.destPug));
+});
 
 gulp.task('compile-sass', () => {
 	return gulp.src(conf.srcSass + '/**/*.scss')
@@ -55,4 +65,4 @@ gulp.task('compile-coffeescript', () => {
 		.pipe(gulp.dest(conf.destCoffee));
 });
 
-gulp.task('default', ['compile-sass', 'compile-jsx', 'compile-coffeescript']);
+gulp.task('default', ['compile-sass', 'compile-jsx', 'compile-coffeescript', 'compile-pug']);
