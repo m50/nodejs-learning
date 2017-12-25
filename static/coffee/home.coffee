@@ -3,17 +3,18 @@ app = angular.module 'HomePage', ['ngRoute']
 main = ($scope, $route) ->
 	$scope.$route = $route
 
-home = ($scope) ->
+home = ($scope, $routeParams) ->
 	$scope.tests = ['test1', 'test2']
 
-page2 = ($scope) ->
+page2 = ($scope, $routeParams) ->
 	$scope.tests = ['test3', 'test4']
 
 app.controller 'MainController', ['$scope', '$route', main]
-app.controller 'HomeController', ['$scope', home]
-app.controller 'Page2Controller', ['$scope', page2]
+app.controller 'HomeController', ['$scope', '$routeParams', home]
+app.controller 'Page2Controller', ['$scope', '$routeParams', page2]
 
 app.config ($routeProvider, $locationProvider) ->
+	console.log 'test'
 	# $routeProvider
 	# 	.when '/',
 	# 		controller: 'HomeController',
@@ -23,4 +24,4 @@ app.config ($routeProvider, $locationProvider) ->
 	# 		templateUrl: 'views/html/angular/Page2.html'
 	# 	.otherwise
 	# 		redirectTo: '/'
-	$locationProvider.html5Mode true
+	# $locationProvider.html5Mode true
