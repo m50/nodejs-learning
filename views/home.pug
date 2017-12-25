@@ -3,10 +3,10 @@ html(ng-app="HomePage")
 	head
 		include ./includes/head.pug
 		include ./includes/angular-js.pug
-	body(ng-controller="MainController")
+	body
 		include ./includes/header.pug
 		include ./includes/navbar.pug
-		div#body
+		div#body(ng-controller="MainController")
 			p $route.current.templateUrl = {{ $route.current.templateUrl }}
 			div(ng-view)
 		script(type='text/javascript' defer src="/static/js/coffee/home.js")
