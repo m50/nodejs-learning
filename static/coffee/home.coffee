@@ -13,9 +13,9 @@ app.controller 'MainController', ['$scope', '$route', main]
 app.controller 'HomeController', ['$scope', '$routeParams', home]
 app.controller 'Page2Controller', ['$scope', '$routeParams', page2]
 
-app.config ( ### $routeProvider, ### $locationProvider ) ->
+app.config ( $routeProvider ) ->
 	console.log 'test'
-	$locationProvider.html5Mode true
+	# $locationProvider.html5Mode true
 	'test'
 	# $routeProvider
 	# 	.when '/',
