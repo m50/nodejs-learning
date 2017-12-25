@@ -2,10 +2,10 @@ doctype html
 html(ng-app="HomePage")
 	head
 		include ./includes/head.pug
-		include ./includes/angular-js.pug
 	body
 		include ./includes/header.pug
 		include ./includes/navbar.pug
+		include ./includes/angular-js.pug
 		div#body(ng-controller="MainController")
 			p $route.current.templateUrl = {{ $route.current.templateUrl }}
 			div(ng-view)

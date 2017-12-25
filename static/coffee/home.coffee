@@ -15,6 +15,7 @@ app.controller 'Page2Controller', ['$scope', '$routeParams', page2]
 
 app.config ($routeProvider, $locationProvider) ->
 	console.log 'test'
+	'test'
 	# $routeProvider
 	# 	.when '/',
 	# 		controller: 'HomeController',
