@@ -54,7 +54,7 @@ router.get('/wiki', (req, res) => {
 });
 
 router.get('*', (req, res) => {
-	res.sendFile(path.resolve('./views/404.html'));
+	res.sendFile(path.resolve('./views/html/404.html'));
 });
 
 //export this router to use in our index.js

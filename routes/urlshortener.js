@@ -66,7 +66,7 @@ router.delete('/api/:key', (req, res) => {
 });
 
 router.get('*', function(req, res){
-	res.sendFile(path.resolve('./views/404.html'));
+	res.sendFile(path.resolve('./views/html/404.html'));
 });
 
 module.exports = router;
