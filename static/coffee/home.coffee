@@ -13,8 +13,9 @@ app.controller 'MainController', ['$scope', '$route', main]
 app.controller 'HomeController', ['$scope', '$routeParams', home]
 app.controller 'Page2Controller', ['$scope', '$routeParams', page2]
 
-app.config ( $routeProvider, $locationProvider ) ->
+app.config ( ### $routeProvider, ### $locationProvider ) ->
 	console.log 'test'
+	$locationProvider.html5Mode true
 	'test'
 	# $routeProvider
 	# 	.when '/',
@@ -25,4 +26,3 @@ app.config ( $routeProvider, $locationProvider ) ->
 	# 		templateUrl: 'views/html/angular/Page2.html'
 	# 	.otherwise
 	# 		redirectTo: '/'
-	# $locationProvider.html5Mode true
