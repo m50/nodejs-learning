@@ -10,12 +10,11 @@ page2 = ($scope, $routeParams) ->
 	$scope.tests = ['test3', 'test4']
 
 app.controller 'MainController', ['$scope', '$route', main]
-app.controller 'HomeController', ['$scope', '$routeParams', home]
-app.controller 'Page2Controller', ['$scope', '$routeParams', page2]
-
-app.config ( $locationProvider ) ->
+.controller 'HomeController', ['$scope', '$routeParams', home]
+.controller 'Page2Controller', ['$scope', '$routeParams', page2]
+.config ( $routeProvider, $locationProvider ) ->
 	console.log 'test'
-	$locationProvider.html5Mode(true)
+	$locationProvider.html5Mode true
 	'test'
 	# $routeProvider
 	# 	.when '/',
