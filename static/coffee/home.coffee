@@ -13,7 +13,7 @@ app.controller 'MainController', ['$scope', '$route', main]
 app.controller 'HomeController', ['$scope', '$routeParams', home]
 app.controller 'Page2Controller', ['$scope', '$routeParams', page2]
 
-app.config ($routeProvider, $locationProvider) ->
+app.config ( ### $routeProvider, $locationProvider ### ) ->
 	console.log 'test'
 	'test'
 	# $routeProvider
