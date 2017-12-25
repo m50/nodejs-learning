@@ -26,7 +26,7 @@ const conf = {
 	destJS: 'static/js',
 
 	srcPug: 'views/html/pug',
-	destPug: 'views/html'
+	destPug: 'views/html',
 
 	appName: 'index.js'
 };
