@@ -6,6 +6,8 @@ html(ng-app="HomePage")
 	body(ng-controller="MainController")
 		include ./includes/header.pug
 		include ./includes/navbar.pug
-		div#body(ng-view)
+		div#body
+			p $route.current.templateUrl = {{ $route.current.templateUrl }}
+			div(ng-view)
 		script(type='text/javascript' defer src="/static/js/coffee/home.js")
 		include ./includes/footer.pug
