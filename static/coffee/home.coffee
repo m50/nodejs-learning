@@ -4,10 +4,10 @@ app.config ($routeProvider) ->
 	$routeProvider
 	.when '/',
 		controller: 'HomeController',
-		templateUrl: 'views/home.html'
+		templateUrl: '/views/html/angular/HomePage.html'
 	.when '/page2',
-		controller: 'PhotoController',
-		templateUrl: 'views/photo.html'
+		controller: 'Page2Controller',
+		templateUrl: '/views/html/angular/Page2.html'
 	.otherwise
 		redirectTo: '/'
 
