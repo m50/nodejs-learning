@@ -9,10 +9,11 @@ home = ($scope) ->
 page2 = ($scope) ->
 	$scope.tests = ['test3', 'test4']
 
+app.controller 'MainController', ['$scope', '$route', main]
 app.controller 'HomeController', ['$scope', home]
 app.controller 'Page2Controller', ['$scope', page2]
 
-app.component 'HomePage', ($routeProvider) ->
+app.component 'HomePage', ($routeProvider, $locationProvider) ->
 	$routeProvider
 		.when '/',
 			controller: 'HomeController',
@@ -22,3 +23,4 @@ app.component 'HomePage', ($routeProvider) ->
 			templateUrl: '/views/html/angular/Page2.html'
 		.otherwise
 			redirectTo: '/'
+	$locationProvider.html5Mode true
