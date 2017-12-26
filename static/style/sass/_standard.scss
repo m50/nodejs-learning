@@ -87,15 +87,15 @@ a {
 }
 
 #footer {
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 	left: 0;
 	right: 0;
-	height: 15px;
-	line-height: 15px;
+	height: 20px;
+	line-height: 20px;
 	font-size: 15px;
 	border-top: $border;
-	background-color: $section-color;
+	background: $section-color;
 }
 
 label, p {
