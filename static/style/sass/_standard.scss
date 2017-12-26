@@ -93,10 +93,11 @@ a {
 	right: 0;
 	height: 20px;
 	line-height: 20px;
-	font-size: 15px;
+	font-size: 12px;
 	border-top: $border;
 	background: $section-color;
 	color: $font-color;
+	padding-left: $padding-side;
 }
 
 label, p {
