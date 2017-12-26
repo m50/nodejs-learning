@@ -86,6 +86,16 @@ a {
 	box-shadow: $body-shadow;
 }
 
+#footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 15px;
+	line-height: 15px;
+	font-size: 15px;
+}
+
 label, p {
 	font-size: 18px;
 	color: $font-color;
