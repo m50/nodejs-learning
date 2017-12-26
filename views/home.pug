@@ -7,6 +7,7 @@ html
 		include ./includes/header.pug
 		include ./includes/navbar.pug
 		div#body(ng-controller="MainController")
+			a(href='page2')
 			p $route.current.templateUrl = {{ $route.current.templateUrl }}
 			div(ng-view)
 		include ./includes/footer.pug
