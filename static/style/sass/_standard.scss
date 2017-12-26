@@ -84,6 +84,7 @@ a {
 	border-radius: 5px;
 	color: $font-color;
 	box-shadow: $body-shadow;
+	z-index: 15;
 }
 
 #footer {
@@ -98,7 +99,6 @@ a {
 	background: $section-color;
 	color: $font-color;
 	padding-left: $padding-side;
-	z-index: -100;
 }
 
 label, p {
