@@ -7,8 +7,7 @@ html
 		include ./includes/header.pug
 		include ./includes/navbar.pug
 		div#body(ng-controller="MainController")
-			a(href='page2') page2
-			p $route.current.templateUrl = {{ $route.current.templateUrl }}
-			div(ng-view)
+			div(ng-repeat="test in tests")
+				p {{ test }}
 		include ./includes/footer.pug
 		script(type='text/javascript' defer src="/static/js/coffee/home.js")
