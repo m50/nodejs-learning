@@ -21,10 +21,10 @@ app.use('/blog', blog);
 app.use('/url', urlshortener);
 app.use('/lorem', longpage);
 
-app.get('*', (req, res) => {
-	res.status(404);
-	res.sendFile(path.resolve('./views/html/404.html'));
-});
+// app.get('*', (req, res) => {
+// 	res.status(404);
+// 	res.sendFile(path.resolve('./views/html/404.html'));
+// });
 
 
 app.listen(6080, '127.0.0.1', () => {
