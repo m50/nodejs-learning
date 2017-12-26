@@ -77,7 +77,7 @@ a {
 		margin: $body-height;
 		padding: $padding-height-small $padding-side-small;
 	}
-	margin: $body-height*2 $body-side;
+	margin: $body-height $body-side $body-height*2 $body-side;
 	border: $border;
 	background: $background-color;
 	padding: $padding-height $padding-side;
