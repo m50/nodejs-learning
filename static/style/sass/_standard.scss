@@ -98,6 +98,7 @@ a {
 	background: $section-color;
 	color: $font-color;
 	padding-left: $padding-side;
+	z-index: -100;
 }
 
 label, p {
