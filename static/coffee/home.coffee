@@ -9,6 +9,6 @@ main = ($scope) ->
 					'URL Shortener: Utilizing Redis and implemented Forms using NodeJS. It was my first NodeJS web-app.',
 					'Blog: Utilizing React for the front-end, and a RESTful API for the backend, the blog stores data in a PostgreSQL Database, and was my second web-app.',
 					'Hidden Pages: There are hidden pages as well, that I utilized when following tutorials to learn new things, but they aren\'t necessarily things I made.'
-				   ]
+				]
 
 app.controller 'MainController', ['$scope', main]
