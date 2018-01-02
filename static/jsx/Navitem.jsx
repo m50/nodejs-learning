@@ -15,7 +15,7 @@ class Navitem extends React.Component {
 		const navitemStyle = { cursor: 'pointer' };
 		var className = 'navitem';
 		if(this.props.curPage == this.props.page) className += ' active'
-		return <span style={navitemStyle} className={className} id={this.props.page} onClick={this.onClick}>{this.props.pageTitle}</span>;
+		return <a href={'#'+className} style={navitemStyle} className={className} id={this.props.page} onClick={this.onClick}>{this.props.pageTitle}</a>;
 	}
 }
 
