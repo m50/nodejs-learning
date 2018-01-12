@@ -3,7 +3,7 @@ import React from 'react';
 class Posts extends React.Component {
 	constructor (props) {
 		super(props);
-		id = window.location.pathname.substring(12);
+		let id = window.location.pathname.substring(12);
 		if(isNaN(id)) {
 			id = -1;
 		}
