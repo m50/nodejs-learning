@@ -27,8 +27,7 @@ class App extends React.Component {
 	// }
 
 	componentDidMount() {
-		console.log("componentDidUpdate");
-		$(".react-toolbar").on("click", (event) => {
+		$("a.react-toolbar.navitem").on("click", (event) => {
 			event.preventDefault();
 			let url = $(this).attr('href');
 			console.log("react-toolbar click - "+url);
