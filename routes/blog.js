@@ -13,20 +13,6 @@ const pool = new Pool({
 pool.connect();
 var router = express.Router();
 
-router.get('/', (req, res) => {
-	res.render('blog', {
-		pageTitle: 'Blog',
-		post: '-1'
-   	});
-});
-
-router.get('/:id([0-9]+)', (req, res) => {
-	res.render('blog', {
-		pageTitle: 'Blog',
-		post: req.params.id
-   	});
-});
-
 router.get('/posts', (req, res) => {
 	pool.query('SELECT id, time_written::timestamp AS date, text AS post, title FROM posts ORDER BY id DESC LIMIT 20', (err, posts) => {
 		if(err) {
@@ -49,13 +35,10 @@ router.get('/posts/:id([0-9]+)', (req, res) => {
 	});
 });
 
-router.get('/wiki', (req, res) => {
-
-});
-
 router.get('*', (req, res) => {
-	res.status(404);
-	res.sendFile(path.resolve('./views/html/404.html'));
+	res.render('blog', {
+		pageTitle: 'Blog'
+   	});
 });
 
 //export this router to use in our index.js

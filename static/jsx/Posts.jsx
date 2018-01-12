@@ -9,15 +9,15 @@ class Posts extends React.Component {
 	}
 
 	headerClick (id) {
-		var page = '/blog/'+id;
+		let page = '/blog/'+id;
 		if(id == -1) page = '/blog';
 		window.location.replace(page);
 	}
 
 	componentDidMount() {
-		const id = this.props.id;
-		var page = '';
-		if(id > 0) {
+		const id = parseInt(window.location.pathname.substring(6));
+		let page = '';
+		if(!isNaN(id)) {
 			page = '/'+id;
 		}
 		$.getJSON('/blog/posts'+page, (data) => {
@@ -36,7 +36,7 @@ class Posts extends React.Component {
 	}
 
 	render () {
-		var lastSection = <div className='blogNav'></div>;
+		let lastSection = <div className='blogNav'></div>;
 		if(this.props.id > 0) {
 			const nextPage = parseInt(this.props.id)+1;
 			const prevPage = parseInt(this.props.id)-1;
