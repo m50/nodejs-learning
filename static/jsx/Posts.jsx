@@ -3,9 +3,13 @@ import React from 'react';
 class Posts extends React.Component {
 	constructor (props) {
 		super(props);
+		id = window.location.pathname.substring(12);
+		if(isNaN(id)) {
+			id = -1;
+		}
 		this.state = {
 			posts: [],
-			postid: -1
+			postid: id
 		};
 		this.headerClick = this.headerClick.bind(this);
 		this.postnavClick = this.postnavClick.bind(this);
