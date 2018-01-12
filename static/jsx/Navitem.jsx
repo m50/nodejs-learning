@@ -7,6 +7,10 @@ class Navitem extends React.Component {
 	}
 
 	onClick (e) {
+		e.preventDefault();
+		let url = e.target.href;
+		console.log("react-toolbar click - "+url);
+		window.history.replaceState({}, "Blog", url);
 		this.props.onclick(e.target.id);
 	}
 
