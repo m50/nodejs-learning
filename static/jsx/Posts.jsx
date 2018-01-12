@@ -40,9 +40,9 @@ class Posts extends React.Component {
 		const id = parseInt(window.location.pathname.substring(6));
 		if(!isNaN(id) && id > 0) {
 			let nextPage = parseInt(this.props.id)+1;
-			console.print(nextPage);
+			console.log(nextPage);
 			let prevPage = parseInt(this.props.id)-1;
-			console.print(prevPage);
+			console.log(prevPage);
 			if(isNaN(prevPage) || prevPage == 0) {
 				prevPage = '';
 			}
