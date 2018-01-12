@@ -4,18 +4,21 @@ class Posts extends React.Component {
 	constructor (props) {
 		super(props);
 		this.state = {
-			posts: []
+			posts: [],
+			postid: -1;
 		};
+		this.headerClick = this.headerClick.bind(this);
 	}
 
 	headerClick (id) {
 		let page = '/blog/posts/'+id;
 		if(id == -1) page = '/blog/posts';
-		window.location.replace(page);
+		window.history.replaceState({}, "Blog", page);
+		this.setState({ posts: [], postid: id });
 	}
 
 	componentDidMount() {
-		const id = parseInt(window.location.pathname.substring(12));
+		const id = this.state.postid;
 		let page = '';
 		if(!isNaN(id) && id > 0) {
 			page = '/'+id;
@@ -30,13 +33,13 @@ class Posts extends React.Component {
 					<div className='postcontent' dangerouslySetInnerHTML={{ __html: post.post.replace(/\<script.*?\>|\<\/script\>/g, '') }}></div>
 				</div>
 				));
-			this.setState({ posts: posts });
+			this.setState({ posts: posts, postid: this.state.postid });
 		});
 	}
 
 	render () {
 		let postnav = <div className='blogNav'></div>;
-		const id = parseInt(window.location.pathname.substring(12));
+		const id = this.state.postid;
 		if(!isNaN(id) && id > 0) {
 			let nextPage = id+1;
 			let prevPage = id-1;
