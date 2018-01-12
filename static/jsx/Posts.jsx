@@ -15,7 +15,7 @@ class Posts extends React.Component {
 		let page = '/blog/posts/'+id;
 		if(id == -1) page = '/blog/posts';
 		window.history.replaceState({}, "Blog", page);
-		let page = '';
+		page = '';
 		if(!isNaN(id) && id > 0) {
 			page = '/'+id;
 		}
@@ -37,7 +37,7 @@ class Posts extends React.Component {
 		let page = '/blog/posts/'+id;
 		if(id == -1) page = '/blog/posts';
 		window.history.replaceState({}, "Blog", page);
-		let page = '';
+		page = '';
 		if(!isNaN(id) && id > 0) {
 			page = '/'+id;
 		}
