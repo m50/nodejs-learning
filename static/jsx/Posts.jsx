@@ -29,7 +29,7 @@ class Posts extends React.Component {
 					<div className='postcontent' dangerouslySetInnerHTML={{ __html: post.post.replace(/\<script.*?\>|\<\/script\>/g, '') }}></div>
 				</div>
 				));
-			this.setState({ posts: posts, postid: this.state.postid });
+			this.setState({ posts: posts, postid: id });
 		});
 	}
 
@@ -51,7 +51,7 @@ class Posts extends React.Component {
 					<div className='postcontent' dangerouslySetInnerHTML={{ __html: post.post.replace(/\<script.*?\>|\<\/script\>/g, '') }}></div>
 				</div>
 				));
-			this.setState({ posts: posts, postid: this.state.postid });
+			this.setState({ posts: posts, postid: id });
 		});
 	}
 
