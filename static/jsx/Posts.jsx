@@ -15,7 +15,7 @@ class Posts extends React.Component {
 	}
 
 	componentDidMount() {
-		const id = parseInt(window.location.pathname.substring(6));
+		const id = parseInt(window.location.pathname.substring(12));
 		let page = '';
 		if(!isNaN(id) && id > 0) {
 			page = '/'+id;
@@ -37,7 +37,7 @@ class Posts extends React.Component {
 
 	render () {
 		let lastSection = <div className='blogNav'></div>;
-		const id = parseInt(window.location.pathname.substring(6));
+		const id = parseInt(window.location.pathname.substring(12));
 		if(!isNaN(id) && id > 0) {
 			let nextPage = id+1;
 			let prevPage = id-1;

@@ -24,6 +24,7 @@ class App extends React.Component {
 		} else if(this.state.page=='wiki') {
 			content = <Wiki />;
 		}
+		console.log(this.state.page);
 		var body = (<div id='body'>
 						<Navbar page={this.state.page}>
 							<Navitem curPage={this.state.page} onclick={this.onNavbar} page='posts' pageTitle='Posts' />
