@@ -48,8 +48,8 @@ class Posts extends React.Component {
 			}
 			postnav = (
 				<div className='blogNav'>
-					<a className='postnav' href={"/blog/posts/"+prevPage}>&lt;</a>
-					<a className='postnav fr' href={"/blog/posts/"+nextPage}>&gt;</a>
+					<a className='postnav' href={"/blog/posts/"+prevPage}>◀</a>
+					<a className='postnav fr' href={"/blog/posts/"+nextPage}>▶</a>
 				</div>
 				);
 		}
