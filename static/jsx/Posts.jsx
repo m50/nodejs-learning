@@ -51,7 +51,7 @@ class Posts extends React.Component {
 			postnav = (
 				<div className='blogNav'>
 					<a className='postnav' href={"/blog/posts/"+prevPage}>◀</a>
-					(this.state.posts)
+					{this.state.posts}
 					<a className='postnav fr' href={"/blog/posts/"+nextPage}>▶</a>
 				</div>
 				);
