@@ -17,7 +17,7 @@ class Posts extends React.Component {
 		this.setState({ posts: [], postid: id });
 	}
 
-	componentDidMount() {
+	componentDidUpdate() {
 		const id = this.state.postid;
 		let page = '';
 		if(!isNaN(id) && id > 0) {
