@@ -3,8 +3,8 @@
 		font-weight: bold;
 		color: white;
 	}
-	&::marker {
-		content: "▶"
+	&::before {
+		content: "▶ "
 	}
-	list-style-type: default;
+	// list-style-type: default;
 }
