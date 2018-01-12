@@ -100,7 +100,7 @@ a {
 	color: $font-color;
 	padding-right: $padding-side;
 	box-shadow: $body-shadow;
-	z-index: 100;
+	z-index: 1000;
 }
 
 label, p {
