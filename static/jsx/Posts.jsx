@@ -38,7 +38,8 @@ class Posts extends React.Component {
 		this.reloadPage(id);
 	}
 
-	postnavClick (id) {
+	postnavClick (id, e) {
+		e.preventDefault();
 		let page = '/blog/posts/'+id;
 		if(id == -1) page = '/blog/posts';
 		window.history.replaceState({}, "Blog", page);
@@ -65,8 +66,8 @@ class Posts extends React.Component {
 			}
 			postnav = (
 				<div className='blogNav'>
-					<a onClick={() => {this.postnavClick(prevPage)}} className='postnav' href={"/blog/posts/"+prevPage}>◀</a>
-					<a onClick={() => {this.postnavClick(nextPage)}} className='postnav fr' href={"/blog/posts/"+nextPage}>▶</a>
+					<a onClick={(e) => {this.postnavClick(prevPage, e)}} className='postnav' href={"/blog/posts/"+prevPage}>◀</a>
+					<a onClick={(e) => {this.postnavClick(nextPage, e)}} className='postnav fr' href={"/blog/posts/"+nextPage}>▶</a>
 				</div>
 				);
 		}
