@@ -12,9 +12,13 @@ class Navitem extends React.Component {
 
 	render () {
 		const navitemStyle = { cursor: 'pointer' };
-		var className = 'navitem';
-		if(this.props.curPage == this.props.page) className += ' active'
-		return <a href={'/blog/'+this.props.page} style={navitemStyle} className={className} id={this.props.page} onClick={this.onClick}>{this.props.pageTitle}</a>;
+		let className = 'navitem';
+		let onclick = this.onClick;
+		if(this.props.curPage == this.props.page) {
+			className += ' active';
+			onclick = null;
+		}
+		return <a href={'/blog/'+this.props.page} style={navitemStyle} className={className} id={this.props.page} onClick={onclick}>{this.props.pageTitle}</a>;
 	}
 }
 
