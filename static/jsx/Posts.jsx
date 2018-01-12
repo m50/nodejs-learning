@@ -5,7 +5,7 @@ class Posts extends React.Component {
 		super(props);
 		this.state = {
 			posts: [],
-			postid: -1;
+			postid: -1
 		};
 		this.headerClick = this.headerClick.bind(this);
 	}
