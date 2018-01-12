@@ -8,9 +8,17 @@ class Posts extends React.Component {
 			postid: -1
 		};
 		this.headerClick = this.headerClick.bind(this);
+		this.postnavClick = this.postnavClick.bind(this);
 	}
 
 	headerClick (id) {
+		let page = '/blog/posts/'+id;
+		if(id == -1) page = '/blog/posts';
+		window.history.replaceState({}, "Blog", page);
+		this.setState({ posts: [], postid: id });
+	}
+
+	postnavClick (id) {
 		let page = '/blog/posts/'+id;
 		if(id == -1) page = '/blog/posts';
 		window.history.replaceState({}, "Blog", page);
@@ -71,8 +79,8 @@ class Posts extends React.Component {
 			}
 			postnav = (
 				<div className='blogNav'>
-					<a className='postnav' href={"/blog/posts/"+prevPage}>◀</a>
-					<a className='postnav fr' href={"/blog/posts/"+nextPage}>▶</a>
+					<a onClick={this.postnavClick(prevPage)} className='postnav' href={"/blog/posts/"+prevPage}>◀</a>
+					<a onClick={this.postnavClick(nextPage)} className='postnav fr' href={"/blog/posts/"+nextPage}>▶</a>
 				</div>
 				);
 		}
