@@ -32,6 +32,7 @@ class App extends React.Component {
 			event.preventDefault();
 			let url = $(this).attr('href');
 			console.log("react-toolbar click - "+url);
+			console.log($(this));
 			window.history.replaceState("sdafsdf", "Blog", url);
 		});
 	}
