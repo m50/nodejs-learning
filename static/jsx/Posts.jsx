@@ -16,15 +16,13 @@ class Posts extends React.Component {
 
 	componentDidMount() {
 		const id = parseInt(window.location.pathname.substring(12));
-		let style = {};
 		let page = '';
 		if(!isNaN(id) && id > 0) {
 			page = '/'+id;
-			style={ display: "inline-block" };
 		}
 		$.getJSON('/blog/api'+page, (data) => {
 			const posts = data.posts.map(post => (
-				<div style={style} key={post.id} id={'post_'+post.id} className='post'>
+				<div key={post.id} id={'post_'+post.id} className='post'>
 					<div className='postheader' onClick={ () => { this.headerClick(post.id); } } val={post.id}>
 						<h3 className='posttitle'>{post.title}</h3>
 						<span className='postdate'>Post Date: {post.date.split('.')[0].split('T').reverse().join(' ')}</span>
@@ -51,7 +49,6 @@ class Posts extends React.Component {
 			postnav = (
 				<div className='blogNav'>
 					<a className='postnav' href={"/blog/posts/"+prevPage}>◀</a>
-					{this.state.posts}
 					<a className='postnav fr' href={"/blog/posts/"+nextPage}>▶</a>
 				</div>
 				);
@@ -60,7 +57,7 @@ class Posts extends React.Component {
 			<div id='Blog'>
 				<br />
 				{postnav}
-				{!isNaN(id) && id > 0 ? '' : this.state.posts}
+				{this.state.posts}
 			</div>
 			);
 	}
