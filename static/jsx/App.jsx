@@ -16,23 +16,23 @@ class App extends React.Component {
 		this.setState({ page: page });
 	}
 
-	componentDidUpdate() {
-		console.log("componentDidUpdate");
-		$(".react-toolbar").on("click", (event) => {
-			console.log("react-toolbar click");
-			event.preventDefault();
-			let url = $(this).attr('href');
-			window.history.replaceState("", "Blog", url);
-		});
-	}
+	// componentDidUpdate() {
+	// 	console.log("componentDidUpdate");
+	// 	$(".react-toolbar").on("click", (event) => {
+	// 		console.log("react-toolbar click");
+	// 		event.preventDefault();
+	// 		let url = $(this).attr('href');
+	// 		window.history.replaceState("", "Blog", url);
+	// 	});
+	// }
 
 	componentDidMount() {
 		console.log("componentDidUpdate");
 		$(".react-toolbar").on("click", (event) => {
-			console.log("react-toolbar click");
 			event.preventDefault();
 			let url = $(this).attr('href');
-			window.history.replaceState("", "Blog", url);
+			console.log("react-toolbar click - "+url);
+			window.history.replaceState("sdafsdf", "Blog", url);
 		});
 	}
 
