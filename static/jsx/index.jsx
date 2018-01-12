@@ -7,9 +7,3 @@ ReactDOM.render(
 	<App />,
 	document.getElementById('root')
 );
-
-$("react-toolbar").on("click", () => {
-	event.preventDefault();
-	let url = $(this).attr('href');
-	window.history.replaceState("", "Blog", url);
-});

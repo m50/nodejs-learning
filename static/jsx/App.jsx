@@ -16,6 +16,14 @@ class App extends React.Component {
 		this.setState({ page: page });
 	}
 
+	componentDidUpdate() {
+		$(".react-toolbar").on("click", () => {
+			event.preventDefault();
+			let url = $(this).attr('href');
+			window.history.replaceState("", "Blog", url);
+		});
+	}
+
 	render() {
 		var content = <div />;
 		if(this.state.page=='posts') {
