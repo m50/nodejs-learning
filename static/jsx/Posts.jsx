@@ -63,10 +63,12 @@ class Posts extends React.Component {
 			if(isNaN(nextPage) || nextPage == 0) {
 				nextPage = '';
 			}
+			// this.postnavClick(prevPage)
+			// this.postnavClick(nextPage)
 			postnav = (
 				<div className='blogNav'>
-					<a onClick={this.postnavClick(prevPage)} className='postnav' href={"/blog/posts/"+prevPage}>◀</a>
-					<a onClick={this.postnavClick(nextPage)} className='postnav fr' href={"/blog/posts/"+nextPage}>▶</a>
+					<a onClick={console.log(prevPage)} className='postnav' href={"/blog/posts/"+prevPage}>◀</a>
+					<a onClick={console.log(nextPage)} className='postnav fr' href={"/blog/posts/"+nextPage}>▶</a>
 				</div>
 				);
 		}
