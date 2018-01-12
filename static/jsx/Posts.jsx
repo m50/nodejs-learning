@@ -79,7 +79,6 @@ class Posts extends React.Component {
 				<br />
 				{postnav}
 				{this.state.posts}
-				{postnav}
 			</div>
 			);
 	}
