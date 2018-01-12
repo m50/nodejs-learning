@@ -13,7 +13,7 @@ class Posts extends React.Component {
 	}
 
 	reloadPage(id) {
-		page = '';
+		let page = '';
 		if(!isNaN(id) && id > 0) {
 			page = '/'+id;
 		}
