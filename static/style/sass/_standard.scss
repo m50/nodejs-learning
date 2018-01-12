@@ -3,7 +3,6 @@ html, body {
 	margin: 0px;
 	padding: 0px;
 	background: $page-color;
-	z-index: -1000;
 }
 
 .fr {
@@ -101,7 +100,7 @@ a {
 	color: $font-color;
 	padding-right: $padding-side;
 	box-shadow: $body-shadow;
-	z-index: -5;
+	z-index: 1;
 }
 
 label, p {
