@@ -39,8 +39,16 @@ class Posts extends React.Component {
 		let lastSection = <div className='blogNav'></div>;
 		const id = parseInt(window.location.pathname.substring(6));
 		if(!isNaN(id) && id > 0) {
-			const nextPage = parseInt(this.props.id)+1;
-			const prevPage = parseInt(this.props.id)-1;
+			let nextPage = parseInt(this.props.id)+1;
+			console.print(nextPage);
+			let prevPage = parseInt(this.props.id)-1;
+			console.print(prevPage);
+			if(isNaN(prevPage) || prevPage == 0) {
+				prevPage = '';
+			}
+			if(isNaN(nextPage) || nextPage == 0) {
+				nextPage = '';
+			}
 			lastSection = (
 				<div className='blogNav'>
 					<a href={"/blog/"+prevPage}>&lt;</a>
