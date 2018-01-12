@@ -7,7 +7,6 @@ import Wiki from './Wiki.jsx';
 class App extends React.Component {
 	constructor (props) {
 		super(props);
-		console.log(window.location.pathname.match(/blog\/([^\/]+)/));
 		this.state = {page: window.location.pathname.match(/blog\/([^\/]+)/)[1]};
 
 		this.onNavbar = this.onNavbar.bind(this);
@@ -24,7 +23,6 @@ class App extends React.Component {
 		} else if(this.state.page=='wiki') {
 			content = <Wiki />;
 		}
-		console.log(this.state.page);
 		var body = (<div id='body'>
 						<Navbar page={this.state.page}>
 							<Navitem curPage={this.state.page} onclick={this.onNavbar} page='posts' pageTitle='Posts' />
