@@ -3,6 +3,7 @@ html, body {
 	margin: 0px;
 	padding: 0px;
 	background: $page-color;
+	z-index: -1000;
 }
 
 .fr {
