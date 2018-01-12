@@ -15,17 +15,6 @@ class Posts extends React.Component {
 		let page = '/blog/posts/'+id;
 		if(id == -1) page = '/blog/posts';
 		window.history.replaceState({}, "Blog", page);
-		this.setState({ posts: [], postid: id });
-	}
-
-	postnavClick (id) {
-		let page = '/blog/posts/'+id;
-		if(id == -1) page = '/blog/posts';
-		window.history.replaceState({}, "Blog", page);
-		this.setState({ posts: [], postid: id });
-	}
-
-	componentDidMount() {
 		const id = this.state.postid;
 		let page = '';
 		if(!isNaN(id) && id > 0) {
@@ -45,7 +34,30 @@ class Posts extends React.Component {
 		});
 	}
 
-	componentDidUpdate() {
+	postnavClick (id) {
+		let page = '/blog/posts/'+id;
+		if(id == -1) page = '/blog/posts';
+		window.history.replaceState({}, "Blog", page);
+		const id = this.state.postid;
+		let page = '';
+		if(!isNaN(id) && id > 0) {
+			page = '/'+id;
+		}
+		$.getJSON('/blog/api'+page, (data) => {
+			const posts = data.posts.map(post => (
+				<div key={post.id} id={'post_'+post.id} className='post'>
+					<div className='postheader' onClick={ () => { this.headerClick(post.id); } } val={post.id}>
+						<h3 className='posttitle'>{post.title}</h3>
+						<span className='postdate'>Post Date: {post.date.split('.')[0].split('T').reverse().join(' ')}</span>
+					</div>
+					<div className='postcontent' dangerouslySetInnerHTML={{ __html: post.post.replace(/\<script.*?\>|\<\/script\>/g, '') }}></div>
+				</div>
+				));
+			this.setState({ posts: posts, postid: this.state.postid });
+		});
+	}
+
+	componentDidMount() {
 		const id = this.state.postid;
 		let page = '';
 		if(!isNaN(id) && id > 0) {
