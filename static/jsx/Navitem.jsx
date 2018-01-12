@@ -12,7 +12,7 @@ class Navitem extends React.Component {
 
 	render () {
 		const navitemStyle = { cursor: 'pointer' };
-		let className = 'navitem';
+		let className = 'navitem react-toolbar';
 		if(this.props.curPage == this.props.page) {
 			className += ' active';
 		}
