@@ -30,6 +30,7 @@ class App extends React.Component {
 		const $navitems = $("a.react-toolbar.navitem");
 		console.log($navitems);
 		$navitems.on("click", (event) => {
+			console.log($(this));
 			event.preventDefault();
 			let url = $(this).attr('href');
 			console.log("react-toolbar click - "+url);
