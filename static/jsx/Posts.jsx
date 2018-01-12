@@ -58,7 +58,6 @@ class Posts extends React.Component {
 	render () {
 		let postnav = <div className='blogNav'></div>;
 		const id = this.state.postid;
-		console.log(id);
 		if(!isNaN(id) && id > 0) {
 			let nextPage = id+1;
 			let prevPage = id-1;
@@ -80,6 +79,7 @@ class Posts extends React.Component {
 				<br />
 				{postnav}
 				{this.state.posts}
+				{postnav}
 			</div>
 			);
 	}
