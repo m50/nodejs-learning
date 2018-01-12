@@ -17,7 +17,7 @@ class Posts extends React.Component {
 	componentDidMount() {
 		const id = parseInt(window.location.pathname.substring(6));
 		let page = '';
-		if(!isNaN(id)) {
+		if(!isNaN(id) && id > 0) {
 			page = '/'+id;
 		}
 		$.getJSON('/blog/posts'+page, (data) => {
@@ -37,7 +37,8 @@ class Posts extends React.Component {
 
 	render () {
 		let lastSection = <div className='blogNav'></div>;
-		if(this.props.id > 0) {
+		const id = parseInt(window.location.pathname.substring(6));
+		if(!isNaN(id) && id > 0) {
 			const nextPage = parseInt(this.props.id)+1;
 			const prevPage = parseInt(this.props.id)-1;
 			lastSection = (
