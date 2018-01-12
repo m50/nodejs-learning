@@ -13,7 +13,7 @@ const pool = new Pool({
 pool.connect();
 var router = express.Router();
 
-router.get('/posts', (req, res) => {
+router.get('/api', (req, res) => {
 	pool.query('SELECT id, time_written::timestamp AS date, text AS post, title FROM posts ORDER BY id DESC LIMIT 20', (err, posts) => {
 		if(err) {
 			res.status(404);
@@ -24,7 +24,7 @@ router.get('/posts', (req, res) => {
 	});
 });
 
-router.get('/posts/:id([0-9]+)', (req, res) => {
+router.get('/api/:id([0-9]+)', (req, res) => {
 	pool.query('SELECT id, time_written::timestamp AS date, text AS post, title FROM posts WHERE id = $1', [ req.params.id ], (err, posts) => {
 		if(err) {
 			res.status(404);

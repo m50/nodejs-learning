@@ -20,7 +20,7 @@ class Posts extends React.Component {
 		if(!isNaN(id) && id > 0) {
 			page = '/'+id;
 		}
-		$.getJSON('/blog/posts'+page, (data) => {
+		$.getJSON('/blog/api'+page, (data) => {
 			const posts = data.posts.map(post => (
 				<div key={post.id} id={'post_'+post.id} className='post'>
 					<div className='postheader' onClick={ () => { this.headerClick(post.id); } } val={post.id}>
@@ -49,8 +49,8 @@ class Posts extends React.Component {
 			}
 			lastSection = (
 				<div className='blogNav'>
-					<a href={"/blog/"+prevPage}>&lt;</a>
-					<a className='fr' href={"/blog/"+nextPage}>&gt;</a>
+					<a href={"/blog/posts/"+prevPage}>&lt;</a>
+					<a className='fr' href={"/blog/posts/"+nextPage}>&gt;</a>
 				</div>
 				);
 		}
