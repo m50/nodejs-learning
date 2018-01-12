@@ -69,7 +69,7 @@ class Posts extends React.Component {
 			}
 			postnav = (
 				<div className='blogNav'>
-					<a onClick={(e) => {this.postnavClick(prevPage, e)}} className='postnav' href={"/blog/posts/"+prevPage}>◀</a>
+					<a onClick={(e) => {this.postnavClick(prevPage, e)}} className='postnav' href={"/blog/posts/"+prevPage}>◀</a>&nbsp;&nbsp;
 					<a onClick={(e) => {this.postnavClick(nextPage, e)}} className='postnav' href={"/blog/posts/"+nextPage}>▶</a>
 				</div>
 				);
