@@ -9,70 +9,45 @@ class Posts extends React.Component {
 		};
 		this.headerClick = this.headerClick.bind(this);
 		this.postnavClick = this.postnavClick.bind(this);
+		this.reloadPage = this.reloadPage.bind(this);
+	}
+
+	reloadPage(id) {
+		page = '';
+		if(!isNaN(id) && id > 0) {
+			page = '/'+id;
+		}
+		$.getJSON('/blog/api'+page, (data) => {
+			const posts = data.posts.map(post => (
+				<div key={post.id} id={'post_'+post.id} className='post'>
+					<div className='postheader' onClick={ () => { this.headerClick(post.id); } } val={post.id}>
+						<h3 className='posttitle'>{post.title}</h3>
+						<span className='postdate'>Post Date: {post.date.split('.')[0].split('T').reverse().join(' ')}</span>
+					</div>
+					<div className='postcontent' dangerouslySetInnerHTML={{ __html: post.post.replace(/\<script.*?\>|\<\/script\>/g, '') }}></div>
+				</div>
+				));
+			this.setState({ posts: posts, postid: id });
+		});
 	}
 
 	headerClick (id) {
 		let page = '/blog/posts/'+id;
 		if(id == -1) page = '/blog/posts';
 		window.history.replaceState({}, "Blog", page);
-		page = '';
-		if(!isNaN(id) && id > 0) {
-			page = '/'+id;
-		}
-		$.getJSON('/blog/api'+page, (data) => {
-			const posts = data.posts.map(post => (
-				<div key={post.id} id={'post_'+post.id} className='post'>
-					<div className='postheader' onClick={ () => { this.headerClick(post.id); } } val={post.id}>
-						<h3 className='posttitle'>{post.title}</h3>
-						<span className='postdate'>Post Date: {post.date.split('.')[0].split('T').reverse().join(' ')}</span>
-					</div>
-					<div className='postcontent' dangerouslySetInnerHTML={{ __html: post.post.replace(/\<script.*?\>|\<\/script\>/g, '') }}></div>
-				</div>
-				));
-			this.setState({ posts: posts, postid: id });
-		});
+		this.reloadPage(id);
 	}
 
 	postnavClick (id) {
 		let page = '/blog/posts/'+id;
 		if(id == -1) page = '/blog/posts';
 		window.history.replaceState({}, "Blog", page);
-		page = '';
-		if(!isNaN(id) && id > 0) {
-			page = '/'+id;
-		}
-		$.getJSON('/blog/api'+page, (data) => {
-			const posts = data.posts.map(post => (
-				<div key={post.id} id={'post_'+post.id} className='post'>
-					<div className='postheader' onClick={ () => { this.headerClick(post.id); } } val={post.id}>
-						<h3 className='posttitle'>{post.title}</h3>
-						<span className='postdate'>Post Date: {post.date.split('.')[0].split('T').reverse().join(' ')}</span>
-					</div>
-					<div className='postcontent' dangerouslySetInnerHTML={{ __html: post.post.replace(/\<script.*?\>|\<\/script\>/g, '') }}></div>
-				</div>
-				));
-			this.setState({ posts: posts, postid: id });
-		});
+		this.reloadPage(id);
 	}
 
 	componentDidMount() {
 		const id = this.state.postid;
-		let page = '';
-		if(!isNaN(id) && id > 0) {
-			page = '/'+id;
-		}
-		$.getJSON('/blog/api'+page, (data) => {
-			const posts = data.posts.map(post => (
-				<div key={post.id} id={'post_'+post.id} className='post'>
-					<div className='postheader' onClick={ () => { this.headerClick(post.id); } } val={post.id}>
-						<h3 className='posttitle'>{post.title}</h3>
-						<span className='postdate'>Post Date: {post.date.split('.')[0].split('T').reverse().join(' ')}</span>
-					</div>
-					<div className='postcontent' dangerouslySetInnerHTML={{ __html: post.post.replace(/\<script.*?\>|\<\/script\>/g, '') }}></div>
-				</div>
-				));
-			this.setState({ posts: posts, postid: this.state.postid });
-		});
+		this.reloadPage(id);
 	}
 
 	render () {
