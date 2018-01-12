@@ -3,4 +3,7 @@
 		font-weight: bold;
 		color: white;
 	}
+	&::marker {
+		content: "▶"
+	}
 }
