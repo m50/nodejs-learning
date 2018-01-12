@@ -27,12 +27,13 @@ class App extends React.Component {
 	// }
 
 	componentDidMount() {
-		$("a.react-toolbar.navitem").on("click", (event) => {
+		const $navitems = $("a.react-toolbar.navitem");
+		console.log($navitems);
+		$navitems.on("click", (event) => {
 			event.preventDefault();
 			let url = $(this).attr('href');
 			console.log("react-toolbar click - "+url);
-			console.log($(this).text());
-			window.history.replaceState("sdafsdf", "Blog", url);
+			window.history.replaceState({}, "Blog", url);
 		});
 	}
 
