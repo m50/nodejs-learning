@@ -3,8 +3,5 @@
 		font-weight: bold;
 		color: white;
 	}
-	&::before {
-		content: "▶ "
-	}
-	// list-style-type: default;
+	list-style-type: disk;
 }
