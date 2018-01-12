@@ -6,7 +6,7 @@ main = ($scope) ->
 					{title: 'CV', content: 'First page I ever utilized JQuery.'},
 					{title: 'URL Shortener', content: 'Utilizing Redis and implemented Forms using NodeJS. It was my first NodeJS web-app.'},
 					{title: 'Blog', content: 'Utilizing React for the front-end, and a RESTful API for the backend, the blog stores data in a PostgreSQL Database, and was my second web-app.'},
-					{title: 'Hidden Pages', content: 'There are hidden pages as well, that I utilized when following tutorials to learn new things, but they aren\'t necessarily things I made.}'
+					{title: 'Hidden Pages', content: 'There are hidden pages as well, that I utilized when following tutorials to learn new things, but they aren\'t necessarily things I made.'}
 				]
 
 app.controller 'MainController', ['$scope', main]
