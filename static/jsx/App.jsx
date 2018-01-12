@@ -17,7 +17,8 @@ class App extends React.Component {
 	}
 
 	componentDidUpdate() {
-		$(".react-toolbar").on("click", () => {
+		$(".react-toolbar").on("click", (event) => {
+			console.log("react-toolbar click");
 			event.preventDefault();
 			let url = $(this).attr('href');
 			window.history.replaceState("", "Blog", url);
