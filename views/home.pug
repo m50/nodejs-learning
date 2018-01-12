@@ -8,8 +8,8 @@ html
 		div#body(ng-controller="MainController")
 			p This is my website! It is where I test different web technologies to build my site.
 			p The backend is NGINX Reverse-Proxying to NodeJS. All the pages are built in pug, and each page was a different learning things.
-			p.ng-section(ng-repeat="sec in sections")
-				section(details="sec")
+			div(ng-repeat="sec in sections")
+				information-section(details="sec")
 		include ./includes/angular-js.pug
 		include ./includes/footer.pug
 		script(type='text/javascript' defer src="/static/js/home.js")

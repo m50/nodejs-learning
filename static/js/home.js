@@ -1,6 +1,6 @@
 app = angular.module('HomePage', []);
 
-app.component('section', {
+app.component('informationSection', {
 	templateUrl: '/views/html/section.html',
 	bindings: {
 		details: '='
