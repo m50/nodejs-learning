@@ -1,7 +1,7 @@
 app = angular.module('HomePage', []);
 
 app.component('section', {
-	template: '/views/html/section.html',
+	templateUrl: '/views/html/section.html',
 	bindings: {
 		details: '='
 	}
