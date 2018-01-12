@@ -17,6 +17,17 @@ class App extends React.Component {
 	}
 
 	componentDidUpdate() {
+		console.log("componentDidUpdate");
+		$(".react-toolbar").on("click", (event) => {
+			console.log("react-toolbar click");
+			event.preventDefault();
+			let url = $(this).attr('href');
+			window.history.replaceState("", "Blog", url);
+		});
+	}
+
+	componentDidMount() {
+		console.log("componentDidUpdate");
 		$(".react-toolbar").on("click", (event) => {
 			console.log("react-toolbar click");
 			event.preventDefault();
