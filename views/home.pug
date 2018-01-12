@@ -10,7 +10,7 @@ html
 			p The backend is NGINX Reverse-Proxying to NodeJS. All the pages are built in pug, and each page was a different learning things.
 			p.ng-section(ng-repeat="section in sections")
 				span.ng-title {{ section.title }}
-				| :
+				| :&nbsp;
 				span.ng-content {{ section.content }}
 		include ./includes/angular-js.pug
 		include ./includes/footer.pug
