@@ -7,7 +7,7 @@ import Wiki from './Wiki.jsx';
 class App extends React.Component {
 	constructor (props) {
 		super(props);
-		this.state = {page: 'posts'};
+		this.state = {page: window.location.pathname.substring(6)};
 
 		this.onNavbar = this.onNavbar.bind(this);
 	}
@@ -19,8 +19,7 @@ class App extends React.Component {
 	render() {
 		var content = <div />;
 		if(this.state.page=='posts') {
-			const postNumber = $('#post-id').val();
-			content = <Posts id={postNumber} />;
+			content = <Posts />;
 		} else if(this.state.page=='wiki') {
 			content = <Wiki />;
 		}

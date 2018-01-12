@@ -7,7 +7,6 @@ class Navitem extends React.Component {
 	}
 
 	onClick (e) {
-		console.log(e.target.id);
 		this.props.onclick(e.target.id);
 	}
 

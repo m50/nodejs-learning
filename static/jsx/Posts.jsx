@@ -9,8 +9,8 @@ class Posts extends React.Component {
 	}
 
 	headerClick (id) {
-		let page = '/blog/'+id;
-		if(id == -1) page = '/blog';
+		let page = '/blog/posts/'+id;
+		if(id == -1) page = '/blog/posts';
 		window.location.replace(page);
 	}
 
