@@ -70,7 +70,6 @@ class Posts extends React.Component {
 			if(isNaN(prevPage) || prevPage == 0) {
 				prevPage = '';
 			}
-			console.log(this.state.maxid);
 			if(isNaN(nextPage) || nextPage > this.state.maxid) {
 				nextPage = '';
 			}
