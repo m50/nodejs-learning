@@ -3,9 +3,11 @@ html
 	head
 		link(rel="stylesheet" type="text/css" href="/static/style/blog.css")
 		include ./includes/head.pug
+		base(href='/blog')
 	body
 		include ./includes/header.pug
 		include ./includes/navbar.pug
-		div#root
-		script(type='text/javascript' defer src="/static/js/react/index.js")
+		a(href="/posts")
+		//- div#root
+		//- script(type='text/javascript' defer src="/static/js/react/index.js")
 		include ./includes/footer.pug
