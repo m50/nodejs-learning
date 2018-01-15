@@ -10,7 +10,7 @@ class Posts extends React.Component {
 		this.state = {
 			posts: [],
 			postid: id,
-			maxid: -1;
+			maxid: -1
 		};
 		this.headerClick = this.headerClick.bind(this);
 		this.postnavClick = this.postnavClick.bind(this);
