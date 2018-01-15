@@ -75,11 +75,10 @@ component.getDatabase = (failure, success) => {
 
 component.getURI = (key, failure, success) => {
 	client.get('urishort:key:'+key, (err, reply) => {
-		var linkuri = 'https://clardy.eu/url/'+newURI;
 		if(err || reply == null) {
 			failure();
 		} else {
-			success(key, linkuri);
+			success(key, reply);
 		}
 	});
 };
