@@ -9,7 +9,8 @@ class Posts extends React.Component {
 		}
 		this.state = {
 			posts: [],
-			postid: id
+			postid: id,
+			maxid: -1;
 		};
 		this.headerClick = this.headerClick.bind(this);
 		this.postnavClick = this.postnavClick.bind(this);
@@ -31,7 +32,7 @@ class Posts extends React.Component {
 					<div className='postcontent' dangerouslySetInnerHTML={{ __html: post.post.replace(/\<script.*?\>|\<\/script\>/g, '') }}></div>
 				</div>
 				));
-			this.setState({ posts: posts, postid: id });
+			this.setState({ posts: posts, postid: id, maxid: data.posts.length - 1 });
 		});
 	}
 
@@ -64,7 +65,7 @@ class Posts extends React.Component {
 			if(isNaN(prevPage) || prevPage == 0) {
 				prevPage = '';
 			}
-			if(isNaN(nextPage) || nextPage == 0) {
+			if(isNaN(nextPage) || nextPage > this.state.maxid) {
 				nextPage = '';
 			}
 			postnav = (
