@@ -29,8 +29,8 @@ router.get('/api/:key', (req, res) => {
 	component.getURI(req.params.key, () => {
 		res.status(404);
 		res.json({ status: 'Failure', message: 'Not Found' });
-	}, (key, uri) => {
-		res.json({ key: key, url: uri });
+	}, (key, uri, newUrl) => {
+		res.json({ key: key, url: uri, shortened: newUrl });
 	});
 });
 

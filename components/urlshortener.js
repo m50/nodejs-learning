@@ -78,7 +78,7 @@ component.getURI = (key, failure, success) => {
 		if(err || reply == null) {
 			failure();
 		} else {
-			success(key, reply);
+			success(key, reply, 'https://clardy.eu/url/'+key);
 		}
 	});
 };
