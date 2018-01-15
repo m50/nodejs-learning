@@ -7,7 +7,11 @@ import Wiki from './Wiki.jsx';
 class App extends React.Component {
 	constructor (props) {
 		super(props);
-		this.state = {page: window.location.pathname.match(/blog\/([^\/]+)/)[1]};
+		let page = window.location.pathname.match(/blog\/([^\/]+)/)[1];
+		if(page == '') {
+			page = window.location.pathname = '/blog/posts';
+		}
+		this.state = {page: page};
 
 		this.onNavbar = this.onNavbar.bind(this);
 	}
