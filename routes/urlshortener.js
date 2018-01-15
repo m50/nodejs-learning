@@ -15,10 +15,6 @@ router.get('/', (req, res) => {
    res.render('urlshortener', { pageTitle: 'URL Shortener' });
 });
 
-router.get('/:key', (req, res) => {
-	component.redirectURI(req.params.key, res);
-});
-
 router.get('/api', (req, res) => {
 	let database = component.getDatabase();
 	res.json(database);
@@ -32,6 +28,10 @@ router.get('/api/:key', (req, res) => {
 		res.status(404);
 		res.json({ status: 'Failure', message: 'Not Found' });
 	}
+});
+
+router.get('/:key', (req, res) => {
+	component.redirectURI(req.params.key, res);
 });
 
 router.use(bodyParser.json()); 
