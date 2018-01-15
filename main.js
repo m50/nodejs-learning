@@ -15,7 +15,7 @@ const longpage = require('./routes/longpage-test.js');
 
 app.use('/', home);
 app.use('/test', test);
-app.use('/markus', cv);
+app.use('/cv', cv);
 app.use('/form', form);
 app.use('/blog', blog);
 app.use('/url', urlshortener);
