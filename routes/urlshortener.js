@@ -20,7 +20,7 @@ router.get('/api', (req, res) => {
 		res.status(404);
 		res.json({ status: 'Failure', message: 'Not Found' });
 	}, (database) => {
-		res.json(database);
+		res.json({keys: database});
 	});
 	
 });
