@@ -10,7 +10,7 @@ $ ->
 
 	$(window).on "scroll", ->
 		if $(window).width() >= 768 
-			if $(this).scrollTop() > ($('#header').height() - 25)
+			if $(this).scrollTop() > ($('#header').height())
 				$('.navbar').addClass('fixed')
 				$('#body').css('margin-top', $('.navbar').height() + 25)
 			else
