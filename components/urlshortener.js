@@ -68,7 +68,7 @@ component.getDatabase = (failure, success) => {
 		if(err) {
 			failure();
 		} else {
-			success(keys.map(key => key.substring(14)));
+			success(keys.map(key => key.substring(13)));
 		}
 	});
 };
