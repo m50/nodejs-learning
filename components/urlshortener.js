@@ -79,10 +79,6 @@ component.getURI = (key, failure, success) => {
 		if(err || reply == null) {
 			failure();
 		} else {
-			client.del('urishort:key:'+key);
-			client.del('urishort:url:'+reply);
-			client.set("urishort:key:"+key, uri, 'EX', 604800);
-			client.set("urishort:url:"+newURI, key, 'EX', 604800);
 			success(key, linkuri);
 		}
 	});
