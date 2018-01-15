@@ -63,12 +63,29 @@ component.redirectURI = (key, res) => {
 	});
 };
 
-component.getDatabase = () => {
-
+component.getDatabase = (failure, success) => {
+	client.keys('urishort:key:*', (err, keys) => {
+		if(err) {
+			failure();
+		} else {
+			success(keys);
+		}
+	});
 };
 
-component.getURI = (key) => {
-
+component.getURI = (key, failure, success) => {
+	client.get('urishort:key:'+key, (err, reply) => {
+		var linkuri = 'https://clardy.eu/url/'+newURI;
+		if(err || reply == null) {
+			failure();
+		} else {
+			client.del('urishort:key:'+key);
+			client.del('urishort:url:'+reply);
+			client.set("urishort:key:"+key, uri, 'EX', 604800);
+			client.set("urishort:url:"+newURI, key, 'EX', 604800);
+			success(key, linkuri);
+		}
+	});
 };
 
 

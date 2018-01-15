@@ -16,18 +16,22 @@ router.get('/', (req, res) => {
 });
 
 router.get('/api', (req, res) => {
-	let database = component.getDatabase();
-	res.json(database);
+	component.getDatabase(() => {
+		res.status(404);
+		res.json({ status: 'Failure', message: 'Not Found' });
+	}, (database) => {
+		res.json(database);
+	});
+	
 });
 
 router.get('/api/:key', (req, res) => {
-	let uri = component.getURI(req.params.key);
-	if(uri) {
-		res.json({ url: uri });
-	} else {
+	component.getURI(req.params.key, () => {
 		res.status(404);
 		res.json({ status: 'Failure', message: 'Not Found' });
-	}
+	}, (key, uri) => {
+		res.json({ key: key, url: uri });
+	});
 });
 
 router.get('/:key', (req, res) => {
