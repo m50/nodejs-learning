@@ -7,14 +7,16 @@ html
 		include ./includes/header.pug
 		include ./includes/navbar.pug
 		div#body(ng-controller="MainController")
-			p I am a German-American from Texas, who currently lives in Ireland.
-			| This site is my personal site, where I have information about myself, and where I employ different Web-Tools to learn different programming
-			| practices that are in use in today's market.
+			p.
+				I am a German-American from Texas, who currently lives in Ireland.
+				This site is my personal site, where I have information about myself, and where I employ different Web-Tools to learn different programming
+				practices that are in use in today's market.
 			p The backend of this server is NGINX Reverse-Proxying to NodeJS. All the pages are rendered from pug, and each page was used to learn different things.
 			ul(ng-repeat="section in sections")
 				information-section(details="section")
-			p In addition to the Web-based pages I serve, this server also hosts my Anti-Spam appliance sitting in front of my G Suite account. This Anti-Spam
-			| appliance utilizes Postfix as the MTA, AMaViSD and SpamAssassin for the Spam Filtering, and a number of custom-made rulesets and tools.
+			p.
+				In addition to the Web-based pages I serve, this server also hosts my Anti-Spam appliance sitting in front of my G Suite account. This Anti-Spam
+				appliance utilizes Postfix as the MTA, AMaViSD and SpamAssassin for the Spam Filtering, and a number of custom-made rulesets and tools.
 		include ./includes/angular-js.pug
 		include ./includes/footer.pug
 		script(type='text/javascript' defer src="/static/js/home.js")
