@@ -30,7 +30,7 @@ class Posts extends React.Component {
 						<span className='postdate'>Post Date: {post.date.split('.')[0].split('T').reverse().join(' ')}</span>
 					</div>
 					<div className='postcontent' dangerouslySetInnerHTML={{ 
-						__html: post.post.replace(/\<script.*?\>|\<\/script\>/g, '').replace(/\bon\w+=/g, 'defang=')
+						__html: post.post.replace(/\<script.*?\>|\<\/script\>/g, '').replace(/\bon\w+\s*=/g, 'defang=')
 					}}></div>
 				</div>
 				));
