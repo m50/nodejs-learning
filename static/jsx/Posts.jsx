@@ -34,7 +34,10 @@ class Posts extends React.Component {
 					}}></div>
 				</div>
 				));
-			this.setState({ posts: posts, postid: id, maxid: data.posts.length - 1 });
+			let maxid = this.state.maxid;
+			if(data.posts.length > 1)
+				maxid = data.posts.length - 1;
+			this.setState({ posts: posts, postid: id, maxid: maxid });
 		});
 	}
 
