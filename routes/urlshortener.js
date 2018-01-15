@@ -21,7 +21,7 @@ router.get('/api', (req, res) => {
 });
 
 router.get('/api/:key', (req, res) => {
-	let uri = component.getURI(key);
+	let uri = component.getURI(req.params.key);
 	if(uri) {
 		res.json({ url: uri });
 	} else {
