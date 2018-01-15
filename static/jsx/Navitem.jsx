@@ -19,8 +19,7 @@ class Navitem extends React.Component {
 		if(this.props.curPage == this.props.page) {
 			className += ' active';
 		}
-		// /blog
-		return <a href={'/'+this.props.page} style={navitemStyle} className={className} id={this.props.page} onClick={this.onClick}>{this.props.pageTitle}</a>;
+		return <a href={'/blog/'+this.props.page} style={navitemStyle} className={className} id={this.props.page} onClick={this.onClick}>{this.props.pageTitle}</a>;
 	}
 }
 
