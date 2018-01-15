@@ -105,6 +105,10 @@ a {
 	padding-right: $padding-side;
 	box-shadow: $body-shadow;
 	z-index: -1;
+
+	@include phone {
+		display: none;
+	}
 }
 
 label, p {
