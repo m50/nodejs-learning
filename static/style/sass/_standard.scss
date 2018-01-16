@@ -78,7 +78,7 @@ a {
 	    font-size: 20px;
 	}
 	@include phone {
-		margin: $body-height 0px;
+		margin: $body-height;
 		padding: $padding-height-small $padding-side-small;
 	}
 	margin: $body-height $body-side $body-height*2 $body-side;
