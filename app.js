@@ -6,7 +6,6 @@ app.set('view engine', 'pug');
 app.set('views','./views');
 
 const home = require('./routes/home.js');
-const test = require('./routes/test.js');
 const cv = require('./routes/cv.js');
 const form = require('./routes/form.js');
 const blog = require('./routes/blog.js');
