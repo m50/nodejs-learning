@@ -21,6 +21,10 @@ app.use('/blog', blog);
 app.use('/url', urlshortener);
 app.use('/lorem', longpage);
 
+app.get('/hello', (req, res) => {
+	res.send('hello!');
+});
+
 app.get('/.well-known/acme-challenge/SicXSgaXNCZ6OQxXZHDqvZN3zDNtBV6kXbaWBijfUhE', (req, res) => {
 	res.send('SicXSgaXNCZ6OQxXZHDqvZN3zDNtBV6kXbaWBijfUhE.rUwlH8y-U9fO3K-WUOjRMZ3MSyJhmzbjutXo78QMMa0');
 });
