@@ -79,7 +79,7 @@ a {
 	}
 	@include phone {
 		margin: $body-height;
-		padding: $padding-height-small $padding-side-small;
+		padding: 0px;
 	}
 	margin: $body-height $body-side $body-height*2 $body-side;
 	border: $border;
