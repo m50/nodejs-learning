@@ -33,7 +33,7 @@
 		"watchify": "^3.9.0"
 	},
 	"scripts": {
-		"start": "git pull && npm run gulp && node main.js",
+		"start": "git pull && npm run gulp && service clardy.eu restart",
 		"compile": "git pull && npm run gulp",
 		"gulp": "gulp"
 	},
